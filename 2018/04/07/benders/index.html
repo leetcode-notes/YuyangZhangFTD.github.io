@@ -103,7 +103,7 @@
 <meta property="og:description" content="Benders Decomposition 总结这次主要来总结一下这段时间研究的benders算法，主要是在做一个规模不算大的MIP问题，但是公司没有商业求解器用，很蛋疼。我主要参考一篇17年的综述文章[1]，翻译为主，而且仅写了最近浏览过和比较感兴趣的部分，并不全面，同时会写点自己的理解，但还是希望大家能去看一下原文。同时这次也是参考了QinHu老师之前的内容，在这放出链接，感觉他们写得比我的全">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/04/07/benders/1.png">
-<meta property="og:updated_time" content="2018-04-12T02:47:41.394Z">
+<meta property="og:updated_time" content="2018-04-14T13:33:56.439Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="benders">
 <meta name="twitter:description" content="Benders Decomposition 总结这次主要来总结一下这段时间研究的benders算法，主要是在做一个规模不算大的MIP问题，但是公司没有商业求解器用，很蛋疼。我主要参考一篇17年的综述文章[1]，翻译为主，而且仅写了最近浏览过和比较感兴趣的部分，并不全面，同时会写点自己的理解，但还是希望大家能去看一下原文。同时这次也是参考了QinHu老师之前的内容，在这放出链接，感觉他们写得比我的全">
@@ -1163,7 +1163,37 @@
   <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
   
 
-  <script src="/js/src/algolia-search.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>
@@ -1181,16 +1211,6 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
-
-
-
-  
-
-  
-
-  
-
-  
   
 
 
