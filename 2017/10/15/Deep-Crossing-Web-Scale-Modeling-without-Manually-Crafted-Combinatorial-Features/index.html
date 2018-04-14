@@ -7,7 +7,7 @@
 
 <html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -94,19 +94,19 @@
 
 
 
-<meta name="description" content="这篇应该是最早的DL做CTR的文章了，好像是KDD2016的best，微软出品。 现在看这篇文章有点普通，但在当时应该还是挺应景的，做的是15年火的embedding和16年火的residual network的结合。模型结构如图所示  本篇论文突出的特点应该是不用人工设计feature，在当时应该也是一个break。 文章后面重点写了embedding和stacking策略以及residual层">
+<meta name="description" content="这篇应该是最早的DL做CTR的文章了，好像是KDD2016的best，微软出品。 现在看这篇文章有点普通，但在当时应该还是挺应景的，做的是15年火的embedding和16年火的residual network的结合。模型结构如图所示   1  本篇论文突出的特点应该是不用人工设计feature，在当时应该也是一个break。 文章后面重点写了embedding和stacking策略以及resid">
 <meta name="keywords" content="Machine Learning,Recommendation System,Deep Learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Deep Crossing- Web-Scale Modeling without Manually Crafted Combinatorial Features">
 <meta property="og:url" content="http://yoursite.com/2017/10/15/Deep-Crossing-Web-Scale-Modeling-without-Manually-Crafted-Combinatorial-Features/index.html">
 <meta property="og:site_name" content="蔻德 &amp; Code">
-<meta property="og:description" content="这篇应该是最早的DL做CTR的文章了，好像是KDD2016的best，微软出品。 现在看这篇文章有点普通，但在当时应该还是挺应景的，做的是15年火的embedding和16年火的residual network的结合。模型结构如图所示  本篇论文突出的特点应该是不用人工设计feature，在当时应该也是一个break。 文章后面重点写了embedding和stacking策略以及residual层">
+<meta property="og:description" content="这篇应该是最早的DL做CTR的文章了，好像是KDD2016的best，微软出品。 现在看这篇文章有点普通，但在当时应该还是挺应景的，做的是15年火的embedding和16年火的residual network的结合。模型结构如图所示   1  本篇论文突出的特点应该是不用人工设计feature，在当时应该也是一个break。 文章后面重点写了embedding和stacking策略以及resid">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2017/10/15/Deep-Crossing-Web-Scale-Modeling-without-Manually-Crafted-Combinatorial-Features/1.png">
 <meta property="og:updated_time" content="2017-10-15T15:12:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep Crossing- Web-Scale Modeling without Manually Crafted Combinatorial Features">
-<meta name="twitter:description" content="这篇应该是最早的DL做CTR的文章了，好像是KDD2016的best，微软出品。 现在看这篇文章有点普通，但在当时应该还是挺应景的，做的是15年火的embedding和16年火的residual network的结合。模型结构如图所示  本篇论文突出的特点应该是不用人工设计feature，在当时应该也是一个break。 文章后面重点写了embedding和stacking策略以及residual层">
+<meta name="twitter:description" content="这篇应该是最早的DL做CTR的文章了，好像是KDD2016的best，微软出品。 现在看这篇文章有点普通，但在当时应该还是挺应景的，做的是15年火的embedding和16年火的residual network的结合。模型结构如图所示   1  本篇论文突出的特点应该是不用人工设计feature，在当时应该也是一个break。 文章后面重点写了embedding和stacking策略以及resid">
 <meta name="twitter:image" content="http://yoursite.com/2017/10/15/Deep-Crossing-Web-Scale-Modeling-without-Manually-Crafted-Combinatorial-Features/1.png">
 
 
@@ -142,7 +142,7 @@
 
 
 
-  <title>Deep Crossing- Web-Scale Modeling without Manually Crafted Combinatorial Features | 蔻德 & Code</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Deep Crossing- Web-Scale Modeling without Manually Crafted Combinatorial Features | 蔻德 & Code</title>
   
 
 
@@ -167,7 +167,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-right page-post-detail ">
+  <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -414,7 +414,10 @@
       
         <p>这篇应该是最早的DL做CTR的文章了，好像是KDD2016的best，微软出品。</p>
 <p>现在看这篇文章有点普通，但在当时应该还是挺应景的，做的是15年火的embedding和16年火的residual network的结合。模型结构如图所示</p>
-<p><img src="1.png" alt="1"></p>
+<div class="figure">
+<img src="1.png" alt="1">
+<p class="caption">1</p>
+</div>
 <p>本篇论文突出的特点应该是不用人工设计feature，在当时应该也是一个break。</p>
 <p>文章后面重点写了embedding和stacking策略以及residual层的应用，以及和DSSM的对比，这里我搜了一下，DSSM是一个深度语义匹配模型，手动微笑，并没有看过，所以他的第三点比较我就没有仔细看，过一阵子填坑，最近要看的太多了。再往后就是模型实现等等，不看了。</p>
 <p>短短两年，一个best paper就成为了“古董”，真是让人感慨。</p>
@@ -1109,24 +1112,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config("");
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="custom_mathjax_source">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 

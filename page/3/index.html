@@ -7,7 +7,7 @@
 
 <html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -138,7 +138,7 @@
 
 
 
-  <title>蔻德 & Code</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>蔻德 & Code</title>
   
 
 
@@ -163,7 +163,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-right 
+  <div class="container sidebar-position-right 
    page-home 
  ">
     <div class="headband"></div>
@@ -414,14 +414,15 @@
       
         
           
-          2017-10-31 Dairy到苏宁已经两个月咯，转眼间已经转正了，对最近的状态做一个小结。
+          2017-10-31 Dairy
+到苏宁已经两个月咯，转眼间已经转正了，对最近的状态做一个小结。
 好的方面：
 
 学到了很多东西，到苏宁之后看了很多论文，而且对于工程方面也有一定提升；
 突然明白了社会人的意义，从此人生多了一个职场的维度，学会做一个优秀的人；
 接触到了更多的东西，包括图像、强化学习、运筹等等；
 坚持每天git一点点，已经坚持了3周了，继续努力；
-坚持每天读论文，每天做不到，每周还是读3
+坚持每天读论文，每天做不到，每周还是读
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -569,8 +570,9 @@
       
         
           
-          GAN笔记为了不被时代所抛弃，最近准备开始好好学一下深度学习的内容，主要针对CV方面，NLP先缓一缓，我还是会站在统计ML的角度来看DL的，今天先来总结一下最优美的GAN。
-首先明确GAN是什么，GAN是一种生成模型。讲到这里先说一下生成模型和判别模型，这两个模型最大的区别就是在于求解方式不同，一个是求解$P(X,Y)$ 联合概率，另一个是求$P(Y|X)$ 条件概率。就拿之前很火的VAE来说明，
+          GAN笔记
+为了不被时代所抛弃，最近准备开始好好学一下深度学习的内容，主要针对CV方面，NLP先缓一缓，我还是会站在统计ML的角度来看DL的，今天先来总结一下最优美的GAN。
+首先明确GAN是什么，GAN是一种生成模型。讲到这里先说一下生成模型和判别模型，这两个模型最大的区别就是在于求解方式不同，一个是求解\(P(X,Y)\) 联合概率，另一个是求\(P(Y|X)\) 条件概率。就拿之前很火的VA
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -873,7 +875,10 @@ pr
         
           
           这次来回顾一下另一个经典模型，Factorization Machine。
-Factorization Machine模型形式如下$$\hat{y}(x)=w_0+\sum^n_{i=1}w_ix_i+\sum^n_{i=1}\sum^n_{j=i+1}\langle v_i,v_j\rangle x_ix_j$$包括对一阶和二阶特征的考虑，这样做是因为我们可以证明对于足够大的$k$ 存在矩阵$V
+Factorization Machine
+模型形式如下 \[
+\hat{y}(x)=w_0+\sum^n_{i=1}w_ix_i+\sum^n_{i=1}\sum^n_{j=i+1}\langle v_i,v_j\rangle x_ix_j
+\] 包括对一阶和二阶特征的考虑，这样做是因为我们可以证明对于足够大的\(k\)
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1173,8 +1178,11 @@ Factorization Machine模型形式如下$$\hat{y}(x)=w_0+\sum^n_{i=1}w_ix_i+\sum^
           这篇应该是最早的DL做CTR的文章了，好像是KDD2016的best，微软出品。
 现在看这篇文章有点普通，但在当时应该还是挺应景的，做的是15年火的embedding和16年火的residual network的结合。模型结构如图所示
 
+
+1
+
 本篇论文突出的特点应该是不用人工设计feature，在当时应该也是一个break。
-文章后面重点写了embedding和stacking策略以及residual层
+文章后面重点写了embedding和stacking策略以及resid
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1328,7 +1336,7 @@ Factorization Machine模型形式如下$$\hat{y}(x)=w_0+\sum^n_{i=1}w_ix_i+\sum^
 可以高效处理高维海量数据；
 在真实海量数据上进行实验，并取得了较好的结果；
 
-下面来看模型，用户对一个广告的行为被称为一次impression，用$x$ 表示，图片$u$ 的尺寸为$120
+下面来看模型，用户对一个广告的行为被称为一次impression，用\(x\) 表示，图片\(u\) 的尺寸为
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1456,7 +1464,8 @@ Factorization Machine模型形式如下$$\hat{y}(x)=w_0+\sum^n_{i=1}w_ix_i+\sum^
           
           昨天看的有点多了，今天少看点，然后看点别的内容缓解一下，刚好今天看到了这篇是attention模型+FM，所以今天打算再去看看attention。
 回归正题，这篇文章主要思路是在FM的二阶特征上加attention layer
-$$f_{\text{Att}}(f_{\text{PI}}(\mathcal{E}))=\sum_{(i,j)\in\mathcal{R}x}a{ij}(v_i\odot
+ \[
+f_{\text{Att}}(f_{\text{PI}}(\mathcal{E}))=\sum_{(i,j)\in\mathcal{R}_x}a_{ij}(v_i\
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1585,10 +1594,17 @@ $$f_{\text{Att}}(f_{\text{PI}}(\mathcal{E}))=\sum_{(i,j)\in\mathcal{R}x}a{ij}(v_
           再来看一篇。。有点累了都。。这篇文章是一篇FM和DL的结合，2017年的文章，这篇文章读起来就给人感觉比较符合当前的主流想法了。
 模型的主要结构如下图所示
 
+
+1
+
 与谷歌之前wide &amp; deep的model不同的是，DeepFM的输入层共享同样的embedding，模型也分为两部分，FM和Deep。
 FM部分的结构如下图所示
 
-就是一个FM模型$$y_{\text{FM}}=\langle w
+
+2
+
+就是一个FM模型 \[
+y_{\text{FM}}
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1739,7 +1755,12 @@ FM部分的结构如下图所示
           这篇文章发于2016年1月，也是很早期的DL做CTR的文章，感觉这几篇文章看的时候没注意顺序，看的时候经常觉得蹦出来的是比较烂大街和过时的想法。。
 文中提出来的第一个模型是FNN
 
-上面几层都很正常，最底下是一个FM层，就是比较经典的一个FM模型作为输入过激活函数$$y_{\text{FM}}=\text{sigmoid}(w_0+\sum^n_{i=1}w_ix_i+\sum^n_{i=1}\s
+
+1
+
+上面几层都很正常，最底下是一个FM层，就是比较经典的一个FM模型作为输入过激活函数 \[
+y_{\text{FM}}=\text{sigmoid}(
+w_0+\sum^n_{i=1}w_ix_i+\sum^n_
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2402,24 +2423,7 @@ FM部分的结构如下图所示
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config("");
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="custom_mathjax_source">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
