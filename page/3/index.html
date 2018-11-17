@@ -568,13 +568,8 @@ Rendle,
         
           
           这篇文章是雅虎关于新闻推荐的一篇文章，发在KDD2017上，比较有insight的一篇文章。
-传统基于协同过滤或者矩阵分解相关的算法并不适用于新闻的推荐，因为新闻的迭代速度块，短时间内会产生大量的新物品，也会代替掉去多过时的物品，所以新闻推荐的三个关键点在于：
-
-理解文章的内容
-理解用户的偏好
-根据内容和偏好列出给用户推荐的内容
-
-一个最基础的做法是将文章看作是文本中词的集合，将用户看做历史浏览过
+传统基于协同过滤或者矩阵分解相关的算法并不适用于新闻的推荐，因为新闻的迭代速度块，短时间内会产生大量的新物品，也会代替掉去多过时的物品，所以新闻推荐的三个关键点在于： - 理解文章的内容 - 理解用户的偏好 - 根据内容和偏好列出给用户推荐的内容
+一个最基础的做法是将文章看作是文本中词的集合，将用户看做历
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -722,7 +717,8 @@ Rendle,
       
         
           
-          Chap1 Introduction我们的目标是研究：当一个人（agent）面对很多的选择时，行为过程是如何影响最终的决策。定义可以观测到的影响因素用$x$表示，无法观测的影响因素用$\epsilon$表示，则通过一个函数$y=h(x,\epsilon)$标识用户的选择，这个函数称为行为过程，behavioral process。因为无法观测的变量$\epsilon$所以agent的选择并不是确定
+          Chap1 Introduction
+我们的目标是研究：当一个人（agent）面对很多的选择时，行为过程是如何影响最终的决策。 定义可以观测到的影响因素用\(x\)表示，无法观测的影响因素用\(\epsilon\)表示，则通过一个函数\(y=h(x,\epsilon)\)标识用户的选择，这个函数称为行为过程，behavioral process。因为无法观测的变量\(\epsilon\)所以age
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -870,8 +866,16 @@ Rendle,
       
         
           
-          Integer Programming整数规划的general form$$\begin{aligned}\max &amp; &amp;cx\\text{subject to}&amp;&amp;Ax\leq b\&amp;&amp; x&gt;0&amp; &amp;\text{integral}\end{aligned}$$
-混合整数规划的general form$$\begin{align
+          Integer Programming
+整数规划的general form \[
+\begin{aligned}
+\max &amp; &amp;cx\\
+\text{subject to}&amp;&amp;Ax\leq b\\
+&amp;&amp; x&gt;0&amp; &amp;\text{integral}
+\end{aligned}
+\]
+混合整数规划的general form \[
+
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1020,7 +1024,7 @@ Rendle,
         
           
           这篇文章主要做的内容是将正确size的商品推荐给客户，很细致的工作，亚马逊的推荐，发表在recsys2017。
-定义一个商品为parent product，而这个商品的不同尺寸的SKU称之为其的child prodcut，产品集合$\mathcal{P}$，用户集合$\mathcal{C}$，购买记录集合$\mathcal{D}=(i,j,y_{ij})$表示用户$i$购买$j$产品然后退换商品型
+定义一个商品为parent product，而这个商品的不同尺寸的SKU称之为其的child prodcut，产品集合\(\mathcal{P}\)，用户集合\(\mathcal{C}\)，购买记录集合\(\mathcal{D}=(i,j,y_{ij})\)表示用户\(i\)购买\(j\
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1170,7 +1174,10 @@ Rendle,
           
           这篇文章发于AAAI2018，阿里的一篇文章。文章主要想法是一种利用teacher-student network，来用简单的网络直接去学习复杂网络的表征，以降低计算的复杂度，应用于在线预测等方面。
 
-图中可见，主要分为两部分的网络，一部分是booster net，一部分是light net，其中booster net中的层为计算复杂程度较高的网络连接，比如加BN，加ResBlock等等，可以用较
+
+1
+
+图中可见，主要分为两部分的网络，一部分是booster net，一部分是light net，其中booster net中的层为计算复杂程度较高的网络连接，比如加BN，加ResBlock等等，
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1318,9 +1325,9 @@ Rendle,
       
         
           
-          这篇文章主要解决了由于对物品和对用户做embedding时时长差距较大情况，而提出多种采样方式，来提高总体的训练速度，文中的review总结的很好。
+          这篇文章主要解决了由于对物品和对用户做embedding时时长差距较大情况，而提出多种采样方式，来提高总体的训练速度，文中的review总结的很好。 
 作者先对已有的embedding做推荐的方式做了一个framework，如上图所示，矩阵分解或者其他embedding都可以认为是one-hot的用户与物品经过functional embedding之后再得到最后的结果。
-作者对当前implicit
+作者对当前implici
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1447,6 +1454,7 @@ Rendle,
         
           
           
+
           
           <!--noindex-->
           <div class="post-button text-center">

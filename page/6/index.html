@@ -392,9 +392,10 @@
       
         
           
-          AdaBRP今天这篇看的是一篇ensemble方法和推荐系统结合的文章，提出一个叫AdaBPR（Adaptive Boosting Personalized Ranking），这篇文章前面的Introduction和related work都写不错，还对我一直不太明白的point-wise、pair-wise和list-wise三种基于模型的方法做出了解释，并给出了一系列参考文献：
+          AdaBRP
+今天这篇看的是一篇ensemble方法和推荐系统结合的文章，提出一个叫AdaBPR（Adaptive Boosting Personalized Ranking），这篇文章前面的Introduction和related work都写不错，还对我一直不太明白的point-wise、pair-wise和list-wise三种基于模型的方法做出了解释，并给出了一系列参考文献：
 
-point-
+point
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -542,7 +543,7 @@ point-
       
         
           
-          看16年recsys的best paper，Local Item-Item Models for Top-N Recommendation  中提到的SLIM方法，最近抓着这个方法研究了一下。然后还发现了Xia Ning和George Karypis这两位，这两位一直是SLIM相关论文的主要作者，XiaNing应该是George Karypis的学生，从最早的SLIM方法开始，到后面也有两篇（好像
+          看16年recsys的best paper，Local Item-Item Models for Top-N Recommendation 中提到的SLIM方法，最近抓着这个方法研究了一下。然后还发现了Xia Ning和George Karypis这两位，这两位一直是SLIM相关论文的主要作者，XiaNing应该是George Karypis的学生，从最早的SLIM方法开始，到后面也有两篇（好像是
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -668,10 +669,13 @@ point-
       
         
           
-          数据库读写分离及相关什么是读写分离将数据库分为主数据库和从数据库，主数据库来处理事务性增、删、改操作，让从数据库处理查操作，用数据库复制将事务性操作变更同步到集群的从数据库中。
-为什么要读写分离主要原因就在于数据量的增加，当单表数据量达到一定条数之后，数据库操作的性能下降，将读写分离后操作会快很多。
-分库分表方式可以根据主键散列分表，如一些订单号等等，或者是用户的内部一致的userid等等。
-Be
+          数据库读写分离及相关
+什么是读写分离
+将数据库分为主数据库和从数据库，主数据库来处理事务性增、删、改操作，让从数据库处理查操作，用数据库复制将事务性操作变更同步到集群的从数据库中。
+为什么要读写分离
+主要原因就在于数据量的增加，当单表数据量达到一定条数之后，数据库操作的性能下降，将读写分离后操作会快很多。
+分库分表方式
+可以根据主键散列分表，如一些订单号等等，或者是用户的内部一致的userid等等
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -819,10 +823,12 @@ Be
       
         
           
-          Python垃圾回收处理引用计数当一个对象被创建或者复制时，对象的引用计数加一，当对象的引用被销毁时，对象的引用计数减一，当引用计数为0时，会将该对象所占内存释放。
+          Python垃圾回收处理
+引用计数
+当一个对象被创建或者复制时，对象的引用计数加一，当对象的引用被销毁时，对象的引用计数减一，当引用计数为0时，会将该对象所占内存释放。
 优点在于实时性，任何内存一旦没有指向它的引用，就会立即被回收，其它垃圾回收机制是建立在一些特殊条件下。
 缺点在于维护计数所造成的计算开销。同时，引用计数会造成循环引用，如下所示
-12345678a = []b = []a.append
+12345678a = []b = []a.appe
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -970,9 +976,12 @@ Be
       
         
           
-          python的dict源码解读PyDictEntry12345typededf struct&#123;  Py_ssize_t me_hash;  PyObject *me_key;  PyObject *me_value;&#125; PyDictEntry
+          python的dict源码解读
+PyDictEntry
+12345typededf struct&#123;  Py_ssize_t me_hash;  PyObject *me_key;  PyObject *me_value;&#125; PyDictEntry
 其中me_hash 用于存储hash值
-PyDictObject123456789101112typedef struct _dicto
+PyDictObject
+123456789101112typedef struct _di
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1121,7 +1130,9 @@ PyDictObject123456789101112typedef struct _dicto
         
           
           因为最近在公司搞一个实时性要求比较高的推荐，所以最近会看一些新闻推荐、实时推荐相关的论文，今天这篇是一篇比较老的增量学习+协同过滤的论文，想法很简单，就是在计算相似度时分类讨论，不同情况选择不同的增量方式，尽最大的可能性减少计算量。
-传统的相似度计算方式为$$\text{sim}(u_x,u_y)=\frac{\sum^n_{h=1}(r_{u_x,i_h}-\overline{r_{u_x}})
+传统的相似度计算方式为 \[
+\text{sim}(u_x,u_y)=\frac
+{\sum^n_{h=1}(r_{u_x,i_h}-\overline{r_{u_x
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1270,7 +1281,7 @@ PyDictObject123456789101112typedef struct _dicto
         
           
           这篇文章发在IJCAI2017上，是一篇音乐推荐的文章，简单解读一下。
-用户在听歌的时候会留下很多数字信息，不仅可以反映出用户的喜好，还能够反映出歌曲之间的相似度，这在之前的音乐推荐中是不被重视的。本文提出了一种个性化的音乐推荐算法，能够有效地刻画出用户的喜好，作者先用word embedding方法估计歌曲之间的相似度，之后再将学习到的相似度嵌入矩阵分解模型中，来提升潜在特征的辨识度，一般选取$
+用户在听歌的时候会留下很多数字信息，不仅可以反映出用户的喜好，还能够反映出歌曲之间的相似度，这在之前的音乐推荐中是不被重视的。本文提出了一种个性化的音乐推荐算法，能够有效地刻画出用户的喜好，作者先用word embedding方法估计歌曲之间的相似度，之后再将学习到的相似度嵌入矩阵分解模型中，来提升潜在特征的辨识度，一般选取\
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1418,11 +1429,14 @@ PyDictObject123456789101112typedef struct _dicto
       
         
           
-          Pytorch note 09.09求导机制每个变量的requires_grad 表明这个变量是否需要计算导数，在创建变量的时候进行设定
+          Pytorch note 09.09
+求导机制
+每个变量的requires_grad 表明这个变量是否需要计算导数，在创建变量的时候进行设定
 z = Variable(torch.randn(5, 5), requires_grad=True)
 这个参数可以让我们动态的调整每个变量是否需要梯度和是否更新。
 volatile 是干什么的暂时没有看懂，先留个坑。
-torchpytorch的基本包torch
+torch
+pytorch的基本包to
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1571,7 +1585,9 @@ torchpytorch的基本包torch
         
           
           这篇论文核心思想是利用评论去解决冷启动问题同时增加预测的准确性，发表在IJCAI上，给我感觉稍微有点水的意味，文章中具体训练步骤说的不是很清楚，可能是我之前没有接触过，先挖个坑，以后填
-TLFM文中的主要思想是利用矩阵分解探究潜在影响因素，文中作者提出加入评论的个人因素作为补充：$$\hat{y}{ui}=g(base+(\sum{w\in W(r_{ui})}\alpha_wv_w^T)(p_u
+TLFM
+文中的主要思想是利用矩阵分解探究潜在影响因素，文中作者提出加入评论的个人因素作为补充： \[
+\hat{y}_{ui}=g(base+(\sum_{w\in W(r_{ui})}\alpha_wv_w^T
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1719,7 +1735,8 @@ TLFM文中的主要思想是利用矩阵分解探究潜在影响因素，文中�
       
         
           
-          2017-08-19最近入职了，写博客的时间少了，但是也倒是没有停止学习~最近把LDA进本从头到尾看了个明白，然后下周开始，会准备做一个推荐的系统的项目~等闲了我会最近写在笔记本上的都腾过来，十一之前会把所有的补上，加油咯。
+          2017-08-19
+最近入职了，写博客的时间少了，但是也倒是没有停止学习最近把LDA进本从头到尾看了个明白，然后下周开始，会准备做一个推荐的系统的项目等闲了我会最近写在笔记本上的都腾过来，十一之前会把所有的补上，加油咯。
 
           
           <!--noindex-->

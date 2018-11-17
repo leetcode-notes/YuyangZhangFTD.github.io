@@ -415,7 +415,9 @@
         
           
           这篇文章是今年年初时候发在kdd上的一篇关于eta的文章，《Learning to Estimate the Travel Time》。
-背景车辆行驶时间估计是重要的位置服务的之一，而且在滴滴的服务中占有比较重要的一环，这篇文章提出了一个新的ETA的模型，并应用于滴滴出行的线上服务。传统的ETA主要分为两类，第一类就是基于路径的方法，整条路径的行驶时间等于其中每一段路径时间的和：$$\hat{y}
+背景
+车辆行驶时间估计是重要的位置服务的之一，而且在滴滴的服务中占有比较重要的一环，这篇文章提出了一个新的ETA的模型，并应用于滴滴出行的线上服务。传统的ETA主要分为两类，第一类就是基于路径的方法，整条路径的行驶时间等于其中每一段路径时间的和： \[
+\hat
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -564,7 +566,8 @@
         
           
           咖啡馆和健身房绝对是二十一世纪适合人类思考的地方的前几名，感觉每次跑步时候的各种想法都可以出本书了，但是我没有带纸笔。希望以后经常写点短篇的东西吧，频率高一点，内容精华一点。
-关于我马上24岁了，最近觉得很没有奋斗目标，以前觉得30岁的时候年薪50w吧，现在发现正常增长也能比较轻松的达到这个水平，目前的日子就一个人来说也过得绰绰有余，买喜欢的东西，吃吃喝喝，还能剩下一点，虽然买房远远不够，但慢慢来
+关于我
+马上24岁了，最近觉得很没有奋斗目标，以前觉得30岁的时候年薪50w吧，现在发现正常增长也能比较轻松的达到这个水平，目前的日子就一个人来说也过得绰绰有余，买喜欢的东西，吃吃喝喝，还能剩下一点，虽然买房远远不够，但慢慢
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -862,7 +865,8 @@
         
           
           最近要写几个滴滴相关的论文的笔记，顺便解读一下目前的拼车算法等策略，顺带着科普。今天这篇是KDD2017的《A Taxi Order Dispatch Model based On Combinatorial Optimization》，这篇文章是比较早时候的分单算法的文章，跟现在的算法略有差异。
-简介传统的拼车算法是一种顺序的分配策略，在乘客周围选择最近的车辆，最大化每个司机对每个订单的接受概率
+简介
+传统的拼车算法是一种顺序的分配策略，在乘客周围选择最近的车辆，最大化每个司机对每个订单的接受概
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -988,12 +992,16 @@
       
         
           
-          python类笔记私有属性和方法命名前加两个下划线
+          python类笔记
+私有属性和方法
+命名前加两个下划线
 1from module import *
 这样做无法直接调用module中的__func()方法，但直接import却是可以的
 1from module import __func
-抽象方法用@abstractmethod。
-__new__和__init____init__() 方法用于给属性赋值，不可以有返回值，__new__()多用于构造不
+抽象方法
+用@abstractmethod。
+__new__和__init__
+__init__() 方法用于给属性赋值，不可以有返回值，__new__()多用
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1142,8 +1150,9 @@ __new__和__init____init__() 方法用于给属性赋值，不可以有返回值
         
           
           最近真的是停更了好久，一是刚来北京，刚来滴滴确实很多事儿需要适应，需要忙，二是最近刚结束了京东的goc的比赛，刚闲下来。今天闲下来，就刚好把之前想写的东西都拿出来写写。
-滴滴这个事儿最近真是令人揪心，到现在已经过去了十几天，网上的舆论渐渐能看了，希望公司所做的努力不会白费，愿越来越好。
-事情经过就不描述了，从出事儿到现在，各种描述我也看了少说一百多遍，各种观点也是很多，就几个点我写写自己的感受吧。
+滴滴
+这个事儿最近真是令人揪心，到现在已经过去了十几天，网上的舆论渐渐能看了，希望公司所做的努力不会白费，愿越来越好。
+事情经过就不描述了，从出事儿到现在，各种描述我也看了少说一百多遍，各种观点也是很多，就几个点我写写自己的感受吧
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1421,14 +1430,15 @@ __new__和__init____init__() 方法用于给属性赋值，不可以有返回值
       
         
           
-          Online Subgradient Descent在线梯度下降算法如下图所示
+          Online Subgradient Descent
+在线梯度下降算法如下图所示
+
+
+OGD
 
 其中，每一步迭代的时候，根据梯度（或次梯度）更新后，将新得到的权重投影到权重的可行域上。
 
-定理1：如果$w’\in\mathcal{W}$，$w=\prod_{\mathcal{W}}(w’)$，$w^\in\mathcal{W}$，那么$(w’-w)(w^-w)\leq0$。
-
-证明：
-假设存在$\hat{w}\
+定理1：如果\(w&#39;\in\mathcal{W}\)，\(w=\prod_{\mathcal{W}}(w&#39;)\)，\(w^*\in\mathcal{W}\)，那么\((w&#39;-w)(w^*-
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1554,13 +1564,16 @@ __new__和__init____init__() 方法用于给属性赋值，不可以有返回值
       
         
           
-          Follow the Leader Against Quadratics某些情况下，FTL是非常好的算法，比如一维的线性回归的情况，很容易推广到高维
+          Follow the Leader Against Quadratics
+某些情况下，FTL是非常好的算法，比如一维的线性回归的情况，很容易推广到高维
 
-每一轮选择$w_t\in[-1,1]$
-对手选择$y_t\in[-1,+1]$
-计算$f_t(w)=\frac{1}{2}(w-y_t)^2$
+每一轮选择\(w_t\in[-1,1]\)
+对手选择\(y_t\in[-1,+1]\)
+计算\(f_t(w)=\frac{1}{2}(w-y_t)^2\)
 
-使用FTL算法：$$\begin{aligned}w_{t+1}&amp;=\underset{w\i
+使用FTL算法： $$
+\[\begin{aligned}
+w_{t+1}&amp;=\
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1686,7 +1699,10 @@ __new__和__init____init__() 方法用于给属性赋值，不可以有返回值
       
         
           
-          Example Online Optimizers对于FTL（Follow-The-Leader）算法，$$\mathbf{w}{t+1}=\underset{\mathbf{w}\in\mathcal{W}}{\arg\min}\sum^t{s=1}f_s(\mathbf{w})\equiv=\underset{\mathbf{w}}{\arg\min}f_{1:t}(\mathbf{w})$$
+          Example Online Optimizers
+对于FTL（Follow-The-Leader）算法， \[
+\mathbf{w}_{t+1}=\underset{\mathbf{w}\in\mathcal{W}}{\arg\min}\sum^t_{s=1}f_s(\mathbf{w})
+\equiv=\underset{\mathbf{w}}{\arg\min}f_{1:t}(\mathbf
           ...
           <!--noindex-->
           <div class="post-button text-center">
