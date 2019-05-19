@@ -321,6 +321,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/19/Scalable-Training-of-L1-Regularized-Log-Linear-Models/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YuyangZhangFTD">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arvin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/19/Scalable-Training-of-L1-Regularized-Log-Linear-Models/" itemprop="url">Scalable Training of L1-Regularized Log-Linear Models</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-19T13:54:48+08:00">
+                2019-05-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PaperNote/" itemprop="url" rel="index">
+                    <span itemprop="name">PaperNote</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Scalable Training of L1-Regularized Log-Linear Models
+最近重读了一下之前阿里的MLR，又仔细研究了一下里面的优化算法，然后发现也是对之前的一个叫Orthant- Wise Limited-memory Quasi-Newton（下文中称OWL-QN，这个owl让我想起了哈利波特的Ordinary Wizarding Level…）的方法进行的一
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/05/19/Scalable-Training-of-L1-Regularized-Log-Linear-Models/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/ETA-in-Didichuxing-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -415,7 +564,9 @@
         
           
           这篇文章是今年年初时候发在sigkdd上的一篇关于eta的文章，《Learning to Estimate the Travel Time》。
-背景车辆行驶时间估计是重要的位置服务的之一，而且在滴滴的服务中占有比较重要的一环，这篇文章提出了一个新的ETA的模型，并应用于滴滴出行的线上服务。传统的ETA主要分为两类，第一类就是基于路径的方法，整条路径的行驶时间等于其中每一段路径时间的和：$$\hat
+背景
+车辆行驶时间估计是重要的位置服务的之一，而且在滴滴的服务中占有比较重要的一环，这篇文章提出了一个新的ETA的模型，并应用于滴滴出行的线上服务。传统的ETA主要分为两类，第一类就是基于路径的方法，整条路径的行驶时间等于其中每一段路径时间的和： \[
+\
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -713,7 +864,8 @@
         
           
           最近要写几个滴滴相关的论文的笔记，顺便解读一下目前的拼车算法等策略，顺带着科普。今天这篇是KDD2017的《A Taxi Order Dispatch Model based On Combinatorial Optimization》，这篇文章是比较早时候的分单算法的文章，跟现在的算法略有差异。
-简介传统的拼车算法是一种顺序的分配策略，在乘客周围选择最近的车辆，最大化每个司机对每个订单的接受概率
+简介
+传统的拼车算法是一种顺序的分配策略，在乘客周围选择最近的车辆，最大化每个司机对每个订单的接受概
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -839,12 +991,16 @@
       
         
           
-          python类笔记私有属性和方法命名前加两个下划线
+          python类笔记
+私有属性和方法
+命名前加两个下划线
 1from module import *
 这样做无法直接调用module中的__func()方法，但直接import却是可以的
 1from module import __func
-抽象方法用@abstractmethod。
-__new__和__init____init__() 方法用于给属性赋值，不可以有返回值，__new__()多用于构造不
+抽象方法
+用@abstractmethod。
+__new__和__init__
+__init__() 方法用于给属性赋值，不可以有返回值，__new__()多用
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -970,14 +1126,14 @@ __new__和__init____init__() 方法用于给属性赋值，不可以有返回值
       
         
           
-          Online Subgradient Descent在线梯度下降算法如下图所示
+          Online Subgradient Descent
+在线梯度下降算法如下图所示
+
+OGD
 
 其中，每一步迭代的时候，根据梯度（或次梯度）更新后，将新得到的权重投影到权重的可行域上。
 
-定理1：如果$w’\in\mathcal{W}$，$w=\prod_{\mathcal{W}}(w’)$，$w^\in\mathcal{W}$，那么$(w’-w)(w^-w)\leq0$。
-
-证明：
-假设存在$\hat{w}\
+定理1：如果\(w&#39;\in\mathcal{W}\)，\(w=\prod_{\mathcal{W}}(w&#39;)\)，\(w^*\in\mathcal{W}\)，那么\((w&#39;-w)(w^*-w
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1103,13 +1259,14 @@ __new__和__init____init__() 方法用于给属性赋值，不可以有返回值
       
         
           
-          Follow the Leader Against Quadratics某些情况下，FTL是非常好的算法，比如一维的线性回归的情况，很容易推广到高维
+          Follow the Leader Against Quadratics
+某些情况下，FTL是非常好的算法，比如一维的线性回归的情况，很容易推广到高维
 
-每一轮选择$w_t\in[-1,1]$
-对手选择$y_t\in[-1,+1]$
-计算$f_t(w)=\frac{1}{2}(w-y_t)^2$
+每一轮选择\(w_t\in[-1,1]\)
+对手选择\(y_t\in[-1,+1]\)
+计算\(f_t(w)=\frac{1}{2}(w-y_t)^2\)
 
-使用FTL算法：$$\begin{aligned}w_{t+1}&amp;=\underset{w\i
+使用FTL算法： $$ \begin{aligned} w_{t+1}&amp;=f_{
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1235,7 +1392,10 @@ __new__和__init____init__() 方法用于给属性赋值，不可以有返回值
       
         
           
-          Example Online Optimizers对于FTL（Follow-The-Leader）算法，$$\mathbf{w}{t+1}=\underset{\mathbf{w}\in\mathcal{W}}{\arg\min}\sum^t{s=1}f_s(\mathbf{w})\equiv=\underset{\mathbf{w}}{\arg\min}f_{1:t}(\mathbf{w})$$
+          Example Online Optimizers
+对于FTL（Follow-The-Leader）算法， \[
+\mathbf{w}_{t+1}=\underset{\mathbf{w}\in\mathcal{W}}{\arg\min}\sum^t_{s=1}f_s(\mathbf{w})
+\equiv=\underset{\mathbf{w}}{\arg\min}f_{1:t}(\mathbf
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1361,12 +1521,14 @@ __new__和__init____init__() 方法用于给属性赋值，不可以有返回值
       
         
           
-          The Online Optimization Game在线优化问题，具体指如下过程：
+          The Online Optimization Game
+在线优化问题，具体指如下过程：
+
+The Online Optimization Game
 
 
-在每回合中，玩家（palyer）选择$\mathbf{w}_t\in\mathcal{W}$，其中$\mathcal{W}\subseteq\mathbb{R}^n$是操作的可行集合
-对手（adversary）选择一个损失函数$f_t:\mathcal{W}\rightarrow\mathbb{R}$
-玩家
+在每回合中，玩家（palyer）选择\(\mathbf{w}_t\in\mathcal{W}\)，其中\(\mathcal{W}\subseteq\mathbb{R}^n\)是操作的可行集合
+对手（adversary）选择一个损失函数\(f_t:
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1493,160 +1655,13 @@ __new__和__init____init__() 方法用于给属性赋值，不可以有返回值
         
           
           最近在学习online learning相关的东西，刚好总结一下。
-Introduction to Online Learning我们以在线二分类预测问题为例，比如说，日常生活中，我们根据气温、温度等特征来试试判断是否会下雪，这就是一个在线的二分类问题。
-二分类分类器（二分类假设，binary classifier或者说binary hypothesis），将特征$\mathbf{x}\in\ma
+Introduction to Online Learning
+我们以在线二分类预测问题为例，比如说，日常生活中，我们根据气温、温度等特征来试试判断是否会下雪，这就是一个在线的二分类问题。
+二分类分类器（二分类假设，binary classifier或者说binary hypothesis），将特征\(\mathbf{x}\in\
           ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/06/13/Online-Learning-1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/07/benders/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="YuyangZhangFTD">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Arvin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/07/benders/" itemprop="url">benders</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-07T13:58:51+08:00">
-                2018-04-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/OperationResearch/" itemprop="url" rel="index">
-                    <span itemprop="name">OperationResearch</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Benders Decomposition 总结这次主要来总结一下这段时间研究的benders算法，主要是在做一个规模不算大的MIP问题，但是公司没有商业求解器用，很蛋疼。我主要参考一篇17年的综述文章[1]，翻译为主，而且仅写了最近浏览过和比较感兴趣的部分，并不全面，同时会写点自己的理解，但还是希望大家能去看一下原文。同时这次也是参考了QinHu老师之前的内容，在这放出链接，感觉他们写得比我的全
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/07/benders/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1734,7 +1749,7 @@ Introduction to Online Learning我们以在线二分类预测问题为例，比�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-count">64</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

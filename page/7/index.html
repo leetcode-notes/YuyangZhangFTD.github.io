@@ -321,6 +321,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/06/Learning-Piece-wise-Linear-Models-from-Large-Scale-Data-for-Ad-ClickPrediction/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YuyangZhangFTD">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arvin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/06/Learning-Piece-wise-Linear-Models-from-Large-Scale-Data-for-Ad-ClickPrediction/" itemprop="url">Learning Piece-wise Linear Models from Large Scale Data for Ad ClickPrediction</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-06T20:25:21+08:00">
+                2017-08-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PaperNote/" itemprop="url" rel="index">
+                    <span itemprop="name">PaperNote</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Introduction
+CTR预估(click-through-rate prediction)是广告行业比较常见的问题，根据用户的历史行为来判断用户对广告点击的可能性。该问题的输入往往是数以万计的稀疏特征向量，在进行特征交叉后会维数会更高，比较常见的就是采用对率回归模型加一些正则化，因为对率回归模型计算开销小且容易实现并行。之前facebook的一篇论文中先用树模型做分类之后再加一个对率回归模
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/06/Learning-Piece-wise-Linear-Models-from-Large-Scale-Data-for-Ad-ClickPrediction/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/06/CollaborativeDeepEmbeddingviaDualNetworks/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -414,9 +563,12 @@
       
         
           
-          Collaborative Deep Embedding​    这篇论文的模型跟DeepMatrixFactorizationModelsforRecommenderSystems 思路非常相近，所以前面的废话描述都不重复了，直接来看模型
+          Collaborative Deep Embedding
+​ 这篇论文的模型跟DeepMatrixFactorizationModelsforRecommenderSystems 思路非常相近，所以前面的废话描述都不重复了，直接来看模型
 
-作者的目的也是用非线性的神经网络结构去改进矩阵分解模型，但是作者做出几个变种，如上图的情况，最左边是基本模型，经过多层转换后，最后结果做点积；上图中间是一个
+1
+
+作者的目的也是用非线性的神经网络结构去改进矩阵分解模型，但是作者做出几个变种，如上图的情况，最左边是基本模型，经过多层转换后，最后结果做点积；上图中间是一
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -564,10 +716,11 @@
       
         
           
-          Introduction​    矩阵分解的方法在推荐算法中是目前效果比较好的，本篇论文用深度学习的方法去做矩阵分解，因为矩阵分解是线性的分解关系，引入激活函数做多层计算后可以有非线性的特性，分解后的矩阵可能拟合程度更好。
+          Introduction
+​ 矩阵分解的方法在推荐算法中是目前效果比较好的，本篇论文用深度学习的方法去做矩阵分解，因为矩阵分解是线性的分解关系，引入激活函数做多层计算后可以有非线性的特性，分解后的矩阵可能拟合程度更好。
 本篇论文主要有以下几点：
 
-提出了一种基于深度学习的矩阵分解方法，不仅使用了明确打分信息(explicit ratings)，还用到了一些没有明确信息的反馈(non-prefe
+提出了一种基于深度学习的矩阵分解方法，不仅使用了明确打分信息(explicit ratings)，还用到了一些没有明确信息的反馈(non-prefere
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -715,7 +868,7 @@
       
         
           
-          恩大家好，我是zyy，今天就开始不在知乎上更新了，来到了这个新家。还是贴上常用地址：Github和知乎专栏。
+          恩大家好，我是zyy，今天就开始不在知乎上更新了，来到了这个新家。 还是贴上常用地址：Github和知乎专栏。
 
           
           <!--noindex-->
@@ -808,7 +961,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-count">64</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
