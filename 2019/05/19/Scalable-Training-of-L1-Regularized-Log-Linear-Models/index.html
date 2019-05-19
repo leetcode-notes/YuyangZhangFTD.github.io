@@ -106,7 +106,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/05/19/Scalable-Training-of-L1-Regularized-Log-Linear-Models/f2.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/05/19/Scalable-Training-of-L1-Regularized-Log-Linear-Models/f3.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/05/19/Scalable-Training-of-L1-Regularized-Log-Linear-Models/owl-qn.jpg">
-<meta property="og:updated_time" content="2019-05-19T11:07:37.865Z">
+<meta property="og:updated_time" content="2019-05-19T11:10:50.823Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scalable Training of L1-Regularized Log-Linear Models">
 <meta name="twitter:description" content="Scalable Training of L1-Regularized Log-Linear Models 最近重读了一下之前阿里的MLR，又仔细研究了一下里面的优化算法，然后发现也是对之前的一个叫Orthant- Wise Limited-memory Quasi-Newton（下文中称OWL-QN，这个owl让我想起了哈利波特的Ordinary Wizarding Level…）的方法进行的一">
@@ -454,8 +454,8 @@ p^k=\pi(\mathbf{H_k}v^k;v^k)
 <p>在迭代的时候，给定迭代的点<span class="math inline">\(x^k\)</span>，有太多相邻或者包含这个点的象限，为了确定下次迭代探索哪个象限，我们定义函数<span class="math inline">\(f\)</span>在<span class="math inline">\(x\)</span>处的伪梯度（pseudo-gradient） <span class="math display">\[
 \diamond f(x)=\left\{
 \begin{aligned}
-\part_i^-f(x) &amp;&amp; \text{if }\part_i^-f(x)&gt;0\\
-\part_i^+f(x) &amp;&amp; \text{if }\part_i^+f(x)&lt;0\\
+\partial_i^-f(x) &amp;&amp; \text{if }\partial_i^-f(x)&gt;0\\
+\partial_i^+f(x) &amp;&amp; \text{if }\partial_i^+f(x)&lt;0\\
 0 &amp;&amp; \text{otherwise}
 \end{aligned}
 \right.
@@ -470,13 +470,13 @@ p^k=\pi(\mathbf{H_k}v^k;v^k)
 <img src="f3.jpg" alt="f3"><figcaption>f3</figcaption>
 </figure>
 <p><span class="math inline">\(f\)</span>的左右偏导为 <span class="math display">\[
-\part_i^{\pm}f(x)=\frac{\part}{\part x_i}\ell(x)+\left\{
+\partial_i^{\pm}f(x)=\frac{\partial}{\partial x_i}\ell(x)+\left\{
 \begin{aligned}
 C\sigma(x_i) &amp;&amp; \text{if } x_i\neq0\\
 \pm C &amp;&amp; \text{if } x_i=0
 \end{aligned}
 \right.
-\]</span> 注意此处有<span class="math inline">\(\part_i^-f(x)\leq\part_i^+f(x)\)</span>。当需要选择下一个象限去探索的时候，选择包含<span class="math inline">\(x^k\)</span>且伪梯度所指向的方向： <span class="math display">\[
+\]</span> 注意此处有<span class="math inline">\(\partial_i^-f(x)\leq\partial_i^+f(x)\)</span>。当需要选择下一个象限去探索的时候，选择包含<span class="math inline">\(x^k\)</span>且伪梯度所指向的方向： <span class="math display">\[
 \xi_i^k=\left\{
 \begin{aligned}
 \sigma(x_i^k) &amp;&amp; \text{if } x_i^k\neq0\\
