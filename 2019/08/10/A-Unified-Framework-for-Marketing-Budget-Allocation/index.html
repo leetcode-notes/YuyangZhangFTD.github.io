@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Try Everything, Machine Learning, Deep Learning" />
+  <meta name="keywords" content="Machine Learning,Budget Allocation," />
 
 
 
@@ -94,20 +94,21 @@
 
 
 
-<meta name="description" content="title: A Unified Framework for Marketing Budget Allocation date: 2019-08-10 13:31:18 categories: PaperNote tags: [Machine Learning, Budget Allocation] [KDD2019] A Unified Framework for Marketing Budge">
+<meta name="description" content="[KDD2019] A Unified Framework for Marketing Budget Allocation 这次是kdd2019的论文分享，本篇是做预算分配的，因为跟我最近做的工作有些关系，所以刚好整理一下。 背景 预算分配核心是解决该把钱投在哪的问题，本篇文章意在提出一种做预算分配的通用框架，包括两个步骤，首先通过历史数据去学习需求曲线，也可称为市场响应模型（market res">
+<meta name="keywords" content="Machine Learning,Budget Allocation">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Arvin&#39;s Blog">
+<meta property="og:title" content="A Unified Framework for Marketing Budget Allocation">
 <meta property="og:url" content="http://yoursite.com/2019/08/10/A-Unified-Framework-for-Marketing-Budget-Allocation/index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
-<meta property="og:description" content="title: A Unified Framework for Marketing Budget Allocation date: 2019-08-10 13:31:18 categories: PaperNote tags: [Machine Learning, Budget Allocation] [KDD2019] A Unified Framework for Marketing Budge">
+<meta property="og:description" content="[KDD2019] A Unified Framework for Marketing Budget Allocation 这次是kdd2019的论文分享，本篇是做预算分配的，因为跟我最近做的工作有些关系，所以刚好整理一下。 背景 预算分配核心是解决该把钱投在哪的问题，本篇文章意在提出一种做预算分配的通用框架，包括两个步骤，首先通过历史数据去学习需求曲线，也可称为市场响应模型（market res">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/08/10/A-Unified-Framework-for-Marketing-Budget-Allocation/fig1.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/08/10/A-Unified-Framework-for-Marketing-Budget-Allocation/fig2.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/08/10/A-Unified-Framework-for-Marketing-Budget-Allocation/fig3.jpg">
-<meta property="og:updated_time" content="2019-08-10T14:28:30.954Z">
+<meta property="og:updated_time" content="2019-08-10T14:34:31.555Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Arvin&#39;s Blog">
-<meta name="twitter:description" content="title: A Unified Framework for Marketing Budget Allocation date: 2019-08-10 13:31:18 categories: PaperNote tags: [Machine Learning, Budget Allocation] [KDD2019] A Unified Framework for Marketing Budge">
+<meta name="twitter:title" content="A Unified Framework for Marketing Budget Allocation">
+<meta name="twitter:description" content="[KDD2019] A Unified Framework for Marketing Budget Allocation 这次是kdd2019的论文分享，本篇是做预算分配的，因为跟我最近做的工作有些关系，所以刚好整理一下。 背景 预算分配核心是解决该把钱投在哪的问题，本篇文章意在提出一种做预算分配的通用框架，包括两个步骤，首先通过历史数据去学习需求曲线，也可称为市场响应模型（market res">
 <meta name="twitter:image" content="http://yoursite.com/2019/08/10/A-Unified-Framework-for-Marketing-Budget-Allocation/fig1.jpg">
 
 
@@ -143,7 +144,7 @@
 
 
 
-  <title> | Arvin's Blog</title>
+  <title>A Unified Framework for Marketing Budget Allocation | Arvin's Blog</title>
   
 
 
@@ -341,7 +342,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">A Unified Framework for Marketing Budget Allocation</h1>
         
 
         <div class="post-meta">
@@ -363,6 +364,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PaperNote/" itemprop="url" rel="index">
+                    <span itemprop="name">PaperNote</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -391,8 +414,7 @@
       
 
       
-        <p>title: A Unified Framework for Marketing Budget Allocation date: 2019-08-10 13:31:18 categories: PaperNote tags: [Machine Learning, Budget Allocation]</p>
-<h1 id="kdd2019-a-unified-framework-for-marketing-budget-allocation">[KDD2019] A Unified Framework for Marketing Budget Allocation</h1>
+        <h1 id="kdd2019-a-unified-framework-for-marketing-budget-allocation">[KDD2019] A Unified Framework for Marketing Budget Allocation</h1>
 <p>这次是kdd2019的论文分享，本篇是做预算分配的，因为跟我最近做的工作有些关系，所以刚好整理一下。</p>
 <h2 id="背景">背景</h2>
 <p>预算分配核心是解决该把钱投在哪的问题，本篇文章意在提出一种做预算分配的通用框架，包括两个步骤，首先通过历史数据去学习需求曲线，也可称为市场响应模型（market response model），然后基于模型进行优化预算分配。</p>
@@ -477,8 +499,33 @@ i=1,\cdots,N
 <p>假设2:存在<span class="math inline">\(\mathbf{q}\)</span>使得<span class="math inline">\(g(\mathbf{q})&lt;0\)</span>。</p>
 </blockquote>
 <p>当以上假设成立时，约束函数<span class="math inline">\(g(\mathbf{q})\)</span>满足Slater’s condition，而KKT条件提供了最优的充分必要条件。</p>
-<p>又根据KKT条件有 $$ \begin{aligned}</p>
-<p><em>{q_i}(<sup><em>D_iq_i<sup><em>c_i(q_i^</em>)-D_iq_i</sup></em>)=&amp;0\ </sup><em>(c_i(q_i^</em>)+q_i</em>{q_i}c_i(q_i<sup><em>))=&amp;1\ ^</em>(c_i(q_i</sup>*i)+q_i_{q_i}c_i(q_i^<em>))=&amp;1\ ^</em>( --[(1-q_i^<em>)-q_i^</em>] + q_i^* (-[-]) )=&amp;1 \ ^<em>( -a_i+ + q_i^</em> ([+]) )=&amp;b_i \ ^<em>( -a_i+ +  )=&amp;b_i \ ^</em>( -a_i+ +  )=&amp;b_i \ ^*( 1-a_i+ +  )=&amp;b_i \ \end{aligned} $$ 因为<span class="math inline">\(b_i&gt;0\)</span>，所以我们有<span class="math inline">\(\lambda^*\neq0\)</span>。</p>
+<p>又根据KKT条件有 <span class="math display">\[
+\begin{aligned}
+\nabla_{q_i}(\lambda^*D_iq_i^*c_i(q_i^*)-D_iq_i^*)=&amp;0\\
+\lambda^*(c_i(q_i^*)+q_i\nabla_{q_i}c_i(q_i^*))=&amp;1\\
+\lambda^*(c_i(q_i^*i)+q_i\nabla_{q_i}c_i(q_i^*))=&amp;1\\
+\lambda^*(
+-\frac{a_i}{b_i}-\frac{1}{b_i}[\ln(1-q_i^*)-\ln q_i^*] + 
+q_i^* (-\frac{1}{b_i}[\frac{-1}{1-q_i^*}-\frac{1}{q_i^*}])
+)=&amp;1 \\
+\lambda^*(
+-a_i+\ln\frac{q_i^*}{1-q_i^*} + 
+q_i^* ([\frac{1}{1-q_i^*}+\frac{1}{q_i^*}])
+)=&amp;b_i \\
+\lambda^*(
+-a_i+\ln\frac{q_i^*}{1-q_i^*} + 
+\frac{1}{1-q_i^*}
+)=&amp;b_i \\
+\lambda^*(
+-a_i+\ln\frac{q_i^*}{1-q_i^*} + 
+\frac{1-q_i^*+q_i^*}{1-q_i^*}
+)=&amp;b_i \\
+\lambda^*(
+1-a_i+\ln\frac{q_i^*}{1-q_i^*} + 
+\frac{q_i^*}{1-q_i^*}
+)=&amp;b_i \\
+\end{aligned}
+\]</span> 因为<span class="math inline">\(b_i&gt;0\)</span>，所以我们有<span class="math inline">\(\lambda^*\neq0\)</span>。</p>
 <p>定义<span class="math inline">\(x_i:=\frac{q_i^*}{1-q_i^*}\)</span>，带入上式有 <span class="math display">\[
 \begin{aligned}
 \ln x_i+x_i=&amp;a_i+\frac{b_i}{\lambda^*}-1\\
@@ -523,6 +570,14 @@ g(\lambda):=&amp;g(\mathbf{q}(\lambda)),\lambda \in(0,+\infty)
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Budget-Allocation/" rel="tag"># Budget Allocation</a>
+          
+        </div>
       
 
       
@@ -642,7 +697,7 @@ g(\lambda):=&amp;g(\mathbf{q}(\lambda)),\lambda \in(0,+\infty)
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
