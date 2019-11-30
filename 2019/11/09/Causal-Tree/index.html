@@ -94,16 +94,18 @@
 
 
 
-<meta name="description" content="Causal Tree &amp;amp; Causal Forest 这次讲的是基础的causal tree和causal forest，最近几篇内容会跟因果推断的有关，关于因果的大框架在最近几篇文章中不会详细写，之后会有总结。 机器学习的方法来做因果推断，估计异质处理效应时，会有以下问题：  机器学习往往在实际中表现很好，但却很难有一些统计性质，在因果问题上，我们又比较需要一些良好的统计性质，在很多场">
+<meta name="description" content="Causal Tree 这次讲的是基础的causal tree，是Susan Athey和Guido Imbens的Recursive partitioning for heterogeneous causal effects [1]，最近几篇内容会跟因果推断的有关，关于因果的大框架在最近几篇文章中不会详细写，之后会有总结。 机器学习的方法来做因果推断，估计处理效应的异质性时，会有以下问题：  机">
 <meta name="keywords" content="Machine Learning,Causal Inference">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Causal Tree">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;09&#x2F;Causal-Tree&#x2F;index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
-<meta property="og:description" content="Causal Tree &amp;amp; Causal Forest 这次讲的是基础的causal tree和causal forest，最近几篇内容会跟因果推断的有关，关于因果的大框架在最近几篇文章中不会详细写，之后会有总结。 机器学习的方法来做因果推断，估计异质处理效应时，会有以下问题：  机器学习往往在实际中表现很好，但却很难有一些统计性质，在因果问题上，我们又比较需要一些良好的统计性质，在很多场">
+<meta property="og:description" content="Causal Tree 这次讲的是基础的causal tree，是Susan Athey和Guido Imbens的Recursive partitioning for heterogeneous causal effects [1]，最近几篇内容会跟因果推断的有关，关于因果的大框架在最近几篇文章中不会详细写，之后会有总结。 机器学习的方法来做因果推断，估计处理效应的异质性时，会有以下问题：  机">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-30T15:08:22.887Z">
+<meta property="og:updated_time" content="2019-11-30T15:00:00.000Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Causal Tree">
+<meta name="twitter:description" content="Causal Tree 这次讲的是基础的causal tree，是Susan Athey和Guido Imbens的Recursive partitioning for heterogeneous causal effects [1]，最近几篇内容会跟因果推断的有关，关于因果的大框架在最近几篇文章中不会详细写，之后会有总结。 机器学习的方法来做因果推断，估计处理效应的异质性时，会有以下问题：  机">
 
 
 
@@ -252,7 +254,7 @@
       
         <li class="menu-item menu-item-search">
           
-            <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
+            <a href="javascript:;" class="popup-trigger">
           
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
@@ -408,12 +410,13 @@
       
 
       
-        <h1 id="causal-tree-causal-forest">Causal Tree &amp; Causal Forest</h1>
-<p>这次讲的是基础的causal tree和causal forest，最近几篇内容会跟因果推断的有关，关于因果的大框架在最近几篇文章中不会详细写，之后会有总结。</p>
-<p>机器学习的方法来做因果推断，估计异质处理效应时，会有以下问题：</p>
+        <h1 id="causal-tree">Causal Tree</h1>
+<p>这次讲的是基础的causal tree，是Susan Athey和Guido Imbens的Recursive partitioning for heterogeneous causal effects [1]，最近几篇内容会跟因果推断的有关，关于因果的大框架在最近几篇文章中不会详细写，之后会有总结。</p>
+<p>机器学习的方法来做因果推断，估计处理效应的异质性时，会有以下问题：</p>
 <ol type="1">
-<li>机器学习往往在实际中表现很好，但却很难有一些统计性质，在因果问题上，我们又比较需要一些良好的统计性质，在很多场景下也需要对于置信区间的估计</li>
+<li>机器学习往往在实际中表现很好，但却很难有一些统计性质</li>
 <li>与纯预测不同，因果推断中并没有真实目标值，ground truth</li>
+<li>在很多场景下需要对于置信区间的估计</li>
 <li>与ml领域关注的兴趣点可能不同
 <ol type="1">
 <li>辨识有异质处理效应群体</li>
@@ -487,6 +490,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/30/Causal-Tree-Causal-Forests/" rel="prev" title="Causal Tree & Causal Forests">
+                Causal Tree & Causal Forests <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -565,7 +572,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">73</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -628,7 +635,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#causal-tree-causal-forest"><span class="nav-number">1.</span> <span class="nav-text">Causal Tree &amp; Causal Forest</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#the-potential-outcomes-framework"><span class="nav-number">1.1.</span> <span class="nav-text">The Potential Outcomes Framework</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.2.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#causal-tree"><span class="nav-number">1.</span> <span class="nav-text">Causal Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#the-potential-outcomes-framework"><span class="nav-number">1.1.</span> <span class="nav-text">The Potential Outcomes Framework</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.2.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -665,12 +672,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>
 </div>

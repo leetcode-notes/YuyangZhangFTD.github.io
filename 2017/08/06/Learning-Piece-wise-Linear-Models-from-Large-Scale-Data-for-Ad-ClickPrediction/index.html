@@ -106,6 +106,8 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;08&#x2F;06&#x2F;Learning-Piece-wise-Linear-Models-from-Large-Scale-Data-for-Ad-ClickPrediction&#x2F;2.png">
 <meta property="og:updated_time" content="2017-08-06T15:24:44.000Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Learning Piece-wise Linear Models from Large Scale Data for Ad ClickPrediction">
+<meta name="twitter:description" content="Introduction CTR预估(click-through-rate prediction)是广告行业比较常见的问题，根据用户的历史行为来判断用户对广告点击的可能性。该问题的输入往往是数以万计的稀疏特征向量，在进行特征交叉后会维数会更高，比较常见的就是采用对率回归模型加一些正则化，因为对率回归模型计算开销小且容易实现并行。之前facebook的一篇论文中先用树模型做分类之后再加一个对率回归模">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;08&#x2F;06&#x2F;Learning-Piece-wise-Linear-Models-from-Large-Scale-Data-for-Ad-ClickPrediction&#x2F;1.png">
 
 
@@ -255,7 +257,7 @@
       
         <li class="menu-item menu-item-search">
           
-            <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
+            <a href="javascript:;" class="popup-trigger">
           
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
@@ -437,7 +439,7 @@ p(y=1|x)=\sum^m_{i=1}
 p(y=1|x)=\sum^m_{i=1}p(z=i|x)p(y|z=i,x)
 \]</span> 在理想情况下，模型会有如下图的表现</p>
 <figure>
-<img src="1.png" alt="1" /><figcaption>1</figcaption>
+<img src="1.png" alt="1"><figcaption>1</figcaption>
 </figure>
 <p>模型会很好的拟合数据的非线性关系。</p>
 <p>LS-PLM模型可以表述为以下形式 <span class="math display">\[
@@ -454,7 +456,7 @@ loss(\Theta)=-\sum^n_{t=1}[
 <h4 id="optimization">Optimization</h4>
 <p>作以下定义：<span class="math inline">\(\partial^+_{ij}f(\Theta)\)</span> 为右导数 <span class="math display">\[
 \partial^+_{ij}f(\Theta)=\lim_{\alpha\rightarrow0}\frac{f(\Theta+\alpha e_{ij})-f(\Theta)}{\alpha}
-\]</span> 其中<span class="math inline">\(e_{ij}\)</span> 为单位偏差向量；<span class="math inline">\(f\)</span> 在方向<span class="math inline">\(d\)</span> 上的导数为<span class="math inline">\(f&#39;(\Theta;d)\)</span><br />
+\]</span> 其中<span class="math inline">\(e_{ij}\)</span> 为单位偏差向量；<span class="math inline">\(f\)</span> 在方向<span class="math inline">\(d\)</span> 上的导数为<span class="math inline">\(f&#39;(\Theta;d)\)</span><br>
 <span class="math display">\[
 f&#39;(\Theta;d)=\lim_{\alpha\rightarrow0}\frac{f(\Theta+\alpha d)-f(\Theta)}{\alpha}
 \]</span> 当<span class="math inline">\(f&#39;(\Theta;d)&lt;0\)</span> 的时候<span class="math inline">\(d\)</span> 是一个下降方向之一；<span class="math inline">\(sign(\cdot)\)</span> 为取值是<span class="math inline">\(\{-1,0,1\}\)</span> 的指示函数，则映射函数为 <span class="math display">\[
@@ -490,7 +492,7 @@ sign(d^{(k)}_{ij}),&amp; \Theta^{(k)}_{ij}=0\\
 \end{cases}
 \]</span> 这步应该是对象限的限制，我没看太懂，好像是参考<a href="machinelearning.wustl.edu/mlpapers/paper_files/icml2007_AndrewG07.pdf">OWLQN method</a> 。留个坑以后填。对目标函数的整体优化算法如下图所示</p>
 <figure>
-<img src="2.png" alt="2" /><figcaption>2</figcaption>
+<img src="2.png" alt="2"><figcaption>2</figcaption>
 </figure>
 <p>后面还有对并行训练方面的优化设计，我对这方面研究较少，就没有细细品读了。</p>
 <h3 id="summary">Summary</h3>
@@ -619,7 +621,7 @@ sign(d^{(k)}_{ij}),&amp; \Theta^{(k)}_{ij}=0\\
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">73</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -719,12 +721,12 @@ sign(d^{(k)}_{ij}),&amp; \Theta^{(k)}_{ij}=0\\
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>
 </div>

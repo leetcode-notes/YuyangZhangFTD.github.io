@@ -108,6 +108,8 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;05&#x2F;19&#x2F;Scalable-Training-of-L1-Regularized-Log-Linear-Models&#x2F;owl-qn.jpg">
 <meta property="og:updated_time" content="2019-05-19T11:10:50.823Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Scalable Training of L1-Regularized Log-Linear Models">
+<meta name="twitter:description" content="Scalable Training of L1-Regularized Log-Linear Models 最近重读了一下之前阿里的MLR，又仔细研究了一下里面的优化算法，然后发现也是对之前的一个叫Orthant- Wise Limited-memory Quasi-Newton（下文中称OWL-QN，这个owl让我想起了哈利波特的Ordinary Wizarding Level…）的方法进行的一">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;05&#x2F;19&#x2F;Scalable-Training-of-L1-Regularized-Log-Linear-Models&#x2F;f1.jpg">
 
 
@@ -257,7 +259,7 @@
       
         <li class="menu-item menu-item-search">
           
-            <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
+            <a href="javascript:;" class="popup-trigger">
           
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
@@ -459,13 +461,13 @@ p^k=\pi(\mathbf{H_k}v^k;v^k)
 \right.
 \]</span> 此处解释一下，当左导数大于0的时候，向左是下降方向，右导数小于零，向右是下降方向，否则，梯度为0，如下图所示</p>
 <figure>
-<img src="f1.jpg" alt="f1" /><figcaption>f1</figcaption>
+<img src="f1.jpg" alt="f1"><figcaption>f1</figcaption>
 </figure>
 <figure>
-<img src="f2.jpg" alt="f2" /><figcaption>f2</figcaption>
+<img src="f2.jpg" alt="f2"><figcaption>f2</figcaption>
 </figure>
 <figure>
-<img src="f3.jpg" alt="f3" /><figcaption>f3</figcaption>
+<img src="f3.jpg" alt="f3"><figcaption>f3</figcaption>
 </figure>
 <p><span class="math inline">\(f\)</span>的左右偏导为 <span class="math display">\[
 \partial_i^{\pm}f(x)=\frac{\partial}{\partial x_i}\ell(x)+\left\{
@@ -489,7 +491,7 @@ x^{k+1}=\pi(x^k+\alpha p^k;\xi^k)
 f(x^{k+1})\leq f(x^k)-\gamma v^\mathsf{T}(x^{k+1}-x^k)
 \]</span> 完整的OWL-QN算法描述如下图</p>
 <figure>
-<img src="owl-qn.jpg" alt="owl-qn" /><figcaption>owl-qn</figcaption>
+<img src="owl-qn.jpg" alt="owl-qn"><figcaption>owl-qn</figcaption>
 </figure>
 <p>相较于标准的L-BFGS，仅有几个不同：</p>
 <ol type="1">
@@ -628,7 +630,7 @@ f(x^{k+1})\leq f(x^k)-\gamma v^\mathsf{T}(x^{k+1}-x^k)
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">73</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -728,12 +730,12 @@ f(x^{k+1})\leq f(x^k)-\gamma v^\mathsf{T}(x^{k+1}-x^k)
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>
 </div>

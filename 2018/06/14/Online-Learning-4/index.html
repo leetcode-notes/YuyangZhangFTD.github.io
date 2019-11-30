@@ -105,6 +105,8 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;06&#x2F;14&#x2F;Online-Learning-4&#x2F;1.png">
 <meta property="og:updated_time" content="2018-06-14T09:51:49.628Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Online Learning 4">
+<meta name="twitter:description" content="Follow the Leader Against Quadratics 某些情况下，FTL是非常好的算法，比如一维的线性回归的情况，很容易推广到高维  每一轮选择\(w_t\in[-1,1]\) 对手选择\(y_t\in[-1,+1]\) 计算\(f_t(w)&#x3D;\frac{1}{2}(w-y_t)^2\)  使用FTL算法： $$ \begin{aligned} w_{t+1}&amp;amp;&#x3D;f_{">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;06&#x2F;14&#x2F;Online-Learning-4&#x2F;1.png">
 
 
@@ -254,7 +256,7 @@
       
         <li class="menu-item menu-item-search">
           
-            <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
+            <a href="javascript:;" class="popup-trigger">
           
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
@@ -440,7 +442,7 @@ w^* &amp;= \underset{w\in\mathcal{W}}{\arg\min}f_{1:t}(w^*) \\
 &amp;=\sum^T_{t=1}[f_t(w_t)-f_t(w^*)]\\
 &amp;\leq \sum^T_{t=1}[w_t\cdot g_t-w^*\cdot g_t]
 \end{aligned}
-\]</span> <img src="1.png" alt="Linearization" /></p>
+\]</span> <img src="1.png" alt="Linearization"></p>
 <p>正如上图所示，用线性近似的话，其他选择的损失是被降低的，因此会导致悔恨的增加。因此，线性情况下的悔恨（linearized regret）是凸函数情况下的悔恨（convex regret）的上界。使用这个性质，通过变换凸在线学习问题到线性在线学习问题，我们可以得到有界的悔恨值。线性情况下，我们最优的情况是<span class="math inline">\(\sqrt{T}\)</span>的悔恨，在有严格凸的假设下，可以做得更好。</p>
 <blockquote>
 <p>定义1：一个函数<span class="math inline">\(f:\mathbb{R}^n\rightarrow\mathbb{R}\)</span>，如果<span class="math inline">\(\forall w, w&#39;\in\mathbb{R}^n\)</span>，有 <span class="math display">\[
@@ -587,7 +589,7 @@ f(w&#39;)-f(w)\leq(w&#39;-w)\cdot g\leq\|w&#39;-w\|\cdot\|g\|\leq\|w&#39;-w\|G
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">73</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -687,12 +689,12 @@ f(w&#39;)-f(w)\leq(w&#39;-w)\cdot g\leq\|w&#39;-w\|\cdot\|g\|\leq\|w&#39;-w\|G
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>
 </div>

@@ -105,6 +105,8 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;04&#x2F;07&#x2F;benders&#x2F;1.png">
 <meta property="og:updated_time" content="2018-04-14T13:47:42.776Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="benders">
+<meta name="twitter:description" content="Benders Decomposition 总结 这次主要来总结一下这段时间研究的benders算法，主要是在做一个规模不算大的MIP问题，但是公司没有商业求解器用，很蛋疼。我主要参考一篇17年的综述文章[1]，翻译为主，而且仅写了最近浏览过和比较感兴趣的部分，并不全面，同时会写点自己的理解，但还是希望大家能去看一下原文。同时这次也是参考了QinHu老师之前的内容，在这放出链接，感觉他们写得比我的">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;04&#x2F;07&#x2F;benders&#x2F;1.png">
 
 
@@ -254,7 +256,7 @@
       
         <li class="menu-item menu-item-search">
           
-            <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
+            <a href="javascript:;" class="popup-trigger">
           
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
@@ -471,7 +473,7 @@ r_q^T(d-B\bar{y})\leq 0\quad \forall q\in Q
 <h2 id="benders-decomposition-改进优化">Benders Decomposition 改进优化</h2>
 <p>MP虽然提供了一个很好的求解MIP甚至是MNLP问题的框架，但也同时有很多问题：时间很长的迭代过程，产生的割有可能很弱，特殊情况收敛慢等等。很多文献都做了BD的优化，一方面是通过减少迭代的次数来改进算法的收敛性，另一方面是减少每次迭代的耗时，前者是通过改善产生解和割的质量，后者则是通过改善产生解的过程和每步求解主问题子问题的方式。</p>
 <figure>
-<img src="1.png" alt="1" /><figcaption>1</figcaption>
+<img src="1.png" alt="1"><figcaption>1</figcaption>
 </figure>
 <p>主要通过四个方向来改进BD：</p>
 <ul>
@@ -675,7 +677,7 @@ r_q^T(d-B\bar{y})\leq 0\quad \forall q\in Q
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">73</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -775,12 +777,12 @@ r_q^T(d-B\bar{y})\leq 0\quad \forall q\in Q
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>
 </div>

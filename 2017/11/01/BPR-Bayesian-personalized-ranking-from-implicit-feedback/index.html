@@ -105,6 +105,8 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;11&#x2F;01&#x2F;BPR-Bayesian-personalized-ranking-from-implicit-feedback&#x2F;1.png">
 <meta property="og:updated_time" content="2017-11-01T15:05:50.000Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BPR- Bayesian personalized ranking from implicit feedback">
+<meta name="twitter:description" content="BPR这篇文章应该是近几年比较特别有意思的文章，有多想法的亮点，值得大家来细细品味。 这篇文章主要的contribution在于以下几点：  提出了一种通用的优化标准BRP-OPT，利用最大后验估计来优化个性化的排序，并且优化BRP-OPT的效果与优化AUC相似； 为了最大化BRP-OPT，提出了基于梯度下降和重采样的通用学习方法LearnBRP，并且可以较有效果； 能够将LearnBRP应用到当">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;11&#x2F;01&#x2F;BPR-Bayesian-personalized-ranking-from-implicit-feedback&#x2F;1.png">
 
 
@@ -254,7 +256,7 @@
       
         <li class="menu-item menu-item-search">
           
-            <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
+            <a href="javascript:;" class="popup-trigger">
           
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
@@ -424,7 +426,7 @@
 \forall i,j,k\in I: i&gt;_uj\wedge j&gt;_uk\rightarrow i&gt;_uk
 \]</span> 分别定义了rank的完整性，非对称性和传递性，然后对于我们已经有的打分记录，我们认为用户有implicit feedback的物品的打分为1，而无交互或者missing value则定义为0，这样我们可以根据用户对打分进行排序比较，如下图所示</p>
 <figure>
-<img src="1.png" alt="1" /><figcaption>1</figcaption>
+<img src="1.png" alt="1"><figcaption>1</figcaption>
 </figure>
 <p>然后我们就可以来构建训练数据 <span class="math display">\[
 D_S=\{(u,i,j)|i\in I^+_u\wedge j\in I/ I^+_u\}
@@ -557,7 +559,7 @@ p(i&gt;_u j|\theta)=\sigma(\hat{x}_{uij}(\theta))
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">73</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -641,12 +643,12 @@ p(i&gt;_u j|\theta)=\sigma(\hat{x}_{uij}(\theta))
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>
 </div>
