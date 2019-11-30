@@ -98,16 +98,14 @@
 <meta name="keywords" content="Machine Learning,Recommendation System">
 <meta property="og:type" content="article">
 <meta property="og:title" content="something about SLIM in recommendation system">
-<meta property="og:url" content="http://yoursite.com/2017/09/17/something-about-SLIM-in-recommendation-system/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;09&#x2F;17&#x2F;something-about-SLIM-in-recommendation-system&#x2F;index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
 <meta property="og:description" content="看16年recsys的best paper，Local Item-Item Models for Top-N Recommendation 中提到的SLIM方法，最近抓着这个方法研究了一下。然后还发现了Xia Ning和George Karypis这两位，这两位一直是SLIM相关论文的主要作者，XiaNing应该是George Karypis的学生，从最早的SLIM方法开始，到后面也有两篇（好像是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2017/09/17/something-about-SLIM-in-recommendation-system/1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;09&#x2F;17&#x2F;something-about-SLIM-in-recommendation-system&#x2F;1.png">
 <meta property="og:updated_time" content="2019-05-19T11:00:56.016Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="something about SLIM in recommendation system">
-<meta name="twitter:description" content="看16年recsys的best paper，Local Item-Item Models for Top-N Recommendation 中提到的SLIM方法，最近抓着这个方法研究了一下。然后还发现了Xia Ning和George Karypis这两位，这两位一直是SLIM相关论文的主要作者，XiaNing应该是George Karypis的学生，从最早的SLIM方法开始，到后面也有两篇（好像是">
-<meta name="twitter:image" content="http://yoursite.com/2017/09/17/something-about-SLIM-in-recommendation-system/1.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;09&#x2F;17&#x2F;something-about-SLIM-in-recommendation-system&#x2F;1.png">
 
 
 
@@ -256,7 +254,7 @@
       
         <li class="menu-item menu-item-search">
           
-            <a href="javascript:;" class="popup-trigger">
+            <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
           
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
@@ -457,7 +455,7 @@
 \min_{P,Q}\frac{1}{2}\sum_{u,i\in R}\|r_{u,i}-\widetilde{r}_{u,i}\|^2_F+\frac{\beta}{2}(\|P\|^2_F+\|Q\|^2_F)+\frac{\lambda}{2}\|b_u\|^2_F+\frac{\gamma}{2}\|b_i\|^2_F
 \]</span> 在训练时，进行非负项的采样迭代训练，训练过程如下：</p>
 <figure>
-<img src="1.png" alt="1"><figcaption>1</figcaption>
+<img src="1.png" alt="1" /><figcaption>1</figcaption>
 </figure>
 <p>FISMauc是一种贝叶斯个性化排序（<a href="https://arxiv.org/ftp/arxiv/papers/1205/1205.2618.pdf" target="_blank" rel="noopener">BRP</a>）的思路，同时利用打分和未打分的物品，来优化AUC，主要想法是先用FISMrmse做出初步结果，再去优化成对的目标损失： <span class="math display">\[
 \min_{P,Q}\frac{1}{2}\sum_{c\in \mathcal{C}}\sum_{i\in\mathcal{R}^+_u,j\in\mathcal{R}^-_u}\|(r_{u,i}-r_{u,j})-(\widetilde{r}_{u,i}-\widetilde{r}_{u,j})\|^2_F+\frac{\beta}{2}(\|P\|^2_F+\|Q\|^2_F)+\frac{\gamma}{2}\|b_i\|^2_F
@@ -682,7 +680,7 @@ z^{k+1}=\min_xL_{\rho}(x^{k+1},z,\mu^k)\\
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-count">73</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -704,7 +702,7 @@ z^{k+1}=\min_xL_{\rho}(x^{k+1},z,\mu^k)\\
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -782,12 +780,12 @@ z^{k+1}=\min_xL_{\rho}(x^{k+1},z,\mu^k)\\
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Muse
   </a>
 </div>

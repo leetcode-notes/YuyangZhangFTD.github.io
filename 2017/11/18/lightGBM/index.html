@@ -98,17 +98,15 @@
 <meta name="keywords" content="Machine Learning,Ensemble Learing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lightGBM">
-<meta property="og:url" content="http://yoursite.com/2017/11/18/lightGBM/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;11&#x2F;18&#x2F;lightGBM&#x2F;index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
 <meta property="og:description" content="今天看nips2017的预选论文，翻到了4篇推荐相关的，其中3篇都是做cold start问题，看来这个问题最近很火热嘛，包括了RL和meta learning，看来有必要跟进一波潮流。再看其他的论文的时候，还翻到了微软的lightGBM，果断先捞出来看一下。 之前网上流传了许多关于lightGBM相关的内容，但是看到论文才是最实在的，文中提到相比于其它关于GBDT的实现，对于计算信息增益来划分节">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2017/11/18/lightGBM/1.png">
-<meta property="og:image" content="http://yoursite.com/2017/11/18/lightGBM/2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;11&#x2F;18&#x2F;lightGBM&#x2F;1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;11&#x2F;18&#x2F;lightGBM&#x2F;2.png">
 <meta property="og:updated_time" content="2017-12-24T12:55:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lightGBM">
-<meta name="twitter:description" content="今天看nips2017的预选论文，翻到了4篇推荐相关的，其中3篇都是做cold start问题，看来这个问题最近很火热嘛，包括了RL和meta learning，看来有必要跟进一波潮流。再看其他的论文的时候，还翻到了微软的lightGBM，果断先捞出来看一下。 之前网上流传了许多关于lightGBM相关的内容，但是看到论文才是最实在的，文中提到相比于其它关于GBDT的实现，对于计算信息增益来划分节">
-<meta name="twitter:image" content="http://yoursite.com/2017/11/18/lightGBM/1.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;11&#x2F;18&#x2F;lightGBM&#x2F;1.png">
 
 
 
@@ -257,7 +255,7 @@
       
         <li class="menu-item menu-item-search">
           
-            <a href="javascript:;" class="popup-trigger">
+            <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
           
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
@@ -419,11 +417,11 @@
 <p>lightGBM主要从两方面来优化，feature数量和data数量，分别提出EFB（Exclusive Feature bundling）和GOSS（Gradient-based One-Side Sampling）进行分别的优化。</p>
 <p>在划分时，gradient大的样本（instance）往往会对信息增益有较大的贡献，所以，我们用采样的方法，减小那些数量较多但是gradient较少对节点划分增益不大的样本的影响，首先根据绝对误差排序，选择top <span class="math inline">\(a\%\)</span>的样本，然后从剩下的采样 <span class="math inline">\(b\%\)</span>，同时赋予不同的权重。后面作者做了理论分析，表示这么抽样不会改变训练数据分布，blabla（当然我是没看的）</p>
 <figure>
-<img src="1.png" alt="1"><figcaption>1</figcaption>
+<img src="1.png" alt="1" /><figcaption>1</figcaption>
 </figure>
 <p>EFB则是解决特征的问题，训练数据往往会十分稀疏，如大量onehot产生的特征，而GBDT这样的算法，在面对节点划分时，不得不考虑所有特征，所以我们用bundling的方式来减少不必要的特征。因为是从histograms-based的想法出发，EFB实际上也是再用划分“桶”（如LSH）这样的方法，减少特征量。具体做法是利用图的着色问题，用特征构造图的矩阵，然后根据着色来划分，如果两个特征不是mutually exclusive，则它们之间存在边。（具体操作此处没看太明白，着色问题我也没看过，留个坑）对于一个bundling的feature，则改变feature的取值区间来merge不同的feature。</p>
 <figure>
-<img src="2.png" alt="2"><figcaption>2</figcaption>
+<img src="2.png" alt="2" /><figcaption>2</figcaption>
 </figure>
 <p>后面是文章的实验部分，效果还是很好的，看微软的论文，就给我一种哪有问题我就干掉哪的感觉，而且是工程化很强的东西，包括之前的lightLDA，现在lightGBM，都是非常厉害。</p>
 
@@ -540,7 +538,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-count">73</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -562,7 +560,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -624,12 +622,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Muse
   </a>
 </div>
