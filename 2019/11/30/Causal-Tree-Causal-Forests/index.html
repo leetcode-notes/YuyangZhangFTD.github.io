@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="Causal Tree &amp;amp; Causal Forest 这次讲的是基础的causal tree和causal forest，最近几篇内容会跟因果推断的有关，关于因果的大框架在最近几篇文章中不会详细写，之后会有总结。总得来说做因果和做纯机器学习主要有以下区别：  与纯预测不同，因果推断中并没有真实目标值，ground truth 机器学习往往在实际中表现很好，但却很76有一些统计性质，在因果">
+<meta name="description" content="Causal Tree &amp;amp; Causal Forest Background 这次讲的是基础的causal tree和causal forest，最近几篇内容会跟因果推断的有关，关于因果的大框架在最近几篇文章中不会详细写，之后会有总结。总得来说做因果和做纯机器学习主要有以下区别：  与纯预测不同，因果推断中并没有真实目标值，ground truth 机器学习往往在实际中表现很好，但却很76">
 <meta name="keywords" content="Machine Learning,Causal Inference">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Causal Tree &amp; Causal Forests">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;Causal-Tree-Causal-Forests&#x2F;index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
-<meta property="og:description" content="Causal Tree &amp;amp; Causal Forest 这次讲的是基础的causal tree和causal forest，最近几篇内容会跟因果推断的有关，关于因果的大框架在最近几篇文章中不会详细写，之后会有总结。总得来说做因果和做纯机器学习主要有以下区别：  与纯预测不同，因果推断中并没有真实目标值，ground truth 机器学习往往在实际中表现很好，但却很76有一些统计性质，在因果">
+<meta property="og:description" content="Causal Tree &amp;amp; Causal Forest Background 这次讲的是基础的causal tree和causal forest，最近几篇内容会跟因果推断的有关，关于因果的大框架在最近几篇文章中不会详细写，之后会有总结。总得来说做因果和做纯机器学习主要有以下区别：  与纯预测不同，因果推断中并没有真实目标值，ground truth 机器学习往往在实际中表现很好，但却很76">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-30T15:49:04.436Z">
+<meta property="og:updated_time" content="2019-12-01T14:38:35.860Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Causal Tree &amp; Causal Forests">
-<meta name="twitter:description" content="Causal Tree &amp;amp; Causal Forest 这次讲的是基础的causal tree和causal forest，最近几篇内容会跟因果推断的有关，关于因果的大框架在最近几篇文章中不会详细写，之后会有总结。总得来说做因果和做纯机器学习主要有以下区别：  与纯预测不同，因果推断中并没有真实目标值，ground truth 机器学习往往在实际中表现很好，但却很76有一些统计性质，在因果">
+<meta name="twitter:description" content="Causal Tree &amp;amp; Causal Forest Background 这次讲的是基础的causal tree和causal forest，最近几篇内容会跟因果推断的有关，关于因果的大框架在最近几篇文章中不会详细写，之后会有总结。总得来说做因果和做纯机器学习主要有以下区别：  与纯预测不同，因果推断中并没有真实目标值，ground truth 机器学习往往在实际中表现很好，但却很76">
 
 
 
@@ -411,12 +411,13 @@
 
       
         <h1 id="causal-tree-causal-forest">Causal Tree &amp; Causal Forest</h1>
+<h2 id="background">Background</h2>
 <p>这次讲的是基础的causal tree和causal forest，最近几篇内容会跟因果推断的有关，关于因果的大框架在最近几篇文章中不会详细写，之后会有总结。总得来说做因果和做纯机器学习主要有以下区别：</p>
 <ol type="1">
 <li>与纯预测不同，因果推断中并没有真实目标值，ground truth</li>
 <li>机器学习往往在实际中表现很好，但却很76有一些统计性质，在因果问题上，我们又比较需要一些良好的统计性质，在很多场景下也需要对于置信区间的估计</li>
 </ol>
-<p>常见因果问题的术语见</p>
+<p>常见因果问题的术语详见<a href="http://www.arvinzyy.cn/2019/11/30/Causal-Inference-Fundation/" target="_blank" rel="noopener">因果推断基础</a>。</p>
 <p>对于i.i.d.的样本<span class="math inline">\(i=1,\cdots,n\)</span>，我们可以观测到<span class="math inline">\((X_i, Y_i,W_i)\)</span>，</p>
 <ul>
 <li>feture vector 特征向量，<span class="math inline">\(X_i\in\Bbb{R}^p\)</span></li>
@@ -427,12 +428,48 @@
 <p>我们的目标是估计条件平均处理效应（CATE，conditional average treatment effect） <span class="math display">\[
 \tau(\rm{x})=\Bbb{E}\left[ \left. Y_i^{(1)}-Y_i^{(0)} \right| \rm{X}=\rm{x} \right]
 \]</span> 在实验中，我们只能观测到<span class="math inline">\(Y_i=Y_i^{W_i}\)</span>。</p>
-<p>如果不做任何假设的情况下，估计<span class="math inline">\(\tau(\rm{x})\)</span>是不可能的。</p>
+<p>如果不做任何假设的情况下，估计<span class="math inline">\(\tau(\rm{x})\)</span>是不可能的，一般需要存在两个假设：</p>
 <p>假设1，unconfoundedness <span class="math display">\[
 \left. \lbrace Y_i^{(1)} - Y_i^{(0)}\rbrace \perp \!\!\! \perp  W_i \,\right| \,X_i
-\]</span> 在unconfoundedness的假设下，matching或者propensity score的估计才有一致性。</p>
-<p>通过划分样本的方式可以构造出有一致性的tree方法。</p>
-<p>划分单独的训练集，一个训练集来构造树，另一个训练集来重新估计叶结点的值，这样得到的树模型是unbiased，剩下要做的就是通过一些方法来降低方差。</p>
+\]</span> 假设2，overlap <span class="math display">\[
+0&lt;e_{\min}\leq e(x)\leq e_\max &lt; 1
+\]</span> 其中<span class="math inline">\(e(x)\)</span>为propensity score。</p>
+<h2 id="causal-tree">Causal Tree</h2>
+<p>作者将传统的建模方式称为adaptive的，因为建模的时候会用训练数据来进行模型选择，这样做有可能会因为一些“伪相关性”影响了模型选择，导致模型的估计存在偏差，而这种偏差只会在样本数量足够大的情况才能消除，在某些情景中，我们会做一些额外的假设来避免这种偏差，比如说稀疏性（也就是找到真的能够影响输出的变量）。在[1]中作者提出的honest的方式，可以在不对模型的复杂度进行一些约束的情况下避免这种伪相关的影响。我们定义honest为：如果一个模型不用相同的数据进行模型结构的学习和最后的估计，我们就认为这个模型是honest的，具体的做法是将数据集分成两部分，一部分为训练集（training sample），一部分为估计集（estimation sample），构造树结构（此处只讲了树模型）时候用训练集，预测时候产出预测值则使用估计集。</p>
+<p>定义特征空间<span class="math inline">\(\Bbb{X}\)</span>上的一棵树或者说一种划分方式为<span class="math inline">\(\Pi\)</span>（其实就是指一个树模型），<span class="math inline">\(\#(\Pi)\)</span>表示划分的数量，等同于叶子结点数量，则有 <span class="math display">\[
+\Pi=\{\ell_1,\cdots,\ell_{\#(\Pi)}\}\,\text{with}\,\bigcup_{j=1}^{\#(\Pi)}\ell_j=\Bbb{X}
+\]</span> 令<span class="math inline">\(\Bbb{P}\)</span>为划分方式的空间（可以理解为模型的空间，hypothesis space），<span class="math inline">\(\ell(x;\Pi)\)</span>表示<span class="math inline">\(\ell\in\Pi\)</span>且<span class="math inline">\(x\in\ell\)</span>（样本x在叶子节点<span class="math inline">\(\ell\)</span>中），令<span class="math inline">\(\Bbb{S}\)</span>为样本空间，定义<span class="math inline">\(\pi:\Bbb{S}\mapsto\Bbb{P}\)</span>为基于样本<span class="math inline">\(S\in\Bbb{S}\)</span>训练出一个划分结构（树模型）<span class="math inline">\(P\in\Bbb{P}\)</span>，一个决策树很简单的做法就是根据某个固定的值来决定是否要划分左右叶子结点 <span class="math display">\[
+\pi(S)=\begin{cases}
+\{\{L,R\}\} &amp;&amp; \text{if } \overline{Y}_L-\overline{Y}_R\leq c \\
+\{\{L\},\{R\}\} &amp;&amp; \text{if } \overline{Y}_L-\overline{Y}_R&gt; c \\
+\end{cases}
+\]</span> 给定一个划分结构<span class="math inline">\(\Pi\)</span>，则条件期望函数<span class="math inline">\(\mu(x;\Pi)\)</span>可以写为 <span class="math display">\[
+\mu(x;\Pi)=\Bbb{E}[Y_i|X_i\in\ell(x;\Pi)]=\Bbb{E}[\mu(X_i)|X\in\ell(x;\Pi)]
+\]</span> 而给定样本<span class="math inline">\(S\)</span>后有 <span class="math display">\[
+\hat{\mu}(x;S,\Pi)=\frac{1}{\#(i\in S:X_i\in\ell(x;\Pi))}\sum_{i\in S:X_i\in\ell(x;\Pi)}Y_i
+\]</span> 作者提出一种基于MSE的指标，对于预测的情况，我们可以用<span class="math inline">\(\Bbb{E}[Y_i^2]\)</span>来调整MSE，因为这个值并不依赖于模型，所以并不会影响比较模型时候的评估。给定划分<span class="math inline">\(\Pi\)</span>，在测试集<span class="math inline">\(S^{\text{te}}\)</span>和估计集<span class="math inline">\(S^\text{est}\)</span>取均值可以定义 <span class="math display">\[
+\text{MSE}_\mu(S^\text{te},S^\text{est},\Pi)=\frac{1}{\#(S^\text{te})}\sum_{i\in S^\text{te}}\left\{
+(Y_i-\hat{\mu}(X_i;S^\text{est},\Pi))^2-Y_i^2
+\right\}
+\]</span> 其期望可以写成 <span class="math display">\[
+\text{EMSE}_\mu(\Pi)=\Bbb{E}_{S^\text{te},S^\text{est}}\left[
+\text{MSE}_\mu(S^\text{te},S^\text{est},\Pi)
+\right]
+\]</span> 其中测试集和估计集相互独立。我们最终的目标就是构建并评估一个算法<span class="math inline">\(\pi(\cdot)\)</span>，来最大化honest指标 <span class="math display">\[
+\cal{Q}^\rm{H}(\pi)=-\Bbb{E}_{S^\text{te},S^\text{est},S^\text{tr}}\left[ 
+\text{MSE}_\mu(S^\text{te},S^\text{est},\pi(S^\text{tr}))
+\right]
+\]</span></p>
+<h2 id="总结与思考">总结与思考</h2>
+<p>causal tree的思路总结如下：</p>
+<ol type="1">
+<li>传统的方式training set同时用来构建模型、选择模型，会存在一些伪相关性，让模型“过”拟合在一些“无关紧要”的变量上，需要避免这种“过”拟合，得到真正影响结果的“因”变量；</li>
+<li>评估泛化误差与估计潜在处理效应都是没有ground truth的问题，如果我们可以通过划分训练集、测试集来评估一个模型的泛化能力，那么也可以多划出一个子集的样本构建潜在处理效应的无偏估计</li>
+<li>Honest方式建模，训练集构建模型，估计集构建模型预测值，测试集测试</li>
+<li>如何在构建模型时候避免引入估计集数据，使得估计集能够独立于构建模型，作者提出Honest target，EMSE指标</li>
+<li><p>通过一些列公式推导，得到树分支指标和模型选择指标</p></li>
+<li><p>可能在因果建模中，Cross Validation的作用可能要重新审视一下，尤其是因果建模中避免这种“二阶过拟合”。</p></li>
+</ol>
 <h2 id="参考">参考</h2>
 <ol type="1">
 <li>Athey, Susan, and Guido Imbens. “Recursive partitioning for heterogeneous causal effects.” <em>Proceedings of the National Academy of Sciences</em> 113.27 (2016): 7353-7360.</li>
@@ -471,8 +508,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/09/Causal-Tree/" rel="next" title="Causal Tree">
-                <i class="fa fa-chevron-left"></i> Causal Tree
+              <a href="/2019/11/03/Bayes-Model-And-Residual-Error/" rel="next" title="Bayes Model And Residual Error">
+                <i class="fa fa-chevron-left"></i> Bayes Model And Residual Error
               </a>
             
           </div>
@@ -625,7 +662,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#causal-tree-causal-forest"><span class="nav-number">1.</span> <span class="nav-text">Causal Tree &amp; Causal Forest</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#causal-tree-causal-forest"><span class="nav-number">1.</span> <span class="nav-text">Causal Tree &amp; Causal Forest</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#background"><span class="nav-number">1.1.</span> <span class="nav-text">Background</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#causal-tree"><span class="nav-number">1.2.</span> <span class="nav-text">Causal Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结与思考"><span class="nav-number">1.3.</span> <span class="nav-text">总结与思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.4.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
             
 
           </div>
