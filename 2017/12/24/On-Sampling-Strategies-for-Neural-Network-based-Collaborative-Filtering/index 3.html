@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Machine Learning,Reinforcement Learning," />
+  <meta name="keywords" content="Machine Learning,Recommendation System,Deep Learning," />
 
 
 
@@ -94,26 +94,25 @@
 
 
 
-<meta name="description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="keywords" content="Machine Learning,Reinforcement Learning">
+<meta name="description" content="这篇文章主要解决了由于对物品和对用户做embedding时时长差距较大情况，而提出多种采样方式，来提高总体的训练速度，文中的review总结的很好。  作者先对已有的embedding做推荐的方式做了一个framework，如上图所示，矩阵分解或者其他embedding都可以认为是one-hot的用户与物品经过functional embedding之后再得到最后的结果。 作者对当前implici">
+<meta name="keywords" content="Machine Learning,Recommendation System,Deep Learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AlphaGo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;index.html">
+<meta property="og:title" content="On Sampling Strategies for Neural Network-based Collaborative Filtering">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;12&#x2F;24&#x2F;On-Sampling-Strategies-for-Neural-Network-based-Collaborative-Filtering&#x2F;index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
-<meta property="og:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
+<meta property="og:description" content="这篇文章主要解决了由于对物品和对用户做embedding时时长差距较大情况，而提出多种采样方式，来提高总体的训练速度，文中的review总结的很好。  作者先对已有的embedding做推荐的方式做了一个framework，如上图所示，矩阵分解或者其他embedding都可以认为是one-hot的用户与物品经过functional embedding之后再得到最后的结果。 作者对当前implici">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211025443.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211034236.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211041175.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211048193.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211055713.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211103102.png">
-<meta property="og:updated_time" content="2020-05-15T13:19:40.648Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;12&#x2F;24&#x2F;On-Sampling-Strategies-for-Neural-Network-based-Collaborative-Filtering&#x2F;1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;12&#x2F;24&#x2F;On-Sampling-Strategies-for-Neural-Network-based-Collaborative-Filtering&#x2F;3.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;12&#x2F;24&#x2F;On-Sampling-Strategies-for-Neural-Network-based-Collaborative-Filtering&#x2F;4.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;12&#x2F;24&#x2F;On-Sampling-Strategies-for-Neural-Network-based-Collaborative-Filtering&#x2F;2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;12&#x2F;24&#x2F;On-Sampling-Strategies-for-Neural-Network-based-Collaborative-Filtering&#x2F;5.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;12&#x2F;24&#x2F;On-Sampling-Strategies-for-Neural-Network-based-Collaborative-Filtering&#x2F;6.png">
+<meta property="og:updated_time" content="2017-12-24T12:55:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AlphaGo">
-<meta name="twitter:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
+<meta name="twitter:title" content="On Sampling Strategies for Neural Network-based Collaborative Filtering">
+<meta name="twitter:description" content="这篇文章主要解决了由于对物品和对用户做embedding时时长差距较大情况，而提出多种采样方式，来提高总体的训练速度，文中的review总结的很好。  作者先对已有的embedding做推荐的方式做了一个framework，如上图所示，矩阵分解或者其他embedding都可以认为是one-hot的用户与物品经过functional embedding之后再得到最后的结果。 作者对当前implici">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;12&#x2F;24&#x2F;On-Sampling-Strategies-for-Neural-Network-based-Collaborative-Filtering&#x2F;1.png">
 
 
 
@@ -142,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/15/AlphaGo/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/24/On-Sampling-Strategies-for-Neural-Network-based-Collaborative-Filtering/"/>
 
 
 
 
 
-  <title>AlphaGo | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>On Sampling Strategies for Neural Network-based Collaborative Filtering | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -329,7 +328,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/AlphaGo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/24/On-Sampling-Strategies-for-Neural-Network-based-Collaborative-Filtering/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YuyangZhangFTD">
@@ -346,7 +345,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AlphaGo</h1>
+          <h1 class="post-title" itemprop="name headline">On Sampling Strategies for Neural Network-based Collaborative Filtering</h1>
         
 
         <div class="post-meta">
@@ -358,8 +357,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-15T21:06:14+08:00">
-                2020-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-24T20:51:38+08:00">
+                2017-12-24
               </time>
             
 
@@ -418,8 +417,29 @@
       
 
       
-        <p>最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。</p>
-<p><img src="image-20200515210947582.png" alt="image-20200515210947582"> <img src="image-20200515211025443.png" alt="image-20200515211025443"> <img src="image-20200515211034236.png" alt="image-20200515211034236"> <img src="image-20200515211041175.png" alt="image-20200515211041175"> <img src="image-20200515211048193.png" alt="image-20200515211048193"> <img src="image-20200515211055713.png" alt="image-20200515211055713"> <img src="image-20200515211103102.png" alt="image-20200515211103102"></p>
+        <p>这篇文章主要解决了由于对物品和对用户做embedding时时长差距较大情况，而提出多种采样方式，来提高总体的训练速度，文中的review总结的很好。 <img src="1.png" alt="1"></p>
+<p>作者先对已有的embedding做推荐的方式做了一个framework，如上图所示，矩阵分解或者其他embedding都可以认为是one-hot的用户与物品经过functional embedding之后再得到最后的结果。</p>
+<p>作者对当前implicit feedback的loss function做了总结，主要为point-wise loss和pair-wise loss：</p>
+<figure>
+<img src="3.png" alt="3"><figcaption>3</figcaption>
+</figure>
+<figure>
+<img src="4.png" alt="4"><figcaption>4</figcaption>
+</figure>
+<p>具体loss各列举了两种</p>
+<figure>
+<img src="2.png" alt="2"><figcaption>2</figcaption>
+</figure>
+<p>上述公式第一次看可能太乱不想看，仔细瞅瞅总结的很到位。</p>
+<p>之后作者说因为引入NN的原因，所以很多情况对于item的特征提取会很费时间</p>
+<figure>
+<img src="5.png" alt="5"><figcaption>5</figcaption>
+</figure>
+<p>所以在一般随机选取负例样本的时候，会造成物品embedding时间过长，所以提出几种方式来加速</p>
+<figure>
+<img src="6.png" alt="6"><figcaption>6</figcaption>
+</figure>
+<p>具体实现细节见论文。之后推荐系统上NN的小伙伴可以关注一下这个小技巧。</p>
 
       
     </div>
@@ -439,7 +459,9 @@
           
             <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
           
-            <a href="/tags/Reinforcement-Learning/" rel="tag"># Reinforcement Learning</a>
+            <a href="/tags/Recommendation-System/" rel="tag"># Recommendation System</a>
+          
+            <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
           
         </div>
       
@@ -452,8 +474,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/08/first-order-and-second-order-metrics/" rel="next" title="first order and second order metrics">
-                <i class="fa fa-chevron-left"></i> first order and second order metrics
+              <a href="/2017/11/26/Dropoutnet-Addressing-Cold-Start-in-Recommnedation-Systems/" rel="next" title=" Dropoutnet- Addressing Cold-Start in Recommnedation Systems">
+                <i class="fa fa-chevron-left"></i>  Dropoutnet- Addressing Cold-Start in Recommnedation Systems
               </a>
             
           </div>
@@ -461,6 +483,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/01/Rocket-Launching-A-Universal-and-Efficient-Framework-for-Training-Well-performing-Light-Net/" rel="prev" title="Rocket Launching- A Universal and Efficient Framework for Training Well-performing Light Net">
+                Rocket Launching- A Universal and Efficient Framework for Training Well-performing Light Net <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -530,7 +556,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -605,7 +631,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

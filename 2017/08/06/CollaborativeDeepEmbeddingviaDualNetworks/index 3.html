@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Machine Learning,Reinforcement Learning," />
+  <meta name="keywords" content="Machine Learning,Recommendation System,Deep Learning," />
 
 
 
@@ -94,26 +94,20 @@
 
 
 
-<meta name="description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="keywords" content="Machine Learning,Reinforcement Learning">
+<meta name="description" content="Collaborative Deep Embedding ​ 这篇论文的模型跟DeepMatrixFactorizationModelsforRecommenderSystems 思路非常相近，所以前面的废话描述都不重复了，直接来看模型  1  作者的目的也是用非线性的神经网络结构去改进矩阵分解模型，但是作者做出几个变种，如上图的情况，最左边是基本模型，经过多层转换后，最后结果做点积；上图中间是一">
+<meta name="keywords" content="Machine Learning,Recommendation System,Deep Learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AlphaGo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;index.html">
+<meta property="og:title" content="Collaborative Deep Embedding via Dual Networks">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;08&#x2F;06&#x2F;CollaborativeDeepEmbeddingviaDualNetworks&#x2F;index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
-<meta property="og:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
+<meta property="og:description" content="Collaborative Deep Embedding ​ 这篇论文的模型跟DeepMatrixFactorizationModelsforRecommenderSystems 思路非常相近，所以前面的废话描述都不重复了，直接来看模型  1  作者的目的也是用非线性的神经网络结构去改进矩阵分解模型，但是作者做出几个变种，如上图的情况，最左边是基本模型，经过多层转换后，最后结果做点积；上图中间是一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211025443.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211034236.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211041175.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211048193.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211055713.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211103102.png">
-<meta property="og:updated_time" content="2020-05-15T13:19:40.648Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;08&#x2F;06&#x2F;CollaborativeDeepEmbeddingviaDualNetworks&#x2F;1.png">
+<meta property="og:updated_time" content="2017-08-06T12:30:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AlphaGo">
-<meta name="twitter:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
+<meta name="twitter:title" content="Collaborative Deep Embedding via Dual Networks">
+<meta name="twitter:description" content="Collaborative Deep Embedding ​ 这篇论文的模型跟DeepMatrixFactorizationModelsforRecommenderSystems 思路非常相近，所以前面的废话描述都不重复了，直接来看模型  1  作者的目的也是用非线性的神经网络结构去改进矩阵分解模型，但是作者做出几个变种，如上图的情况，最左边是基本模型，经过多层转换后，最后结果做点积；上图中间是一">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;08&#x2F;06&#x2F;CollaborativeDeepEmbeddingviaDualNetworks&#x2F;1.png">
 
 
 
@@ -142,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/15/AlphaGo/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/06/CollaborativeDeepEmbeddingviaDualNetworks/"/>
 
 
 
 
 
-  <title>AlphaGo | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Collaborative Deep Embedding via Dual Networks | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -329,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/AlphaGo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/06/CollaborativeDeepEmbeddingviaDualNetworks/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YuyangZhangFTD">
@@ -346,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AlphaGo</h1>
+          <h1 class="post-title" itemprop="name headline">Collaborative Deep Embedding via Dual Networks</h1>
         
 
         <div class="post-meta">
@@ -358,8 +352,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-15T21:06:14+08:00">
-                2020-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-06T01:14:55+08:00">
+                2017-08-06
               </time>
             
 
@@ -418,8 +412,17 @@
       
 
       
-        <p>最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。</p>
-<p><img src="image-20200515210947582.png" alt="image-20200515210947582"> <img src="image-20200515211025443.png" alt="image-20200515211025443"> <img src="image-20200515211034236.png" alt="image-20200515211034236"> <img src="image-20200515211041175.png" alt="image-20200515211041175"> <img src="image-20200515211048193.png" alt="image-20200515211048193"> <img src="image-20200515211055713.png" alt="image-20200515211055713"> <img src="image-20200515211103102.png" alt="image-20200515211103102"></p>
+        <h3 id="collaborative-deep-embedding">Collaborative Deep Embedding</h3>
+<p>​ 这篇论文的模型跟<a href="http://static.ijcai.org/proceedings-2017/0447.pdf" target="_blank" rel="noopener">DeepMatrixFactorizationModelsforRecommenderSystems</a> 思路非常相近，所以前面的废话描述都不重复了，直接来看模型</p>
+<figure>
+<img src="1.png" alt="1"><figcaption>1</figcaption>
+</figure>
+<p>作者的目的也是用非线性的神经网络结构去改进矩阵分解模型，但是作者做出几个变种，如上图的情况，最左边是基本模型，经过多层转换后，最后结果做点积；上图中间是一个小的改进，线性转化的每一层都做点积，最后做求和，作为对评分的估计；上图右边是继续的改进，每层之后相当于多做一层Embedding，之后再点积求和。</p>
+<p>​ 作者定义损失函数为 <span class="math display">\[
+\min_{W_u,W_v}\sum_i\sum_jc_ij||R_{ij}-&lt;f(x_i;W_v),g(r_i;W_u)&gt;||^2
+\]</span> 总的来说就是均方误差在整个模型结构上的损失。之后作者与<a href="https://arxiv.org/pdf/1409.2944.pdf" target="_blank" rel="noopener">CDL</a>模型做了比较，列举了几个CDL的劣势，但是总的感觉就是对CDL模型单方面只对物品Encoded的改进，总体感觉改动并不大。</p>
+<h3 id="summary">Summary</h3>
+<p>​ 本篇也是一篇利用神经网络的非线性来做矩阵分解的，这篇我看见的比较早，之前在arxiv上就看见了，第一次看见的时候感觉思路特别棒，看见之后觉得跟矩阵分解有异曲同工之妙，但文中作者并为这么点出，而以CDL的改进模型作为出发点，感觉被拒的原因就是如此。对于矩阵分解和这个模型，感觉可以证明一下二者之间的等价性，水一篇论文，但这个idea一直没有去实现。今天看IJCAI-17，看见一篇思路一致的论文，是南大某实验室发的，不知道这二者孰先孰后，这篇论文ICLR 上屡屡遭拒，而另一篇却被IJCAI接收，真是感慨万千。</p>
 
       
     </div>
@@ -439,7 +442,9 @@
           
             <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
           
-            <a href="/tags/Reinforcement-Learning/" rel="tag"># Reinforcement Learning</a>
+            <a href="/tags/Recommendation-System/" rel="tag"># Recommendation System</a>
+          
+            <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
           
         </div>
       
@@ -452,8 +457,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/08/first-order-and-second-order-metrics/" rel="next" title="first order and second order metrics">
-                <i class="fa fa-chevron-left"></i> first order and second order metrics
+              <a href="/2017/08/05/DeepMatrixFactorizationModelsforRecommenderSystems/" rel="next" title="Deep Matrix Factorization Models for Recommender Systems">
+                <i class="fa fa-chevron-left"></i> Deep Matrix Factorization Models for Recommender Systems
               </a>
             
           </div>
@@ -461,6 +466,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/06/Learning-Piece-wise-Linear-Models-from-Large-Scale-Data-for-Ad-ClickPrediction/" rel="prev" title="Learning Piece-wise Linear Models from Large Scale Data for Ad ClickPrediction">
+                Learning Piece-wise Linear Models from Large Scale Data for Ad ClickPrediction <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -514,8 +523,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -530,7 +548,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -584,6 +602,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#collaborative-deep-embedding"><span class="nav-number">1.</span> <span class="nav-text">Collaborative Deep Embedding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#summary"><span class="nav-number">2.</span> <span class="nav-text">Summary</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -605,7 +639,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Machine Learning,Reinforcement Learning," />
+  <meta name="keywords" content="Machine Learning,Recommendation System," />
 
 
 
@@ -94,26 +94,20 @@
 
 
 
-<meta name="description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="keywords" content="Machine Learning,Reinforcement Learning">
+<meta name="description" content="特征工程一直是很多预测模型效果突出的关键，人工设计等影响因素往往决定这这一环节的好坏，深度学习可以自动学习特征，却很难学到一些交叉特征。本文提出了一种交叉的网络结构的深度学习模型DCN，Deep &amp;amp; Cross Network，可以有效的寻找交叉特征，在CTR预估方面可以取得较好的效果。 DCN模型可以有效学习大规模的稀疏和稠密特征，并且能够有效抓住特征间的交叉关系，并且只需要较低的计算开">
+<meta name="keywords" content="Machine Learning,Recommendation System">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AlphaGo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;index.html">
+<meta property="og:title" content="Deep &amp; Cross Network for Ad Click Predictions">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;10&#x2F;05&#x2F;Deep-Cross-Network-for-Ad-Click-Predictions&#x2F;index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
-<meta property="og:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
+<meta property="og:description" content="特征工程一直是很多预测模型效果突出的关键，人工设计等影响因素往往决定这这一环节的好坏，深度学习可以自动学习特征，却很难学到一些交叉特征。本文提出了一种交叉的网络结构的深度学习模型DCN，Deep &amp;amp; Cross Network，可以有效的寻找交叉特征，在CTR预估方面可以取得较好的效果。 DCN模型可以有效学习大规模的稀疏和稠密特征，并且能够有效抓住特征间的交叉关系，并且只需要较低的计算开">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211025443.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211034236.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211041175.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211048193.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211055713.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211103102.png">
-<meta property="og:updated_time" content="2020-05-15T13:19:40.648Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;10&#x2F;05&#x2F;Deep-Cross-Network-for-Ad-Click-Predictions&#x2F;1.png">
+<meta property="og:updated_time" content="2017-10-05T13:19:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AlphaGo">
-<meta name="twitter:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
+<meta name="twitter:title" content="Deep &amp; Cross Network for Ad Click Predictions">
+<meta name="twitter:description" content="特征工程一直是很多预测模型效果突出的关键，人工设计等影响因素往往决定这这一环节的好坏，深度学习可以自动学习特征，却很难学到一些交叉特征。本文提出了一种交叉的网络结构的深度学习模型DCN，Deep &amp;amp; Cross Network，可以有效的寻找交叉特征，在CTR预估方面可以取得较好的效果。 DCN模型可以有效学习大规模的稀疏和稠密特征，并且能够有效抓住特征间的交叉关系，并且只需要较低的计算开">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;10&#x2F;05&#x2F;Deep-Cross-Network-for-Ad-Click-Predictions&#x2F;1.png">
 
 
 
@@ -142,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/15/AlphaGo/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/05/Deep-Cross-Network-for-Ad-Click-Predictions/"/>
 
 
 
 
 
-  <title>AlphaGo | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Deep & Cross Network for Ad Click Predictions | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -329,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/AlphaGo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/05/Deep-Cross-Network-for-Ad-Click-Predictions/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YuyangZhangFTD">
@@ -346,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AlphaGo</h1>
+          <h1 class="post-title" itemprop="name headline">Deep & Cross Network for Ad Click Predictions</h1>
         
 
         <div class="post-meta">
@@ -358,8 +352,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-15T21:06:14+08:00">
-                2020-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-05T21:14:14+08:00">
+                2017-10-05
               </time>
             
 
@@ -368,28 +362,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PaperNote/" itemprop="url" rel="index">
-                    <span itemprop="name">PaperNote</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -418,8 +390,26 @@
       
 
       
-        <p>最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。</p>
-<p><img src="image-20200515210947582.png" alt="image-20200515210947582"> <img src="image-20200515211025443.png" alt="image-20200515211025443"> <img src="image-20200515211034236.png" alt="image-20200515211034236"> <img src="image-20200515211041175.png" alt="image-20200515211041175"> <img src="image-20200515211048193.png" alt="image-20200515211048193"> <img src="image-20200515211055713.png" alt="image-20200515211055713"> <img src="image-20200515211103102.png" alt="image-20200515211103102"></p>
+        <p>特征工程一直是很多预测模型效果突出的关键，人工设计等影响因素往往决定这这一环节的好坏，深度学习可以自动学习特征，却很难学到一些交叉特征。本文提出了一种交叉的网络结构的深度学习模型DCN，Deep &amp; Cross Network，可以有效的寻找交叉特征，在CTR预估方面可以取得较好的效果。</p>
+<p>DCN模型可以有效学习大规模的稀疏和稠密特征，并且能够有效抓住特征间的交叉关系，并且只需要较低的计算开销，本文主要有以下几点贡献：</p>
+<ul>
+<li>我们提出一种新型的交叉网络结构，可以用来提取交叉组合特征，并不需要人为设计的特征工程；</li>
+<li>这种网络结构足够简单同时也很有效，经过设计，多项式度（polynomial degree）随着网络层数增加而增加；</li>
+<li>十分节约内存，并且易于使用；</li>
+<li>实验结果表明，DCN相比于其他模型有更出色的效果，与DNN模型相比，较少的参数却取得了较好的效果。</li>
+</ul>
+<p>主要的网络结构如下图所示</p>
+<figure>
+<img src="1.png" alt="1"><figcaption>1</figcaption>
+</figure>
+<p>在最开始的输入层，对非连续特征进行Embedding，然后和连续密集特征拼接 <span class="math display">\[
+x_0=[x_{\text{embed,1}}^T,\cdots,x_{\text{embed,k}}^T,x_{\text{dense}}^T]
+\]</span> 交叉网络结构形式如下 <span class="math display">\[
+x_{l+1}=x_0x_l^Tw_l+b_l+x_l=f(x_l,w_l,b_l)+x_l
+\]</span> 其中<span class="math inline">\(x_l,x_{l+1}\in\mathbb{R}^d\)</span> 是<span class="math inline">\(l\)</span> 层与<span class="math inline">\(l+1\)</span> 层的输出，<span class="math inline">\(w_l,b_l\)</span> 是<span class="math inline">\(l\)</span> 层的权重与偏置，每一层都是学习一个特征交叉映射<span class="math inline">\(f:\mathbb{R}^d\rightarrow\mathbb{R}^d\)</span> ，来拟合<span class="math inline">\(x_{l+1}-x_l\)</span> 的残差。第一遍看这个特别迷茫，然后我就去看了一下何凯明大神的ResNet，然后恍然大悟，一方面，每一层学习的映射<span class="math inline">\(f\)</span> 都是一个对交叉特征的非线性映射，然后通过拟合残差的方式，提高权重的敏感度，更适合稀疏的输入，同时另一方面，方便网络整体的反向传播，提高网络训练效率。</p>
+<p>右侧是一般的全连接层，是对原始输入特征的非线性映射，最后连接层是softmax。</p>
+<p>文章后面对DCN进行了一些理论分析，主要从三个角度出发：多项式近似、广义因子分解机模型和有效投影（efficient projection），我这捉急的翻译自己都看不下去了。。</p>
+<p>具体的分析思路大家可以下下来自己体会，总的来说，就是巧妙地利用ResNet来解决交叉特征的问题，网络结构设计颇为巧妙，分析也比较到位。</p>
 
       
     </div>
@@ -439,7 +429,7 @@
           
             <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
           
-            <a href="/tags/Reinforcement-Learning/" rel="tag"># Reinforcement Learning</a>
+            <a href="/tags/Recommendation-System/" rel="tag"># Recommendation System</a>
           
         </div>
       
@@ -452,8 +442,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/08/first-order-and-second-order-metrics/" rel="next" title="first order and second order metrics">
-                <i class="fa fa-chevron-left"></i> first order and second order metrics
+              <a href="/2017/10/03/Gradient-Boosted-Decision-Tables/" rel="next" title="BDT- Gradient Boosted Decision Tables for High Accuracy and Scoring Efficiency">
+                <i class="fa fa-chevron-left"></i> BDT- Gradient Boosted Decision Tables for High Accuracy and Scoring Efficiency
               </a>
             
           </div>
@@ -461,6 +451,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/12/A-Review-for-Boosting/" rel="prev" title="A Review for Boosting">
+                A Review for Boosting <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -530,7 +524,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -605,7 +599,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

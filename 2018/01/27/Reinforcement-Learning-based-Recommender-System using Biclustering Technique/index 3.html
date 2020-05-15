@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Machine Learning,Reinforcement Learning," />
+  <meta name="keywords" content="Machine Learning,Recommendation System,Reinforcement Learning," />
 
 
 
@@ -94,26 +94,21 @@
 
 
 
-<meta name="description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="keywords" content="Machine Learning,Reinforcement Learning">
+<meta name="description" content="这篇文章是一篇用RL做RS的一个探索，思路也比较简单，但实验用的是movielens100k和movielens1m，所以可能实际效果不好，只能说是思路上的一个尝试。 这篇文章的主要思路是利用tabular的rl方法来从已经聚类过的用户评分中找到相似的推荐，算是一种启发式的方法（强化学习哪个算法不是启发式呢？：P）  如上图所示，将聚类后的user-item分为多个cluster，然后做成grid">
+<meta name="keywords" content="Machine Learning,Recommendation System,Reinforcement Learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AlphaGo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;index.html">
+<meta property="og:title" content="Reinforcement Learning based Recommender System using Biclustering Technique">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;01&#x2F;27&#x2F;Reinforcement-Learning-based-Recommender-System using Biclustering Technique&#x2F;index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
-<meta property="og:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
+<meta property="og:description" content="这篇文章是一篇用RL做RS的一个探索，思路也比较简单，但实验用的是movielens100k和movielens1m，所以可能实际效果不好，只能说是思路上的一个尝试。 这篇文章的主要思路是利用tabular的rl方法来从已经聚类过的用户评分中找到相似的推荐，算是一种启发式的方法（强化学习哪个算法不是启发式呢？：P）  如上图所示，将聚类后的user-item分为多个cluster，然后做成grid">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211025443.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211034236.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211041175.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211048193.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211055713.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211103102.png">
-<meta property="og:updated_time" content="2020-05-15T13:19:40.648Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;01&#x2F;27&#x2F;Reinforcement-Learning-based-Recommender-System%20using%20Biclustering%20Technique&#x2F;1,png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;01&#x2F;27&#x2F;Reinforcement-Learning-based-Recommender-System%20using%20Biclustering%20Technique&#x2F;2.png">
+<meta property="og:updated_time" content="2018-01-27T04:03:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AlphaGo">
-<meta name="twitter:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
+<meta name="twitter:title" content="Reinforcement Learning based Recommender System using Biclustering Technique">
+<meta name="twitter:description" content="这篇文章是一篇用RL做RS的一个探索，思路也比较简单，但实验用的是movielens100k和movielens1m，所以可能实际效果不好，只能说是思路上的一个尝试。 这篇文章的主要思路是利用tabular的rl方法来从已经聚类过的用户评分中找到相似的推荐，算是一种启发式的方法（强化学习哪个算法不是启发式呢？：P）  如上图所示，将聚类后的user-item分为多个cluster，然后做成grid">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;01&#x2F;27&#x2F;Reinforcement-Learning-based-Recommender-System%20using%20Biclustering%20Technique&#x2F;1,png">
 
 
 
@@ -142,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/15/AlphaGo/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/27/Reinforcement-Learning-based-Recommender-System using Biclustering Technique/"/>
 
 
 
 
 
-  <title>AlphaGo | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Reinforcement Learning based Recommender System using Biclustering Technique | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -329,7 +324,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/AlphaGo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/27/Reinforcement-Learning-based-Recommender-System using Biclustering Technique/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YuyangZhangFTD">
@@ -346,7 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AlphaGo</h1>
+          <h1 class="post-title" itemprop="name headline">Reinforcement Learning based Recommender System using Biclustering Technique</h1>
         
 
         <div class="post-meta">
@@ -358,8 +353,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-15T21:06:14+08:00">
-                2020-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-27T10:50:02+08:00">
+                2018-01-27
               </time>
             
 
@@ -418,8 +413,10 @@
       
 
       
-        <p>最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。</p>
-<p><img src="image-20200515210947582.png" alt="image-20200515210947582"> <img src="image-20200515211025443.png" alt="image-20200515211025443"> <img src="image-20200515211034236.png" alt="image-20200515211034236"> <img src="image-20200515211041175.png" alt="image-20200515211041175"> <img src="image-20200515211048193.png" alt="image-20200515211048193"> <img src="image-20200515211055713.png" alt="image-20200515211055713"> <img src="image-20200515211103102.png" alt="image-20200515211103102"></p>
+        <p>这篇文章是一篇用RL做RS的一个探索，思路也比较简单，但实验用的是movielens100k和movielens1m，所以可能实际效果不好，只能说是思路上的一个尝试。</p>
+<p>这篇文章的主要思路是利用tabular的rl方法来从已经聚类过的用户评分中找到相似的推荐，算是一种启发式的方法（强化学习哪个算法不是启发式呢？：P） <img src="1,png" alt="1"></p>
+<p>如上图所示，将聚类后的user-item分为多个cluster，然后做成gridword的形式，然后利用Q-learning或者是Sarsa来学习转移得到的收益，从而达到推荐的效果 <img src="2.png" alt="2"></p>
+<p>思路很简单，文章也很短，算是一种尝试，不过我看完还真有点启发，之前看的yahoo的embedding做news recommendation，也可以看成是MDP-based model，从这个角度看，的确有很多事情可以做。</p>
 
       
     </div>
@@ -439,6 +436,8 @@
           
             <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
           
+            <a href="/tags/Recommendation-System/" rel="tag"># Recommendation System</a>
+          
             <a href="/tags/Reinforcement-Learning/" rel="tag"># Reinforcement Learning</a>
           
         </div>
@@ -452,8 +451,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/08/first-order-and-second-order-metrics/" rel="next" title="first order and second order metrics">
-                <i class="fa fa-chevron-left"></i> first order and second order metrics
+              <a href="/2018/01/21/BPR-analysis/" rel="next" title="BPR analysis">
+                <i class="fa fa-chevron-left"></i> BPR analysis
               </a>
             
           </div>
@@ -461,6 +460,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/29/Playing-Atari-with-Deep-Reinforcement-Learning/" rel="prev" title="Playing Atari with Deep Reinforcement Learning">
+                Playing Atari with Deep Reinforcement Learning <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -530,7 +533,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -605,7 +608,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

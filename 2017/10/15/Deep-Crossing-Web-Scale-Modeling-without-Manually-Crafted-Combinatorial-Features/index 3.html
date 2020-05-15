@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Machine Learning,Reinforcement Learning," />
+  <meta name="keywords" content="Machine Learning,Recommendation System,Deep Learning," />
 
 
 
@@ -94,26 +94,20 @@
 
 
 
-<meta name="description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="keywords" content="Machine Learning,Reinforcement Learning">
+<meta name="description" content="这篇应该是最早的DL做CTR的文章了，好像是KDD2016的best，微软出品。 现在看这篇文章有点普通，但在当时应该还是挺应景的，做的是15年火的embedding和16年火的residual network的结合。模型结构如图所示  1  本篇论文突出的特点应该是不用人工设计feature，在当时应该也是一个break。 文章后面重点写了embedding和stacking策略以及residu">
+<meta name="keywords" content="Machine Learning,Recommendation System,Deep Learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AlphaGo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;index.html">
+<meta property="og:title" content="Deep Crossing- Web-Scale Modeling without Manually Crafted Combinatorial Features">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;10&#x2F;15&#x2F;Deep-Crossing-Web-Scale-Modeling-without-Manually-Crafted-Combinatorial-Features&#x2F;index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
-<meta property="og:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
+<meta property="og:description" content="这篇应该是最早的DL做CTR的文章了，好像是KDD2016的best，微软出品。 现在看这篇文章有点普通，但在当时应该还是挺应景的，做的是15年火的embedding和16年火的residual network的结合。模型结构如图所示  1  本篇论文突出的特点应该是不用人工设计feature，在当时应该也是一个break。 文章后面重点写了embedding和stacking策略以及residu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211025443.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211034236.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211041175.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211048193.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211055713.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211103102.png">
-<meta property="og:updated_time" content="2020-05-15T13:19:40.648Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;10&#x2F;15&#x2F;Deep-Crossing-Web-Scale-Modeling-without-Manually-Crafted-Combinatorial-Features&#x2F;1.png">
+<meta property="og:updated_time" content="2017-10-15T15:12:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AlphaGo">
-<meta name="twitter:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
+<meta name="twitter:title" content="Deep Crossing- Web-Scale Modeling without Manually Crafted Combinatorial Features">
+<meta name="twitter:description" content="这篇应该是最早的DL做CTR的文章了，好像是KDD2016的best，微软出品。 现在看这篇文章有点普通，但在当时应该还是挺应景的，做的是15年火的embedding和16年火的residual network的结合。模型结构如图所示  1  本篇论文突出的特点应该是不用人工设计feature，在当时应该也是一个break。 文章后面重点写了embedding和stacking策略以及residu">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;10&#x2F;15&#x2F;Deep-Crossing-Web-Scale-Modeling-without-Manually-Crafted-Combinatorial-Features&#x2F;1.png">
 
 
 
@@ -142,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/15/AlphaGo/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/15/Deep-Crossing-Web-Scale-Modeling-without-Manually-Crafted-Combinatorial-Features/"/>
 
 
 
 
 
-  <title>AlphaGo | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Deep Crossing- Web-Scale Modeling without Manually Crafted Combinatorial Features | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -329,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/AlphaGo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/15/Deep-Crossing-Web-Scale-Modeling-without-Manually-Crafted-Combinatorial-Features/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YuyangZhangFTD">
@@ -346,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AlphaGo</h1>
+          <h1 class="post-title" itemprop="name headline">Deep Crossing- Web-Scale Modeling without Manually Crafted Combinatorial Features</h1>
         
 
         <div class="post-meta">
@@ -358,8 +352,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-15T21:06:14+08:00">
-                2020-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-15T23:00:14+08:00">
+                2017-10-15
               </time>
             
 
@@ -418,8 +412,14 @@
       
 
       
-        <p>最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。</p>
-<p><img src="image-20200515210947582.png" alt="image-20200515210947582"> <img src="image-20200515211025443.png" alt="image-20200515211025443"> <img src="image-20200515211034236.png" alt="image-20200515211034236"> <img src="image-20200515211041175.png" alt="image-20200515211041175"> <img src="image-20200515211048193.png" alt="image-20200515211048193"> <img src="image-20200515211055713.png" alt="image-20200515211055713"> <img src="image-20200515211103102.png" alt="image-20200515211103102"></p>
+        <p>这篇应该是最早的DL做CTR的文章了，好像是KDD2016的best，微软出品。</p>
+<p>现在看这篇文章有点普通，但在当时应该还是挺应景的，做的是15年火的embedding和16年火的residual network的结合。模型结构如图所示</p>
+<figure>
+<img src="1.png" alt="1"><figcaption>1</figcaption>
+</figure>
+<p>本篇论文突出的特点应该是不用人工设计feature，在当时应该也是一个break。</p>
+<p>文章后面重点写了embedding和stacking策略以及residual层的应用，以及和DSSM的对比，这里我搜了一下，DSSM是一个深度语义匹配模型，手动微笑，并没有看过，所以他的第三点比较我就没有仔细看，过一阵子填坑，最近要看的太多了。再往后就是模型实现等等，不看了。</p>
+<p>短短两年，一个best paper就成为了“古董”，真是让人感慨。</p>
 
       
     </div>
@@ -439,7 +439,9 @@
           
             <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
           
-            <a href="/tags/Reinforcement-Learning/" rel="tag"># Reinforcement Learning</a>
+            <a href="/tags/Recommendation-System/" rel="tag"># Recommendation System</a>
+          
+            <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
           
         </div>
       
@@ -452,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/08/first-order-and-second-order-metrics/" rel="next" title="first order and second order metrics">
-                <i class="fa fa-chevron-left"></i> first order and second order metrics
+              <a href="/2017/10/15/Deep-CTR-Prediction-in-Display-Advertising/" rel="next" title="Deep CTR Prediction in Display Advertising">
+                <i class="fa fa-chevron-left"></i> Deep CTR Prediction in Display Advertising
               </a>
             
           </div>
@@ -461,6 +463,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/16/Deep-Content-based-Music-Recommendation/" rel="prev" title="Deep Content-based Music Recommendation">
+                Deep Content-based Music Recommendation <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -530,7 +536,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -605,7 +611,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

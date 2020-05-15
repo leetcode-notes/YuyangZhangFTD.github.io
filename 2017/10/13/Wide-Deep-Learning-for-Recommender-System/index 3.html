@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Machine Learning,Reinforcement Learning," />
+  <meta name="keywords" content="Machine Learning,Recommendation System,Deep Learning," />
 
 
 
@@ -94,26 +94,20 @@
 
 
 
-<meta name="description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="keywords" content="Machine Learning,Reinforcement Learning">
+<meta name="description" content="最近都在读深度学习与推荐系统、CTR预估相关的内容，会带来一系列的分享。今天看的是谷歌的一篇深度学习“范文”。 论文中提出，一个推荐系统面临的挑战是memorization和generalization，memorization可以定义为学习共现物品或者特征的频率，并且在历史数据中探索可能出现的相关关系，generalization指的是基于相关关系，探索新的特征组合，简单来说就是，一个是抓住过去">
+<meta name="keywords" content="Machine Learning,Recommendation System,Deep Learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AlphaGo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;index.html">
+<meta property="og:title" content="Wide &amp; Deep Learning for Recommender System">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;10&#x2F;13&#x2F;Wide-Deep-Learning-for-Recommender-System&#x2F;index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
-<meta property="og:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
+<meta property="og:description" content="最近都在读深度学习与推荐系统、CTR预估相关的内容，会带来一系列的分享。今天看的是谷歌的一篇深度学习“范文”。 论文中提出，一个推荐系统面临的挑战是memorization和generalization，memorization可以定义为学习共现物品或者特征的频率，并且在历史数据中探索可能出现的相关关系，generalization指的是基于相关关系，探索新的特征组合，简单来说就是，一个是抓住过去">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211025443.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211034236.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211041175.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211048193.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211055713.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211103102.png">
-<meta property="og:updated_time" content="2020-05-15T13:19:40.648Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;10&#x2F;13&#x2F;Wide-Deep-Learning-for-Recommender-System&#x2F;1.png">
+<meta property="og:updated_time" content="2017-10-13T02:10:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AlphaGo">
-<meta name="twitter:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
+<meta name="twitter:title" content="Wide &amp; Deep Learning for Recommender System">
+<meta name="twitter:description" content="最近都在读深度学习与推荐系统、CTR预估相关的内容，会带来一系列的分享。今天看的是谷歌的一篇深度学习“范文”。 论文中提出，一个推荐系统面临的挑战是memorization和generalization，memorization可以定义为学习共现物品或者特征的频率，并且在历史数据中探索可能出现的相关关系，generalization指的是基于相关关系，探索新的特征组合，简单来说就是，一个是抓住过去">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;10&#x2F;13&#x2F;Wide-Deep-Learning-for-Recommender-System&#x2F;1.png">
 
 
 
@@ -142,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/15/AlphaGo/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/13/Wide-Deep-Learning-for-Recommender-System/"/>
 
 
 
 
 
-  <title>AlphaGo | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Wide & Deep Learning for Recommender System | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -329,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/AlphaGo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/13/Wide-Deep-Learning-for-Recommender-System/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YuyangZhangFTD">
@@ -346,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AlphaGo</h1>
+          <h1 class="post-title" itemprop="name headline">Wide & Deep Learning for Recommender System</h1>
         
 
         <div class="post-meta">
@@ -358,8 +352,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-15T21:06:14+08:00">
-                2020-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-13T09:27:03+08:00">
+                2017-10-13
               </time>
             
 
@@ -418,8 +412,14 @@
       
 
       
-        <p>最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。</p>
-<p><img src="image-20200515210947582.png" alt="image-20200515210947582"> <img src="image-20200515211025443.png" alt="image-20200515211025443"> <img src="image-20200515211034236.png" alt="image-20200515211034236"> <img src="image-20200515211041175.png" alt="image-20200515211041175"> <img src="image-20200515211048193.png" alt="image-20200515211048193"> <img src="image-20200515211055713.png" alt="image-20200515211055713"> <img src="image-20200515211103102.png" alt="image-20200515211103102"></p>
+        <p>最近都在读深度学习与推荐系统、CTR预估相关的内容，会带来一系列的分享。今天看的是谷歌的一篇深度学习“范文”。</p>
+<p>论文中提出，一个推荐系统面临的挑战是memorization和generalization，memorization可以定义为学习共现物品或者特征的频率，并且在历史数据中探索可能出现的相关关系，generalization指的是基于相关关系，探索新的特征组合，简单来说就是，一个是抓住过去历史数据中蕴藏着的推荐偏好，另一个探索可能存在的推荐偏好，这里的推荐偏好是用特征组合-&gt;物品喜好的形式来表述的。</p>
+<p>论文中提出的模型就是为了同时去实现memorization和generalization，主题模型如下图所示</p>
+<figure>
+<img src="1.png" alt="1"><figcaption>1</figcaption>
+</figure>
+<p>很简单的思路，模型的左边Wide部分，是简单的广义线性模型，来刻画特征间的组合关系，右边Deep部分，是通过embedding来刻画交叉特征的关系。两种模型的输入加权后进入最后的log odds（也就是lr）得到结果，被称为joint training。这里需要区分一下ensemble和joint training的区别，ensemble是模型在inference的阶段进行combine的，而joint learning是在训练阶段。</p>
+<p>论文到这里也就基本上结束了，模型很简单，最重要的是提供了tensorflow的实现，在tensorflow的源码示例中，大家可以下载看一下。</p>
 
       
     </div>
@@ -439,7 +439,9 @@
           
             <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
           
-            <a href="/tags/Reinforcement-Learning/" rel="tag"># Reinforcement Learning</a>
+            <a href="/tags/Recommendation-System/" rel="tag"># Recommendation System</a>
+          
+            <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
           
         </div>
       
@@ -452,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/08/first-order-and-second-order-metrics/" rel="next" title="first order and second order metrics">
-                <i class="fa fa-chevron-left"></i> first order and second order metrics
+              <a href="/2017/10/12/A-Review-for-Boosting/" rel="next" title="A Review for Boosting">
+                <i class="fa fa-chevron-left"></i> A Review for Boosting
               </a>
             
           </div>
@@ -461,6 +463,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/13/Product-based-Neural-Networks-for-User-Response-Prediction/" rel="prev" title="Product-based Neural Networks for User Response Prediction">
+                Product-based Neural Networks for User Response Prediction <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -530,7 +536,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -605,7 +611,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

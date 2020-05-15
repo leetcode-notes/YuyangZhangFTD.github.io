@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Machine Learning,Reinforcement Learning," />
+  <meta name="keywords" content="Machine Learning,Convex Optimization,Online Learning," />
 
 
 
@@ -94,26 +94,20 @@
 
 
 
-<meta name="description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="keywords" content="Machine Learning,Reinforcement Learning">
+<meta name="description" content="The Online Optimization Game 在线优化问题，具体指如下过程：  The Online Optimization Game   在每回合中，玩家（palyer）选择\(\mathbf{w}_t\in\mathcal{W}\)，其中\(\mathcal{W}\subseteq\mathbb{R}^n\)是操作的可行集合 对手（adversary）选择一个损失函数\(f_t:">
+<meta name="keywords" content="Machine Learning,Convex Optimization,Online Learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AlphaGo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;index.html">
+<meta property="og:title" content="Online Learning 2">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;06&#x2F;13&#x2F;Online-Learning-2&#x2F;index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
-<meta property="og:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
+<meta property="og:description" content="The Online Optimization Game 在线优化问题，具体指如下过程：  The Online Optimization Game   在每回合中，玩家（palyer）选择\(\mathbf{w}_t\in\mathcal{W}\)，其中\(\mathcal{W}\subseteq\mathbb{R}^n\)是操作的可行集合 对手（adversary）选择一个损失函数\(f_t:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211025443.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211034236.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211041175.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211048193.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211055713.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211103102.png">
-<meta property="og:updated_time" content="2020-05-15T13:19:40.648Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;06&#x2F;13&#x2F;Online-Learning-2&#x2F;1.png">
+<meta property="og:updated_time" content="2018-06-13T15:33:50.789Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AlphaGo">
-<meta name="twitter:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
+<meta name="twitter:title" content="Online Learning 2">
+<meta name="twitter:description" content="The Online Optimization Game 在线优化问题，具体指如下过程：  The Online Optimization Game   在每回合中，玩家（palyer）选择\(\mathbf{w}_t\in\mathcal{W}\)，其中\(\mathcal{W}\subseteq\mathbb{R}^n\)是操作的可行集合 对手（adversary）选择一个损失函数\(f_t:">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;06&#x2F;13&#x2F;Online-Learning-2&#x2F;1.png">
 
 
 
@@ -142,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/15/AlphaGo/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/13/Online-Learning-2/"/>
 
 
 
 
 
-  <title>AlphaGo | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Online Learning 2 | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -329,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/AlphaGo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/13/Online-Learning-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YuyangZhangFTD">
@@ -346,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AlphaGo</h1>
+          <h1 class="post-title" itemprop="name headline">Online Learning 2</h1>
         
 
         <div class="post-meta">
@@ -358,8 +352,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-15T21:06:14+08:00">
-                2020-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T15:57:06+08:00">
+                2018-06-13
               </time>
             
 
@@ -368,28 +362,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PaperNote/" itemprop="url" rel="index">
-                    <span itemprop="name">PaperNote</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -418,8 +390,67 @@
       
 
       
-        <p>最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。</p>
-<p><img src="image-20200515210947582.png" alt="image-20200515210947582"> <img src="image-20200515211025443.png" alt="image-20200515211025443"> <img src="image-20200515211034236.png" alt="image-20200515211034236"> <img src="image-20200515211041175.png" alt="image-20200515211041175"> <img src="image-20200515211048193.png" alt="image-20200515211048193"> <img src="image-20200515211055713.png" alt="image-20200515211055713"> <img src="image-20200515211103102.png" alt="image-20200515211103102"></p>
+        <h2 id="the-online-optimization-game">The Online Optimization Game</h2>
+<p>在线优化问题，具体指如下过程：</p>
+<figure>
+<img src="1.png" alt="The Online Optimization Game"><figcaption>The Online Optimization Game</figcaption>
+</figure>
+<ol type="1">
+<li>在每回合中，玩家（palyer）选择<span class="math inline">\(\mathbf{w}_t\in\mathcal{W}\)</span>，其中<span class="math inline">\(\mathcal{W}\subseteq\mathbb{R}^n\)</span>是操作的可行集合</li>
+<li>对手（adversary）选择一个损失函数<span class="math inline">\(f_t:\mathcal{W}\rightarrow\mathbb{R}\)</span></li>
+<li>玩家承受损失<span class="math inline">\(f_t(w_t)\)</span></li>
+<li>玩家更新<span class="math inline">\(w_{t+1}\)</span></li>
+</ol>
+<p>累计损失，<span class="math inline">\(T\)</span>轮游戏后的累积损失，<span class="math inline">\(\sum^T_{t=1}f_t(w_t)\)</span>。</p>
+<p>玩家的悔恨（regret），<span class="math inline">\(T\)</span>轮游戏后，<span class="math inline">\(\sum^T_{t=1}f_t(w_t)-\underset{\mathbf{w}\in\mathcal{W}}{\min}\sum^T_{t=1}f_t(w)\)</span>，每一步的累积损失，和令累计损失最小的全局最优动作，所对应累积损失之差，即实际累计损失与事后的最小损失的差距。</p>
+<h2 id="online-binary-predcition">Online Binary Predcition</h2>
+<p>上一篇说到的在线二分类预测问题是在线优化问题的一种特例，对比如下</p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>在线二分类预测问题</th>
+<th>在线优化问题</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>每一轮<span class="math inline">\(t\in{1,2,\cdots,T}\)</span>选择一个<span class="math inline">\(h_t\in\mathcal{H}\)</span></td>
+<td>每一轮<span class="math inline">\(t\in{1,2,\cdots,T}\)</span>选择一个<span class="math inline">\(w_t\in\mathcal{W}\)</span></td>
+</tr>
+<tr class="even">
+<td>对手（adversary）选择<span class="math inline">\((x_t,y_t)\)</span></td>
+<td>对手选择损失<span class="math inline">\(f_t\)</span></td>
+</tr>
+<tr class="odd">
+<td>第<span class="math inline">\(t\)</span>轮的损失是<span class="math inline">\(\mathbf{1}_{h_t(x_t)\neq y_t}\)</span></td>
+<td>第<span class="math inline">\(t\)</span>轮的损失是<span class="math inline">\(f_t(w_t)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>我们可以认为假设<span class="math inline">\(h_t\)</span>是以<span class="math inline">\(w_t\)</span>为参数的假设，损失函数在线优化问题中的<span class="math inline">\(f_t(w)\)</span>，<span class="math inline">\(f_t(w)=\mathbf{1}_{h_t(x_t)\neq y_t}\)</span>。</p>
+<h2 id="online-convex-optimization">Online Convex Optimization</h2>
+<p>相比于一般的在线优化问题，在线凸优化问题，</p>
+<ul>
+<li><span class="math inline">\(\mathcal{W}\)</span>是<span class="math inline">\(\mathbb{R}^n\)</span>的凸的子集</li>
+<li><span class="math inline">\(f_t\)</span>是凸函数，<span class="math inline">\(\forall t\)</span></li>
+</ul>
+<p>以下是一些例子：</p>
+<ul>
+<li>在线线性回归，<span class="math inline">\(\mathbf{w}_t\in\mathcal{W}=\mathbb{R}^n\)</span>，<span class="math inline">\(\mathbf{x}_t\in\mathbb{R}^n\)</span>，<span class="math inline">\(y_t\in\mathbb{R}\)</span>，<span class="math inline">\(f_t=(\mathbf{w}_t\cdot\mathbf{x}_t-y_t)^2\)</span></li>
+<li>二次线性回归，<span class="math inline">\((\mathbf{w}_t,\mathbf{A_t})\in(\mathbb{R}^n\times\mathbb{R}^{n\times n})\)</span>，<span class="math inline">\(\mathbf{x}_t\in\mathbb{R}^n\)</span>，<span class="math inline">\(y_t\in\mathbb{R}\)</span>，<span class="math inline">\(f_t=(\mathbf{w}_t\cdot\mathbf{x}_t+\mathbf{x}_t^T\mathbf{A}_t\mathbf{x}_t-y_t)^2\)</span></li>
+<li>…</li>
+</ul>
+<h2 id="follow-the-leaderftl-algorithm">Follow The Leader(FTL) Algorithm</h2>
+<p>FTL算法更新方式如下： <span class="math display">\[
+\begin{aligned}
+\mathbf{w}_t &amp; =\underset{\mathbf{w}\in\mathcal{W}}{\arg\min} \sum^t_{s=1}f_s(\mathbf{w})\\
+&amp;=\underset{\mathbf{w}\in\mathcal{W}}{\arg\min}f_{1:t}(\mathbf{w})
+\end{aligned}
+\]</span> 其中<span class="math inline">\(f_{1:t}(\mathbf{w})=\sum^t_{s=1}f_s(\mathbf{w})\)</span>。</p>
 
       
     </div>
@@ -439,7 +470,9 @@
           
             <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
           
-            <a href="/tags/Reinforcement-Learning/" rel="tag"># Reinforcement Learning</a>
+            <a href="/tags/Convex-Optimization/" rel="tag"># Convex Optimization</a>
+          
+            <a href="/tags/Online-Learning/" rel="tag"># Online Learning</a>
           
         </div>
       
@@ -452,8 +485,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/08/first-order-and-second-order-metrics/" rel="next" title="first order and second order metrics">
-                <i class="fa fa-chevron-left"></i> first order and second order metrics
+              <a href="/2018/06/13/Online-Learning-1/" rel="next" title="Online Learning 1">
+                <i class="fa fa-chevron-left"></i> Online Learning 1
               </a>
             
           </div>
@@ -461,6 +494,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/14/Online-Learning-3/" rel="prev" title="Online Learning 3">
+                Online Learning 3 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -514,8 +551,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -530,7 +576,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -584,6 +630,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#the-online-optimization-game"><span class="nav-number">1.</span> <span class="nav-text">The Online Optimization Game</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#online-binary-predcition"><span class="nav-number">2.</span> <span class="nav-text">Online Binary Predcition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#online-convex-optimization"><span class="nav-number">3.</span> <span class="nav-text">Online Convex Optimization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#follow-the-leaderftl-algorithm"><span class="nav-number">4.</span> <span class="nav-text">Follow The Leader(FTL) Algorithm</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -605,7 +667,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

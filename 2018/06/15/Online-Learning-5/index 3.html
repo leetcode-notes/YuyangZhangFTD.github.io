@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Machine Learning,Reinforcement Learning," />
+  <meta name="keywords" content="Machine Learning,Convex Optimization,Online Learning," />
 
 
 
@@ -94,26 +94,20 @@
 
 
 
-<meta name="description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="keywords" content="Machine Learning,Reinforcement Learning">
+<meta name="description" content="Online Subgradient Descent 在线梯度下降算法如下图所示  OGD  其中，每一步迭代的时候，根据梯度（或次梯度）更新后，将新得到的权重投影到权重的可行域上。  定理1：如果\(w&amp;#39;\in\mathcal{W}\)，\(w&#x3D;\prod_{\mathcal{W}}(w&amp;#39;)\)，\(w^*\in\mathcal{W}\)，那么\((w&amp;#39;-w)(w^*-w">
+<meta name="keywords" content="Machine Learning,Convex Optimization,Online Learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AlphaGo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;index.html">
+<meta property="og:title" content="Online Learning 5">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;06&#x2F;15&#x2F;Online-Learning-5&#x2F;index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
-<meta property="og:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
+<meta property="og:description" content="Online Subgradient Descent 在线梯度下降算法如下图所示  OGD  其中，每一步迭代的时候，根据梯度（或次梯度）更新后，将新得到的权重投影到权重的可行域上。  定理1：如果\(w&amp;#39;\in\mathcal{W}\)，\(w&#x3D;\prod_{\mathcal{W}}(w&amp;#39;)\)，\(w^*\in\mathcal{W}\)，那么\((w&amp;#39;-w)(w^*-w">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211025443.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211034236.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211041175.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211048193.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211055713.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211103102.png">
-<meta property="og:updated_time" content="2020-05-15T13:19:40.648Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;06&#x2F;15&#x2F;Online-Learning-5&#x2F;1.png">
+<meta property="og:updated_time" content="2018-06-20T01:45:53.629Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AlphaGo">
-<meta name="twitter:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
+<meta name="twitter:title" content="Online Learning 5">
+<meta name="twitter:description" content="Online Subgradient Descent 在线梯度下降算法如下图所示  OGD  其中，每一步迭代的时候，根据梯度（或次梯度）更新后，将新得到的权重投影到权重的可行域上。  定理1：如果\(w&amp;#39;\in\mathcal{W}\)，\(w&#x3D;\prod_{\mathcal{W}}(w&amp;#39;)\)，\(w^*\in\mathcal{W}\)，那么\((w&amp;#39;-w)(w^*-w">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;06&#x2F;15&#x2F;Online-Learning-5&#x2F;1.png">
 
 
 
@@ -142,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/15/AlphaGo/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/15/Online-Learning-5/"/>
 
 
 
 
 
-  <title>AlphaGo | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Online Learning 5 | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -329,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/AlphaGo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/Online-Learning-5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YuyangZhangFTD">
@@ -346,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AlphaGo</h1>
+          <h1 class="post-title" itemprop="name headline">Online Learning 5</h1>
         
 
         <div class="post-meta">
@@ -358,8 +352,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-15T21:06:14+08:00">
-                2020-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-15T20:21:42+08:00">
+                2018-06-15
               </time>
             
 
@@ -368,28 +362,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PaperNote/" itemprop="url" rel="index">
-                    <span itemprop="name">PaperNote</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -418,8 +390,113 @@
       
 
       
-        <p>最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。</p>
-<p><img src="image-20200515210947582.png" alt="image-20200515210947582"> <img src="image-20200515211025443.png" alt="image-20200515211025443"> <img src="image-20200515211034236.png" alt="image-20200515211034236"> <img src="image-20200515211041175.png" alt="image-20200515211041175"> <img src="image-20200515211048193.png" alt="image-20200515211048193"> <img src="image-20200515211055713.png" alt="image-20200515211055713"> <img src="image-20200515211103102.png" alt="image-20200515211103102"></p>
+        <h2 id="online-subgradient-descent">Online Subgradient Descent</h2>
+<p>在线梯度下降算法如下图所示</p>
+<figure>
+<img src="1.png" alt="OGD"><figcaption>OGD</figcaption>
+</figure>
+<p>其中，每一步迭代的时候，根据梯度（或次梯度）更新后，将新得到的权重投影到权重的可行域上。</p>
+<blockquote>
+<p>定理1：如果<span class="math inline">\(w&#39;\in\mathcal{W}\)</span>，<span class="math inline">\(w=\prod_{\mathcal{W}}(w&#39;)\)</span>，<span class="math inline">\(w^*\in\mathcal{W}\)</span>，那么<span class="math inline">\((w&#39;-w)(w^*-w)\leq0\)</span>。</p>
+</blockquote>
+<p>证明：</p>
+<p>假设存在<span class="math inline">\(\hat{w}\in\mathcal{W}\)</span>，使得<span class="math inline">\((w&#39;-\hat{w})(w^*-\hat{w})&gt;0\)</span>。定义 <span class="math display">\[
+\begin{aligned}
+Z(\lambda)
+&amp;=(1-\lambda)\hat{w}+\lambda w^*
+&amp;\lambda\in[0,1]\\
+&amp;=\hat{w}+\lambda(w^*-\hat{w})
+\end{aligned}
+\]</span> 注意，因为<span class="math inline">\(\mathcal{W}\)</span>是凸集，所以有<span class="math inline">\(Z(\lambda)\in\mathcal{W}\)</span>。 <span class="math display">\[
+\begin{aligned}
+\|w&#39;-Z(\lambda)\|^2
+&amp;=\|w&#39;-\hat{w}-\lambda(w^*-\hat{w})\|^2\\
+&amp;=\|w&#39;-\hat{w}\|^2+\lambda^2\|w^*-\hat{w}\|^2
+-2\lambda(w&#39;-\hat{w})(w^*-\hat{w})
+\end{aligned}
+\]</span></p>
+<p>令<span class="math inline">\(h(\lambda)=\lambda^2\|w^*-\hat{w}\|-2\lambda(w&#39;-\hat{w})(w^*-\hat{w})\)</span>，该函数的根为<span class="math inline">\(0\)</span>和<span class="math inline">\(\frac{(w&#39;-\hat{w})(w^*-\hat{w})}{\|w^*-\hat{w}\|^2}\)</span>，当<span class="math inline">\(\lambda\in(0,\frac{(w&#39;-\hat{w})(w^*-\hat{w})}{\|w^*-\hat{w}\|^2})\)</span>时，<span class="math inline">\(h(\lambda)&lt;0\)</span>，所以有 <span class="math display">\[
+\|w&#39;-Z(\lambda)\|^2\leq\|w&#39;-\hat{w}\|^2
+\]</span> 对于任何使得<span class="math inline">\(h(\lambda)&lt;0\)</span>的<span class="math inline">\(\lambda\)</span>，都会产生<span class="math inline">\(Z(\lambda)\in\mathcal{W}\)</span>相比于<span class="math inline">\(\hat{w}\)</span>更接近<span class="math inline">\(w&#39;\)</span>，原假设不成立，该定理得证。<span class="math inline">\(\Box\)</span></p>
+<blockquote>
+<p>定理2：<span class="math inline">\(w&#39;\notin\mathcal{W}\)</span>，<span class="math inline">\(w=\prod_{\mathcal{W}}(w&#39;)\)</span>，<span class="math inline">\(w^*\in\mathcal{W}\)</span>，那么<span class="math inline">\(\frac{1}{2}\|w&#39;-w\|^2+\frac{1}{2}\|w-w^*\|^2\leq\frac{1}{2}\|w^*-w&#39;\|^2\)</span>。</p>
+</blockquote>
+<p>证明： <span class="math display">\[
+\begin{aligned}
+&amp;\frac{1}{2}\|w&#39;\|^2+\frac{1}{2}\|w\|^2-w&#39;\cdot w
++\frac{1}{2}\|w\|^2+\frac{1}{2}\|w^*\|^2-w\cdot w^*
+-\frac{1}{2}\|w^*\|^2-\frac{1}{2}\|w&#39;\|^2+w^*\cdot w&#39;\\
+=&amp;w\cdot w-w&#39;\cdot w-w\cdot w^*+w^*\cdot w&#39;\\
+=&amp;w&#39;(w^*-w)-w(w^*-w)\\
+=&amp;(w&#39;-w)(w^*-w)\\
+\leq&amp;0
+\end{aligned}
+\]</span> 证毕。<span class="math inline">\(\Box\)</span></p>
+<p>接下来我们来证明一下潜在函数（potential function）为<span class="math inline">\(\Phi(w,w^*)=\frac{1}{2}\|w-w^*\|^2\)</span>，选择<span class="math inline">\(w^*\in\mathcal{W}\)</span>，对于梯度下降，我们有 <span class="math display">\[
+\begin{aligned}
+&amp;\Phi(w_t,w^*)-\Phi(w&#39;_{t+1},w^*)\\
+=&amp;\frac{1}{2}\|w_t-w^*\|^2-\frac{1}{2}\|w&#39;_{t+1}-w^*\|^2\\
+=&amp;\frac{1}{2}\|w_t-w^*\|^2-\frac{1}{2}\|w_t-w^*-\eta_tg_t\|^2\\
+=&amp;\frac{1}{2}\|w_t-w^*\|^2-\frac{1}{2}\|w_t-w^*\|^2+\eta_t(w_t-w^*)\cdot g_t-\frac{1}{2}\eta_t^2\|g_t\|^2\\
+=&amp;-\frac{1}{2}\eta_t^2\|g_t\|^2+\eta_t(w_t-w^*)\cdot g_t
+\end{aligned}
+\]</span> 其中后一项 <span class="math display">\[
+\begin{aligned}
+(w_t-w^*)\cdot g_t&amp;=\frac{1}{\eta_t}(\Phi(w_t,w^*)-\Phi(w&#39;_{t+1},w^*))+\frac{1}{2}\eta_t\|g_t\|^2\\
+&amp;\leq\frac{1}{\eta_t}(
+\Phi(w_t,w^*)-\Phi(w&#39;_{t+1},w^*)+\Phi(w&#39;_{t+1},w^*)-\Phi(w_{t+1},w^*))+\frac{1}{2}\eta_t\|g_t\|^2\\
+\sum^T_{t=1}f_t(w_t)-f_t(w^*)
+&amp;\leq \sum^T_{t=1}w_t\cdot g_t-w^*\cdot g_t\\
+&amp;\leq\sum^T_{t=1}\frac{1}{\eta_t}(\Phi(w_t,w^*)-\Phi(w_{t+1},w^*))
++\sum^T_{t=1}\frac{1}{2}\eta_t\|g_t\|^2\\
+&amp;=\frac{1}{\eta_1}\Phi(w_1,w^*)-\frac{1}{\eta_T}\Phi(w_{T+1},w^*)
++\sum^T_{t=2}(\frac{1}{\eta_{t}}-\frac{1}{\eta_{t-1}})\Phi(w_t,w^*)
++\sum^T_{t=1}\frac{1}{2}\eta_t\|g_t\|^2\\
+\end{aligned}
+\]</span></p>
+<p>此处我们假设<span class="math inline">\(f_t\)</span>是G-Lipschitz的，则<span class="math inline">\(\|g_t\|^2\leq G^2\)</span>。假设<span class="math inline">\(\|w^*\|\leq R,\|w_t\|\leq R, \forall t\)</span>，则<span class="math inline">\(\frac{1}{2}\|w_t-w^*\|^2\leq2R^2\)</span>，所以上式有 <span class="math display">\[
+\begin{aligned}
+\sum^T_{t=1}f_t(w_t)-f_t(w^*)
+&amp;\leq\frac{2}{\eta_1}R^2-\frac{1}{\eta_T}\Phi(w_{T+1},w^*)
++2\sum^T_{t=2}(\frac{1}{\eta_{t}}-\frac{1}{\eta_{t-1}})R^2
++\sum^T_{t=1}\frac{1}{2}\eta_t\|g_t\|^2\\
+\end{aligned}
+\]</span> 其中<span class="math inline">\(\frac{1}{\eta_T}\Phi(w_{T+1},w^*)\geq0\)</span>，所以在计算上界的时候可以消去这一项，有 <span class="math display">\[
+\begin{aligned}
+\sum^T_{t=1}f_t(w_t)-f_t(w^*)
+&amp;\leq\frac{2}{\eta_1}R^2
++2\sum^T_{t=2}(\frac{1}{\eta_{t}}-\frac{1}{\eta_{t-1}})R^2
++\sum^T_{t=1}\frac{1}{2}\eta_tG^2\\
+&amp;=2R^2(\frac{1}{\eta_1}+\sum^T_{t=2}(\frac{1}{\eta_{t}}-\frac{1}{\eta_{t-1}}))
++\sum^T_{t=1}\frac{1}{2}\eta_tG^2\\
+&amp;=2R^2\frac{1}{\eta_T}+\frac{G^2}{2}\sum^T_{t=1}\frac{1}{2}\eta_t
+\end{aligned}
+\]</span> 令<span class="math inline">\(\eta_t=\eta\cdot\frac{1}{\sqrt{T}}\)</span>， <span class="math display">\[
+\begin{aligned}
+\sum^T_{t=1}f_t(w_t)-f_t(w^*)
+&amp;\leq2R^2\frac{1}{\eta_T}+\frac{G^2}{2}\sum^T_{t=1}\frac{1}{2}\eta_t\\
+&amp;=\frac{2R^2\sqrt{T}}{\eta}+\frac{G^2}{2}T\eta\frac{1}{\sqrt{T}}\\
+\end{aligned}
+\]</span> 令<span class="math inline">\(\eta=\frac{2R}{G}\)</span>， <span class="math display">\[
+\begin{aligned}
+\sum^T_{t=1}f_t(w_t)-f_t(w^*)
+&amp;\leq\frac{2R^2\sqrt{T}}{\eta}+\frac{G^2}{2}T\eta\frac{1}{\sqrt{T}}\\
+&amp;=2RG\sqrt{T}
+\end{aligned}
+\]</span> 当<span class="math inline">\(T\)</span>不可知的时候 <span class="math display">\[
+\begin{aligned}
+\text{Regret}&amp;\leq\frac{2R^2}{\eta_T}+\frac{G^2}{2}\sum^T_{t=1}\eta_t\\
+&amp;=\frac{2R^2\sqrt{T}}{\eta}+\frac{G^2}{2}\eta\sum^T_{t=1}\frac{1}{\sqrt{t}}\\
+&amp;\leq\frac{2R^2\sqrt{T}}{\eta}+\frac{G^2}{2}\eta\sqrt{T}
+\end{aligned}
+\]</span></p>
+<p>令<span class="math inline">\(\eta=\frac{\sqrt{2}R}{G}\)</span>， <span class="math display">\[
+\begin{aligned}
+\text{Regret}
+&amp;\leq\frac{2R^2\sqrt{T}}{\eta}+\frac{G^2}{2}\eta\sqrt{T}\\
+&amp;=2\sqrt{2}RG\sqrt{T}
+\end{aligned}
+\]</span></p>
 
       
     </div>
@@ -439,7 +516,9 @@
           
             <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
           
-            <a href="/tags/Reinforcement-Learning/" rel="tag"># Reinforcement Learning</a>
+            <a href="/tags/Convex-Optimization/" rel="tag"># Convex Optimization</a>
+          
+            <a href="/tags/Online-Learning/" rel="tag"># Online Learning</a>
           
         </div>
       
@@ -452,8 +531,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/08/first-order-and-second-order-metrics/" rel="next" title="first order and second order metrics">
-                <i class="fa fa-chevron-left"></i> first order and second order metrics
+              <a href="/2018/06/14/Online-Learning-4/" rel="next" title="Online Learning 4">
+                <i class="fa fa-chevron-left"></i> Online Learning 4
               </a>
             
           </div>
@@ -461,6 +540,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/13/python-class-note/" rel="prev" title="python类笔记">
+                python类笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -514,8 +597,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -530,7 +622,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -584,6 +676,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#online-subgradient-descent"><span class="nav-number">1.</span> <span class="nav-text">Online Subgradient Descent</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -605,7 +713,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Machine Learning,Reinforcement Learning," />
+  <meta name="keywords" content="Python," />
 
 
 
@@ -94,26 +94,18 @@
 
 
 
-<meta name="description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="keywords" content="Machine Learning,Reinforcement Learning">
+<meta name="description" content="spmatrix 基本类。 csc_matrix 最为常用的稀疏矩阵格式之一，对列运算支持较高，应该是按列存储稀疏结构，CSC格式优点：  高效支持运算符，CSC+CSC,CSC*CSC等等 高效列分割 快速矩阵向量乘积（可能不如CSR和BSR）  缺点：  相比如CSR行切割较慢 转换为其他稀疏结构较慢，如LIL和DOK  csr_matrix 最为常用的稀疏矩阵格式之一，对行运算支持较高，应该">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AlphaGo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;index.html">
+<meta property="og:title" content="Sparse Matrix in Scipy">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;09&#x2F;30&#x2F;Sparse-Matrix-in-Scipy&#x2F;index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
-<meta property="og:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
+<meta property="og:description" content="spmatrix 基本类。 csc_matrix 最为常用的稀疏矩阵格式之一，对列运算支持较高，应该是按列存储稀疏结构，CSC格式优点：  高效支持运算符，CSC+CSC,CSC*CSC等等 高效列分割 快速矩阵向量乘积（可能不如CSR和BSR）  缺点：  相比如CSR行切割较慢 转换为其他稀疏结构较慢，如LIL和DOK  csr_matrix 最为常用的稀疏矩阵格式之一，对行运算支持较高，应该">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211025443.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211034236.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211041175.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211048193.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211055713.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211103102.png">
-<meta property="og:updated_time" content="2020-05-15T13:19:40.648Z">
+<meta property="og:updated_time" content="2017-09-30T13:53:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AlphaGo">
-<meta name="twitter:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
+<meta name="twitter:title" content="Sparse Matrix in Scipy">
+<meta name="twitter:description" content="spmatrix 基本类。 csc_matrix 最为常用的稀疏矩阵格式之一，对列运算支持较高，应该是按列存储稀疏结构，CSC格式优点：  高效支持运算符，CSC+CSC,CSC*CSC等等 高效列分割 快速矩阵向量乘积（可能不如CSR和BSR）  缺点：  相比如CSR行切割较慢 转换为其他稀疏结构较慢，如LIL和DOK  csr_matrix 最为常用的稀疏矩阵格式之一，对行运算支持较高，应该">
 
 
 
@@ -142,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/15/AlphaGo/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/30/Sparse-Matrix-in-Scipy/"/>
 
 
 
 
 
-  <title>AlphaGo | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Sparse Matrix in Scipy | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -329,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/AlphaGo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/Sparse-Matrix-in-Scipy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YuyangZhangFTD">
@@ -346,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AlphaGo</h1>
+          <h1 class="post-title" itemprop="name headline">Sparse Matrix in Scipy</h1>
         
 
         <div class="post-meta">
@@ -358,8 +350,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-15T21:06:14+08:00">
-                2020-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T21:49:33+08:00">
+                2017-09-30
               </time>
             
 
@@ -381,8 +373,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PaperNote/" itemprop="url" rel="index">
-                    <span itemprop="name">PaperNote</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -418,8 +410,61 @@
       
 
       
-        <p>最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。</p>
-<p><img src="image-20200515210947582.png" alt="image-20200515210947582"> <img src="image-20200515211025443.png" alt="image-20200515211025443"> <img src="image-20200515211034236.png" alt="image-20200515211034236"> <img src="image-20200515211041175.png" alt="image-20200515211041175"> <img src="image-20200515211048193.png" alt="image-20200515211048193"> <img src="image-20200515211055713.png" alt="image-20200515211055713"> <img src="image-20200515211103102.png" alt="image-20200515211103102"></p>
+        <h2 id="spmatrix"><code>spmatrix</code></h2>
+<p>基本类。</p>
+<h2 id="csc_matrix"><code>csc_matrix</code></h2>
+<p>最为常用的稀疏矩阵格式之一，对列运算支持较高，应该是按列存储稀疏结构，CSC格式优点：</p>
+<ul>
+<li>高效支持运算符，CSC+CSC,CSC*CSC等等</li>
+<li>高效列分割</li>
+<li>快速矩阵向量乘积（可能不如CSR和BSR）</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>相比如CSR行切割较慢</li>
+<li>转换为其他稀疏结构较慢，如LIL和DOK</li>
+</ul>
+<h2 id="csr_matrix"><code>csr_matrix</code></h2>
+<p>最为常用的稀疏矩阵格式之一，对行运算支持较高，应该是按行存储稀疏结构，CSR格式优点：</p>
+<ul>
+<li>高效支持运算符，CSR+CSR,CSR*CSR等等</li>
+<li>高效行分割</li>
+<li>快速矩阵向量乘积</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>相比如CSC列切割较慢</li>
+<li>转换为其他稀疏结构较慢，如LIL和DOK</li>
+</ul>
+<h2 id="dok_matrix"><code>dok_matrix</code></h2>
+<p>采用字典的键值对存储的矩阵格式，支持常规运算，并且有O(1)的查找速度，不能复制，可以快速转成coo_matrix格式</p>
+<h2 id="coo_matrix"><code>coo_matrix</code></h2>
+<p>采用坐标记录的，形成<code>(i,j,v)</code> 的三元组，优点为：</p>
+<ul>
+<li>转换其他系数格式十分迅速</li>
+<li>允许复制</li>
+<li>转化为CSR/CSC格式很快</li>
+</ul>
+<p>缺点</p>
+<ul>
+<li>不直接支持运算和切片</li>
+</ul>
+<h2 id="bsr_matrix"><code>bsr_matrix</code></h2>
+<p>块稀疏矩阵格式，分成(R,C)的矩阵块来存储。</p>
+<h2 id="lil_matrix"><code>lil_matrix</code></h2>
+<p>行连接列表的系数矩阵格式，适用于大小增长的稀疏矩阵，优点：</p>
+<ul>
+<li>支持切片</li>
+<li>高效转换成其他稀疏矩阵格式</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>运算较慢</li>
+<li>列切片较慢</li>
+<li>乘积较慢</li>
+</ul>
+<h2 id="dia_matrix"><code>dia_matrix</code></h2>
+<p>稀疏对角矩阵存储，支持运算</p>
 
       
     </div>
@@ -437,9 +482,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
-          
-            <a href="/tags/Reinforcement-Learning/" rel="tag"># Reinforcement Learning</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
         </div>
       
@@ -452,8 +495,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/08/first-order-and-second-order-metrics/" rel="next" title="first order and second order metrics">
-                <i class="fa fa-chevron-left"></i> first order and second order metrics
+              <a href="/2017/09/23/A-Boosting-Algorithm-for-Item-Recommendation-with-Implicit-Feedback/" rel="next" title="A Boosting Algorithm for Item Recommendation with Implicit Feedback">
+                <i class="fa fa-chevron-left"></i> A Boosting Algorithm for Item Recommendation with Implicit Feedback
               </a>
             
           </div>
@@ -461,6 +504,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/02/HoORaYs-High-order-Optimization-of-Rating-Distance-for/" rel="prev" title="HoORaYs- High-order Optimization of Rating Distance for Recommender System">
+                HoORaYs- High-order Optimization of Rating Distance for Recommender System <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -514,8 +561,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -530,7 +586,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -584,6 +640,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#spmatrix"><span class="nav-number">1.</span> <span class="nav-text">spmatrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#csc_matrix"><span class="nav-number">2.</span> <span class="nav-text">csc_matrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#csr_matrix"><span class="nav-number">3.</span> <span class="nav-text">csr_matrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dok_matrix"><span class="nav-number">4.</span> <span class="nav-text">dok_matrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#coo_matrix"><span class="nav-number">5.</span> <span class="nav-text">coo_matrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bsr_matrix"><span class="nav-number">6.</span> <span class="nav-text">bsr_matrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lil_matrix"><span class="nav-number">7.</span> <span class="nav-text">lil_matrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dia_matrix"><span class="nav-number">8.</span> <span class="nav-text">dia_matrix</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -605,7 +677,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

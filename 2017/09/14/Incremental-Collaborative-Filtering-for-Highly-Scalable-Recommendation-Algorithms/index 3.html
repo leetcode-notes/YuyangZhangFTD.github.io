@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Machine Learning,Reinforcement Learning," />
+  <meta name="keywords" content="Machine Learning,Recommendation System," />
 
 
 
@@ -94,26 +94,21 @@
 
 
 
-<meta name="description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="keywords" content="Machine Learning,Reinforcement Learning">
+<meta name="description" content="因为最近在公司搞一个实时性要求比较高的推荐，所以最近会看一些新闻推荐、实时推荐相关的论文，今天这篇是一篇比较老的增量学习+协同过滤的论文，想法很简单，就是在计算相似度时分类讨论，不同情况选择不同的增量方式，尽最大的可能性减少计算量。 传统的相似度计算方式为 \[ \text{sim}(u_x,u_y)&#x3D;\frac {\sum^n_{h&#x3D;1}(r_{u_x,i_h}-\overline{r_{u_x">
+<meta name="keywords" content="Machine Learning,Recommendation System">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AlphaGo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;index.html">
+<meta property="og:title" content="Incremental Collaborative Filtering for Highly-Scalable Recommendation Algorithms">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;09&#x2F;14&#x2F;Incremental-Collaborative-Filtering-for-Highly-Scalable-Recommendation-Algorithms&#x2F;index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
-<meta property="og:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
+<meta property="og:description" content="因为最近在公司搞一个实时性要求比较高的推荐，所以最近会看一些新闻推荐、实时推荐相关的论文，今天这篇是一篇比较老的增量学习+协同过滤的论文，想法很简单，就是在计算相似度时分类讨论，不同情况选择不同的增量方式，尽最大的可能性减少计算量。 传统的相似度计算方式为 \[ \text{sim}(u_x,u_y)&#x3D;\frac {\sum^n_{h&#x3D;1}(r_{u_x,i_h}-\overline{r_{u_x">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211025443.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211034236.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211041175.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211048193.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211055713.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211103102.png">
-<meta property="og:updated_time" content="2020-05-15T13:19:40.648Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;09&#x2F;14&#x2F;Incremental-Collaborative-Filtering-for-Highly-Scalable-Recommendation-Algorithms&#x2F;1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;09&#x2F;14&#x2F;Incremental-Collaborative-Filtering-for-Highly-Scalable-Recommendation-Algorithms&#x2F;2.png">
+<meta property="og:updated_time" content="2017-09-14T14:45:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AlphaGo">
-<meta name="twitter:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
+<meta name="twitter:title" content="Incremental Collaborative Filtering for Highly-Scalable Recommendation Algorithms">
+<meta name="twitter:description" content="因为最近在公司搞一个实时性要求比较高的推荐，所以最近会看一些新闻推荐、实时推荐相关的论文，今天这篇是一篇比较老的增量学习+协同过滤的论文，想法很简单，就是在计算相似度时分类讨论，不同情况选择不同的增量方式，尽最大的可能性减少计算量。 传统的相似度计算方式为 \[ \text{sim}(u_x,u_y)&#x3D;\frac {\sum^n_{h&#x3D;1}(r_{u_x,i_h}-\overline{r_{u_x">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;09&#x2F;14&#x2F;Incremental-Collaborative-Filtering-for-Highly-Scalable-Recommendation-Algorithms&#x2F;1.png">
 
 
 
@@ -142,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/15/AlphaGo/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/14/Incremental-Collaborative-Filtering-for-Highly-Scalable-Recommendation-Algorithms/"/>
 
 
 
 
 
-  <title>AlphaGo | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Incremental Collaborative Filtering for Highly-Scalable Recommendation Algorithms | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -329,7 +324,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/AlphaGo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/14/Incremental-Collaborative-Filtering-for-Highly-Scalable-Recommendation-Algorithms/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YuyangZhangFTD">
@@ -346,7 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AlphaGo</h1>
+          <h1 class="post-title" itemprop="name headline">Incremental Collaborative Filtering for Highly-Scalable Recommendation Algorithms</h1>
         
 
         <div class="post-meta">
@@ -358,8 +353,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-15T21:06:14+08:00">
-                2020-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-14T22:29:07+08:00">
+                2017-09-14
               </time>
             
 
@@ -418,8 +413,27 @@
       
 
       
-        <p>最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。</p>
-<p><img src="image-20200515210947582.png" alt="image-20200515210947582"> <img src="image-20200515211025443.png" alt="image-20200515211025443"> <img src="image-20200515211034236.png" alt="image-20200515211034236"> <img src="image-20200515211041175.png" alt="image-20200515211041175"> <img src="image-20200515211048193.png" alt="image-20200515211048193"> <img src="image-20200515211055713.png" alt="image-20200515211055713"> <img src="image-20200515211103102.png" alt="image-20200515211103102"></p>
+        <p>因为最近在公司搞一个实时性要求比较高的推荐，所以最近会看一些新闻推荐、实时推荐相关的论文，今天这篇是一篇比较老的增量学习+协同过滤的论文，想法很简单，就是在计算相似度时分类讨论，不同情况选择不同的增量方式，尽最大的可能性减少计算量。</p>
+<p>传统的相似度计算方式为 <span class="math display">\[
+\text{sim}(u_x,u_y)=\frac
+{\sum^n_{h=1}(r_{u_x,i_h}-\overline{r_{u_x}})((r_{u_x,i_h}-\overline{r_{u_y}})}
+{\sqrt{\sum^{n&#39;}_{h=1}(r_{u_x,i_h}-\overline{r_{u_x}}\sum^{n&#39;}_{h=1}(r_{u_y,i_h}-\overline{r_{u_y}}))}}
+\]</span></p>
+<p><span class="math display">\[
+A=\frac{B}{\sqrt{C}\sqrt{D}}
+\]</span></p>
+<p>增量的计算方式为 <span class="math display">\[
+A=\frac{B&#39;}{\sqrt{C&#39;}\sqrt{D&#39;}}=\frac{B+e}{\sqrt{C+f}\sqrt{D+g}}
+\]</span> 然后作者就给出了不同情况下的更新方式</p>
+<figure>
+<img src="1.png" alt="1"><figcaption>1</figcaption>
+</figure>
+<p>以及经过简单的缓存与计算就可以快速迭代相似度</p>
+<figure>
+<img src="2.png" alt="2"><figcaption>2</figcaption>
+</figure>
+<p>论文最后作者对各种情况的复杂度进行了分析，并进行了实验。</p>
+<p>总的来说是一篇很基础的论文，我查了一下，2005年发表，引用100+，应该在当时也是种很实用的方法吧。</p>
 
       
     </div>
@@ -439,7 +453,7 @@
           
             <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
           
-            <a href="/tags/Reinforcement-Learning/" rel="tag"># Reinforcement Learning</a>
+            <a href="/tags/Recommendation-System/" rel="tag"># Recommendation System</a>
           
         </div>
       
@@ -452,8 +466,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/08/first-order-and-second-order-metrics/" rel="next" title="first order and second order metrics">
-                <i class="fa fa-chevron-left"></i> first order and second order metrics
+              <a href="/2017/09/12/Exploiting-Music-Play-Sequence-for-Music-Recommendation/" rel="next" title="Exploiting Music Play Sequence for Music Recommendation">
+                <i class="fa fa-chevron-left"></i> Exploiting Music Play Sequence for Music Recommendation
               </a>
             
           </div>
@@ -461,6 +475,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/15/Python-dict-code/" rel="prev" title="python的dict源码解读">
+                python的dict源码解读 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -530,7 +548,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -605,7 +623,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Machine Learning,Reinforcement Learning," />
+  <meta name="keywords" content="Machine Learning,Ensemble Learing," />
 
 
 
@@ -94,26 +94,21 @@
 
 
 
-<meta name="description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="keywords" content="Machine Learning,Reinforcement Learning">
+<meta name="description" content="今天看nips2017的预选论文，翻到了4篇推荐相关的，其中3篇都是做cold start问题，看来这个问题最近很火热嘛，包括了RL和meta learning，看来有必要跟进一波潮流。再看其他的论文的时候，还翻到了微软的lightGBM，果断先捞出来看一下。 之前网上流传了许多关于lightGBM相关的内容，但是看到论文才是最实在的，文中提到相比于其它关于GBDT的实现，对于计算信息增益来划分节">
+<meta name="keywords" content="Machine Learning,Ensemble Learing">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AlphaGo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;index.html">
+<meta property="og:title" content="lightGBM">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;11&#x2F;18&#x2F;lightGBM&#x2F;index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
-<meta property="og:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
+<meta property="og:description" content="今天看nips2017的预选论文，翻到了4篇推荐相关的，其中3篇都是做cold start问题，看来这个问题最近很火热嘛，包括了RL和meta learning，看来有必要跟进一波潮流。再看其他的论文的时候，还翻到了微软的lightGBM，果断先捞出来看一下。 之前网上流传了许多关于lightGBM相关的内容，但是看到论文才是最实在的，文中提到相比于其它关于GBDT的实现，对于计算信息增益来划分节">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211025443.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211034236.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211041175.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211048193.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211055713.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211103102.png">
-<meta property="og:updated_time" content="2020-05-15T13:19:40.648Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;11&#x2F;18&#x2F;lightGBM&#x2F;1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;11&#x2F;18&#x2F;lightGBM&#x2F;2.png">
+<meta property="og:updated_time" content="2017-12-24T12:55:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AlphaGo">
-<meta name="twitter:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
+<meta name="twitter:title" content="lightGBM">
+<meta name="twitter:description" content="今天看nips2017的预选论文，翻到了4篇推荐相关的，其中3篇都是做cold start问题，看来这个问题最近很火热嘛，包括了RL和meta learning，看来有必要跟进一波潮流。再看其他的论文的时候，还翻到了微软的lightGBM，果断先捞出来看一下。 之前网上流传了许多关于lightGBM相关的内容，但是看到论文才是最实在的，文中提到相比于其它关于GBDT的实现，对于计算信息增益来划分节">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;11&#x2F;18&#x2F;lightGBM&#x2F;1.png">
 
 
 
@@ -142,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/15/AlphaGo/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/18/lightGBM/"/>
 
 
 
 
 
-  <title>AlphaGo | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>lightGBM | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -329,7 +324,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/AlphaGo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/18/lightGBM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YuyangZhangFTD">
@@ -346,7 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AlphaGo</h1>
+          <h1 class="post-title" itemprop="name headline">lightGBM</h1>
         
 
         <div class="post-meta">
@@ -358,8 +353,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-15T21:06:14+08:00">
-                2020-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-18T18:34:29+08:00">
+                2017-11-18
               </time>
             
 
@@ -418,8 +413,19 @@
       
 
       
-        <p>最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。</p>
-<p><img src="image-20200515210947582.png" alt="image-20200515210947582"> <img src="image-20200515211025443.png" alt="image-20200515211025443"> <img src="image-20200515211034236.png" alt="image-20200515211034236"> <img src="image-20200515211041175.png" alt="image-20200515211041175"> <img src="image-20200515211048193.png" alt="image-20200515211048193"> <img src="image-20200515211055713.png" alt="image-20200515211055713"> <img src="image-20200515211103102.png" alt="image-20200515211103102"></p>
+        <p>今天看nips2017的预选论文，翻到了4篇推荐相关的，其中3篇都是做cold start问题，看来这个问题最近很火热嘛，包括了RL和meta learning，看来有必要跟进一波潮流。再看其他的论文的时候，还翻到了微软的lightGBM，果断先捞出来看一下。</p>
+<p>之前网上流传了许多关于lightGBM相关的内容，但是看到论文才是最实在的，文中提到相比于其它关于GBDT的实现，对于计算信息增益来划分节点的做法都还是太耗时间了，基本上都是<span class="math inline">\(\#feature\times\#data\)</span> 的计算损耗，而基于柱状图（histograms-based）的方法则会相比更高效且节约内存，所以lightGBM也是从这个思路出发的。</p>
+<p>BTW，文中的review部分包括了很多已有的其它GBM实现方法的回顾，都cite的是很经典的文章，如果想深入了解的话可以按照文中的review来看。</p>
+<p>lightGBM主要从两方面来优化，feature数量和data数量，分别提出EFB（Exclusive Feature bundling）和GOSS（Gradient-based One-Side Sampling）进行分别的优化。</p>
+<p>在划分时，gradient大的样本（instance）往往会对信息增益有较大的贡献，所以，我们用采样的方法，减小那些数量较多但是gradient较少对节点划分增益不大的样本的影响，首先根据绝对误差排序，选择top <span class="math inline">\(a\%\)</span>的样本，然后从剩下的采样 <span class="math inline">\(b\%\)</span>，同时赋予不同的权重。后面作者做了理论分析，表示这么抽样不会改变训练数据分布，blabla（当然我是没看的）</p>
+<figure>
+<img src="1.png" alt="1"><figcaption>1</figcaption>
+</figure>
+<p>EFB则是解决特征的问题，训练数据往往会十分稀疏，如大量onehot产生的特征，而GBDT这样的算法，在面对节点划分时，不得不考虑所有特征，所以我们用bundling的方式来减少不必要的特征。因为是从histograms-based的想法出发，EFB实际上也是再用划分“桶”（如LSH）这样的方法，减少特征量。具体做法是利用图的着色问题，用特征构造图的矩阵，然后根据着色来划分，如果两个特征不是mutually exclusive，则它们之间存在边。（具体操作此处没看太明白，着色问题我也没看过，留个坑）对于一个bundling的feature，则改变feature的取值区间来merge不同的feature。</p>
+<figure>
+<img src="2.png" alt="2"><figcaption>2</figcaption>
+</figure>
+<p>后面是文章的实验部分，效果还是很好的，看微软的论文，就给我一种哪有问题我就干掉哪的感觉，而且是工程化很强的东西，包括之前的lightLDA，现在lightGBM，都是非常厉害。</p>
 
       
     </div>
@@ -439,7 +445,7 @@
           
             <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
           
-            <a href="/tags/Reinforcement-Learning/" rel="tag"># Reinforcement Learning</a>
+            <a href="/tags/Ensemble-Learing/" rel="tag"># Ensemble Learing</a>
           
         </div>
       
@@ -452,8 +458,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/08/first-order-and-second-order-metrics/" rel="next" title="first order and second order metrics">
-                <i class="fa fa-chevron-left"></i> first order and second order metrics
+              <a href="/2017/11/01/BPR-Bayesian-personalized-ranking-from-implicit-feedback/" rel="next" title="BPR- Bayesian personalized ranking from implicit feedback">
+                <i class="fa fa-chevron-left"></i> BPR- Bayesian personalized ranking from implicit feedback
               </a>
             
           </div>
@@ -461,6 +467,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/26/Dropoutnet-Addressing-Cold-Start-in-Recommnedation-Systems/" rel="prev" title=" Dropoutnet- Addressing Cold-Start in Recommnedation Systems">
+                 Dropoutnet- Addressing Cold-Start in Recommnedation Systems <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -530,7 +540,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -605,7 +615,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

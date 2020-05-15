@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Machine Learning,Reinforcement Learning," />
+  <meta name="keywords" content="Machine Learning,Recommendation System," />
 
 
 
@@ -94,26 +94,18 @@
 
 
 
-<meta name="description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="keywords" content="Machine Learning,Reinforcement Learning">
+<meta name="description" content="今天有点累了，记一篇之前看过的论文吧。Deep Content-based Music Recommendation这篇文章是发在13年的nips上，当年挺经典的一篇文章，后来很多music recommendation都是顺着他们的思路来的。 文中分享了一个在推荐中很重要的点，semantic gap，就是说你能抓住拿来用的特征到刻画用户的偏好之间，会存在一个gap，而这个gap则是极难跨越的。">
+<meta name="keywords" content="Machine Learning,Recommendation System">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AlphaGo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;index.html">
+<meta property="og:title" content="Deep Content-based Music Recommendation">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;10&#x2F;16&#x2F;Deep-Content-based-Music-Recommendation&#x2F;index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
-<meta property="og:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
+<meta property="og:description" content="今天有点累了，记一篇之前看过的论文吧。Deep Content-based Music Recommendation这篇文章是发在13年的nips上，当年挺经典的一篇文章，后来很多music recommendation都是顺着他们的思路来的。 文中分享了一个在推荐中很重要的点，semantic gap，就是说你能抓住拿来用的特征到刻画用户的偏好之间，会存在一个gap，而这个gap则是极难跨越的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211025443.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211034236.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211041175.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211048193.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211055713.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211103102.png">
-<meta property="og:updated_time" content="2020-05-15T13:19:40.648Z">
+<meta property="og:updated_time" content="2017-10-16T15:57:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AlphaGo">
-<meta name="twitter:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
+<meta name="twitter:title" content="Deep Content-based Music Recommendation">
+<meta name="twitter:description" content="今天有点累了，记一篇之前看过的论文吧。Deep Content-based Music Recommendation这篇文章是发在13年的nips上，当年挺经典的一篇文章，后来很多music recommendation都是顺着他们的思路来的。 文中分享了一个在推荐中很重要的点，semantic gap，就是说你能抓住拿来用的特征到刻画用户的偏好之间，会存在一个gap，而这个gap则是极难跨越的。">
 
 
 
@@ -142,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/15/AlphaGo/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/16/Deep-Content-based-Music-Recommendation/"/>
 
 
 
 
 
-  <title>AlphaGo | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Deep Content-based Music Recommendation | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -329,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/AlphaGo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/16/Deep-Content-based-Music-Recommendation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YuyangZhangFTD">
@@ -346,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AlphaGo</h1>
+          <h1 class="post-title" itemprop="name headline">Deep Content-based Music Recommendation</h1>
         
 
         <div class="post-meta">
@@ -358,8 +350,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-15T21:06:14+08:00">
-                2020-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-16T23:41:55+08:00">
+                2017-10-16
               </time>
             
 
@@ -418,8 +410,10 @@
       
 
       
-        <p>最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。</p>
-<p><img src="image-20200515210947582.png" alt="image-20200515210947582"> <img src="image-20200515211025443.png" alt="image-20200515211025443"> <img src="image-20200515211034236.png" alt="image-20200515211034236"> <img src="image-20200515211041175.png" alt="image-20200515211041175"> <img src="image-20200515211048193.png" alt="image-20200515211048193"> <img src="image-20200515211055713.png" alt="image-20200515211055713"> <img src="image-20200515211103102.png" alt="image-20200515211103102"></p>
+        <p>今天有点累了，记一篇之前看过的论文吧。Deep Content-based Music Recommendation这篇文章是发在13年的nips上，当年挺经典的一篇文章，后来很多music recommendation都是顺着他们的思路来的。</p>
+<p>文中分享了一个在推荐中很重要的点，semantic gap，就是说你能抓住拿来用的特征到刻画用户的偏好之间，会存在一个gap，而这个gap则是极难跨越的。在音乐推荐上，这个gap就可以表现为一首歌能够影响用户偏好的特性与它的声音信号中，大致相近的音律却能给用户带来不一样的感受，而我们一般说的感情、韵律、主题都需要非常复杂的模型才能刻画，甚至有很多事无法刻画的。（就像小苹果能火起来，why？？）</p>
+<p>文章中提到了几个常用音乐推荐数据集：million song dataset、last.fm等等，做这方面的同学可以关注一下。BTW，明年RecSys的比赛题目与music有关，有心的小伙伴早作准备。</p>
+<p>文中作者采用了多种方法，包括加权矩阵分解、提取歌词特征和对音律图像做CNN分类，然后做了实验对比，这里就不具体说了，感觉模型部分不是特别出彩，当也能算上面面俱到了，本文重点在于介绍music recommendation的问题，以及总结了很多前任的工作，为后续大家用dl做music的推荐提供了思路。</p>
 
       
     </div>
@@ -439,7 +433,7 @@
           
             <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
           
-            <a href="/tags/Reinforcement-Learning/" rel="tag"># Reinforcement Learning</a>
+            <a href="/tags/Recommendation-System/" rel="tag"># Recommendation System</a>
           
         </div>
       
@@ -452,8 +446,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/08/first-order-and-second-order-metrics/" rel="next" title="first order and second order metrics">
-                <i class="fa fa-chevron-left"></i> first order and second order metrics
+              <a href="/2017/10/15/Deep-Crossing-Web-Scale-Modeling-without-Manually-Crafted-Combinatorial-Features/" rel="next" title="Deep Crossing- Web-Scale Modeling without Manually Crafted Combinatorial Features">
+                <i class="fa fa-chevron-left"></i> Deep Crossing- Web-Scale Modeling without Manually Crafted Combinatorial Features
               </a>
             
           </div>
@@ -461,6 +455,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/17/A-survey-of-FM/" rel="prev" title="A survey of FM">
+                A survey of FM <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -530,7 +528,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -605,7 +603,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

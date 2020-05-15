@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Machine Learning,Reinforcement Learning," />
+  <meta name="keywords" content="Machine Learning,Convex Optimization,Online Learning," />
 
 
 
@@ -94,26 +94,20 @@
 
 
 
-<meta name="description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="keywords" content="Machine Learning,Reinforcement Learning">
+<meta name="description" content="Follow the Leader Against Quadratics 某些情况下，FTL是非常好的算法，比如一维的线性回归的情况，很容易推广到高维  每一轮选择\(w_t\in[-1,1]\) 对手选择\(y_t\in[-1,+1]\) 计算\(f_t(w)&#x3D;\frac{1}{2}(w-y_t)^2\)  使用FTL算法： $$ \begin{aligned} w_{t+1}&amp;amp;&#x3D;f_{">
+<meta name="keywords" content="Machine Learning,Convex Optimization,Online Learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AlphaGo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;index.html">
+<meta property="og:title" content="Online Learning 4">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;06&#x2F;14&#x2F;Online-Learning-4&#x2F;index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
-<meta property="og:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
+<meta property="og:description" content="Follow the Leader Against Quadratics 某些情况下，FTL是非常好的算法，比如一维的线性回归的情况，很容易推广到高维  每一轮选择\(w_t\in[-1,1]\) 对手选择\(y_t\in[-1,+1]\) 计算\(f_t(w)&#x3D;\frac{1}{2}(w-y_t)^2\)  使用FTL算法： $$ \begin{aligned} w_{t+1}&amp;amp;&#x3D;f_{">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211025443.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211034236.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211041175.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211048193.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211055713.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515211103102.png">
-<meta property="og:updated_time" content="2020-05-15T13:19:40.648Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;06&#x2F;14&#x2F;Online-Learning-4&#x2F;1.png">
+<meta property="og:updated_time" content="2018-06-14T09:51:49.628Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AlphaGo">
-<meta name="twitter:description" content="最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;15&#x2F;AlphaGo&#x2F;image-20200515210947582.png">
+<meta name="twitter:title" content="Online Learning 4">
+<meta name="twitter:description" content="Follow the Leader Against Quadratics 某些情况下，FTL是非常好的算法，比如一维的线性回归的情况，很容易推广到高维  每一轮选择\(w_t\in[-1,1]\) 对手选择\(y_t\in[-1,+1]\) 计算\(f_t(w)&#x3D;\frac{1}{2}(w-y_t)^2\)  使用FTL算法： $$ \begin{aligned} w_{t+1}&amp;amp;&#x3D;f_{">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;06&#x2F;14&#x2F;Online-Learning-4&#x2F;1.png">
 
 
 
@@ -142,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/15/AlphaGo/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/14/Online-Learning-4/"/>
 
 
 
 
 
-  <title>AlphaGo | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Online Learning 4 | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -329,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/AlphaGo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/14/Online-Learning-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YuyangZhangFTD">
@@ -346,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AlphaGo</h1>
+          <h1 class="post-title" itemprop="name headline">Online Learning 4</h1>
         
 
         <div class="post-meta">
@@ -358,8 +352,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-15T21:06:14+08:00">
-                2020-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T16:50:46+08:00">
+                2018-06-14
               </time>
             
 
@@ -368,28 +362,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PaperNote/" itemprop="url" rel="index">
-                    <span itemprop="name">PaperNote</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -418,8 +390,80 @@
       
 
       
-        <p>最近也是工作太忙，工作方向上有强化学习相关的探索，就以alpha go做开篇了。</p>
-<p><img src="image-20200515210947582.png" alt="image-20200515210947582"> <img src="image-20200515211025443.png" alt="image-20200515211025443"> <img src="image-20200515211034236.png" alt="image-20200515211034236"> <img src="image-20200515211041175.png" alt="image-20200515211041175"> <img src="image-20200515211048193.png" alt="image-20200515211048193"> <img src="image-20200515211055713.png" alt="image-20200515211055713"> <img src="image-20200515211103102.png" alt="image-20200515211103102"></p>
+        <h2 id="follow-the-leader-against-quadratics">Follow the Leader Against Quadratics</h2>
+<p>某些情况下，FTL是非常好的算法，比如一维的线性回归的情况，很容易推广到高维</p>
+<ul>
+<li>每一轮选择<span class="math inline">\(w_t\in[-1,1]\)</span></li>
+<li>对手选择<span class="math inline">\(y_t\in[-1,+1]\)</span></li>
+<li>计算<span class="math inline">\(f_t(w)=\frac{1}{2}(w-y_t)^2\)</span></li>
+</ul>
+<p>使用FTL算法： $$ \begin{aligned} w_{t+1}&amp;=f_{1:t}(w)\ f_t(w)&amp;=(w-y_t)<sup>2=w</sup>2-wy_t+y_t^2\</p>
+<p>\end{aligned} <span class="math display">\[
+由于$y_t^2$是常数，所以我们令
+\]</span> \begin{aligned} f_t(w)&amp;=w<sup>2-wy_t\ f_{1:t}(w)&amp;=w</sup>2-y_{1:t}w \end{aligned} <span class="math display">\[
+我们的目标就是求
+\]</span> w_{t+1}=f_{1:t}(w) <span class="math display">\[
+对$w$求导并令导数为$0$，我们有
+\]</span> w_{t+1}= $$</p>
+<blockquote>
+<p>定理1：如果<span class="math inline">\(f\)</span>是一个凸函数，那么<span class="math inline">\(\forall w,w_t\in\mathcal{W}\)</span>，有 <span class="math display">\[
+\begin{aligned}
+f(w)&amp; \geq f(w_t)+\triangledown f(w_t)(w-w_t) \\
+\end{aligned}
+\]</span></p>
+</blockquote>
+<p>所以我们有 <span class="math display">\[
+\begin{aligned}
+f(w_t) - f(w_{t+1}) &amp; \leq \triangledown f(w_t)(w_t-w_{t+1}) \\
+&amp;\leq \|\triangledown f(w_t)\|\|w_t-w_{t+1}\|
+\end{aligned}
+\]</span> 我们可以发现上述不等式右边，第一项小于梯度的界，第二项小于两次迭代间距离的界。现在我们可以计算二次情况下的悔恨值的界 <span class="math display">\[
+\begin{aligned}
+w_t-w_{t+1}
+&amp;= \frac{y_{1:t-1}}{t-1}-(\frac{y_{1:t-1}}{t-1}\cdot\frac{t-1}{t}+\frac{y_t}{t})\\
+&amp;=\frac{y_{1:t-1}}{t(t-1)}-\frac{y_t}{t}\\
+&amp;\leq \frac{t-1}{t(t-1)}+\frac{1}{t}\\
+&amp;\leq \frac{2}{t}
+\end{aligned}
+\]</span> 其中第三步是因为<span class="math inline">\(y_t\in[-1,+1]\)</span>，所以可以得到悔恨的界为 <span class="math display">\[
+\text{Regret}
+\leq\sum_t f_t(w_t)-f_t(w_{t+1})
+\leq\sum_t2(\frac{2}{t})
+\leq4\sum_t\frac{1}{t}
+\leq 4(\log(T)+1)
+\]</span></p>
+<h2 id="playing-against-linear-functions">Playing Against Linear Functions</h2>
+<h3 id="linearizing-convex-functions">Linearizing Convex Functions</h3>
+<p>线性化一个凸函数会让在线学习变得更难，对于任意<span class="math inline">\(w^*\)</span>，<span class="math inline">\(g_t\in\part f_t(w_t)\)</span>， <span class="math display">\[
+\begin{aligned}
+w^* &amp;= \underset{w\in\mathcal{W}}{\arg\min}f_{1:t}(w^*) \\
+\text{Regret}(T)
+&amp;= f_{1:t}(w_t)-f_{1:t}(w^*)\\
+&amp;=\sum^T_{t=1}[f_t(w_t)-f_t(w^*)]\\
+&amp;\leq \sum^T_{t=1}[w_t\cdot g_t-w^*\cdot g_t]
+\end{aligned}
+\]</span> <img src="1.png" alt="Linearization"></p>
+<p>正如上图所示，用线性近似的话，其他选择的损失是被降低的，因此会导致悔恨的增加。因此，线性情况下的悔恨（linearized regret）是凸函数情况下的悔恨（convex regret）的上界。使用这个性质，通过变换凸在线学习问题到线性在线学习问题，我们可以得到有界的悔恨值。线性情况下，我们最优的情况是<span class="math inline">\(\sqrt{T}\)</span>的悔恨，在有严格凸的假设下，可以做得更好。</p>
+<blockquote>
+<p>定义1：一个函数<span class="math inline">\(f:\mathbb{R}^n\rightarrow\mathbb{R}\)</span>，如果<span class="math inline">\(\forall w, w&#39;\in\mathbb{R}^n\)</span>，有 <span class="math display">\[
+\|f(w)-f(w&#39;)\|\leq G\|w-w&#39;\|
+\]</span> 那么这个函数<span class="math inline">\(f\)</span>是G-Lipschitz的。</p>
+</blockquote>
+<blockquote>
+<p>定理2：对于一个凸函数<span class="math inline">\(f:\mathbb{R}^n\rightarrow\mathbb{R}\)</span>，如果是G-Lipschitz，当且仅当对于<span class="math inline">\(\forall w\in\mathbb{R}^n\)</span>，<span class="math inline">\(\forall g\in\part f_t(w_t)\)</span>，有<span class="math inline">\(|g|\leq G\)</span>。</p>
+</blockquote>
+<p>证明：</p>
+<p>必要性，选择<span class="math inline">\(w\in\mathcal{W}\)</span>，<span class="math inline">\(g\in\part f_t(w_t)\)</span>， <span class="math display">\[
+G\|w-w-\frac{g}{\|g\|}\|\geq f(w+\frac{g}{\|g\|})-f(w)
+\]</span> 根据次梯度的定义 <span class="math display">\[
+f(w+\frac{g}{\|g\|})-f(w)
+\geq (w+\frac{g}{\|g\|}-w)g
+=\frac{g\cdot g}{\|g\|}
+=\|g\|
+\]</span> 充分性，选择<span class="math inline">\(w&#39;\in\mathcal{W}\)</span>，<span class="math inline">\(g\in\part f_t(w_t)\)</span> <span class="math display">\[
+f(w&#39;)-f(w)\leq(w&#39;-w)\cdot g\leq\|w&#39;-w\|\cdot\|g\|\leq\|w&#39;-w\|G
+\]</span> 证毕。<span class="math inline">\(\Box\)</span></p>
+<p>所以当我们用一个凸的Lipschitz函数时候，FTRL可以达到<span class="math inline">\(\mathcal{O}(\sqrt{T})\)</span>的悔恨值。</p>
 
       
     </div>
@@ -439,7 +483,9 @@
           
             <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
           
-            <a href="/tags/Reinforcement-Learning/" rel="tag"># Reinforcement Learning</a>
+            <a href="/tags/Convex-Optimization/" rel="tag"># Convex Optimization</a>
+          
+            <a href="/tags/Online-Learning/" rel="tag"># Online Learning</a>
           
         </div>
       
@@ -452,8 +498,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/08/first-order-and-second-order-metrics/" rel="next" title="first order and second order metrics">
-                <i class="fa fa-chevron-left"></i> first order and second order metrics
+              <a href="/2018/06/14/Online-Learning-3/" rel="next" title="Online Learning 3">
+                <i class="fa fa-chevron-left"></i> Online Learning 3
               </a>
             
           </div>
@@ -461,6 +507,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/15/Online-Learning-5/" rel="prev" title="Online Learning 5">
+                Online Learning 5 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -514,8 +564,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -530,7 +589,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -584,6 +643,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#follow-the-leader-against-quadratics"><span class="nav-number">1.</span> <span class="nav-text">Follow the Leader Against Quadratics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#playing-against-linear-functions"><span class="nav-number">2.</span> <span class="nav-text">Playing Against Linear Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#linearizing-convex-functions"><span class="nav-number">2.1.</span> <span class="nav-text">Linearizing Convex Functions</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -605,7 +680,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
