@@ -113,7 +113,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/06/06/Counterfactual-Cross-Validation-Stable-Model-Selection-Procedure-for-Causal-Inference-Models/approx_obj.png">
 <meta property="og:image" content="http://yoursite.com/2020/06/06/Counterfactual-Cross-Validation-Stable-Model-Selection-Procedure-for-Causal-Inference-Models/alg1.png">
 <meta property="article:published_time" content="2020-06-06T10:23:12.000Z">
-<meta property="article:modified_time" content="2020-06-06T17:34:04.423Z">
+<meta property="article:modified_time" content="2020-06-06T17:36:34.317Z">
 <meta property="article:author" content="YuyangZhangFTD">
 <meta property="article:tag" content="Machine Learning">
 <meta property="article:tag" content="Causal Inference">
@@ -462,7 +462,7 @@
 {\cal{R}}_{true}(\hat{\tau}_1) - {\cal{R}}_{true}(\hat{\tau}_2)
 \]</span> 如果一个CATE的estimator在评估器<span class="math inline">\(\hat{\cal{R}}\)</span>上拥有最小期望值，那这个模型就是所有候选模型中最优的模型。然而，往往我们验证集的数量并不会很多，这使得我们需要考虑评估器的不确定性。我们对其进行拆解</p>
 <figure>
-<img src="decomposition.png" alt="decoposition1" /><figcaption>decoposition1</figcaption>
+<img src="decomposition.png" alt="decomposition" /><figcaption>decomposition</figcaption>
 </figure>
 <p>其中第二项<span class="math inline">\(\cal{W}\)</span>式不确定性的关键，同时受到<span class="math inline">\(\tilde{\tau}\)</span>的影响，所以我们尝试来降低<span class="math inline">\(\cal{W}\)</span>的方差，以降低模型选择中的不确定性，通过各种公式推导，发现<span class="math inline">\(\cal{W}\)</span>的方差的上界为</p>
 <figure>
