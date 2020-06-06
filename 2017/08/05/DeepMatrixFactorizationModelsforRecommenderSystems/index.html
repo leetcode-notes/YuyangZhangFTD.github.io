@@ -95,19 +95,20 @@
 
 
 <meta name="description" content="Introduction ​ 矩阵分解的方法在推荐算法中是目前效果比较好的，本篇论文用深度学习的方法去做矩阵分解，因为矩阵分解是线性的分解关系，引入激活函数做多层计算后可以有非线性的特性，分解后的矩阵可能拟合程度更好。 本篇论文主要有以下几点：  提出了一种基于深度学习的矩阵分解方法，不仅使用了明确打分信息(explicit ratings)，还用到了一些没有明确信息的反馈(non-prefere">
-<meta name="keywords" content="Machine Learning,Recommendation System,Deep Learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Deep Matrix Factorization Models for Recommender Systems">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;08&#x2F;05&#x2F;DeepMatrixFactorizationModelsforRecommenderSystems&#x2F;index.html">
+<meta property="og:url" content="http://yoursite.com/2017/08/05/DeepMatrixFactorizationModelsforRecommenderSystems/index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
 <meta property="og:description" content="Introduction ​ 矩阵分解的方法在推荐算法中是目前效果比较好的，本篇论文用深度学习的方法去做矩阵分解，因为矩阵分解是线性的分解关系，引入激活函数做多层计算后可以有非线性的特性，分解后的矩阵可能拟合程度更好。 本篇论文主要有以下几点：  提出了一种基于深度学习的矩阵分解方法，不仅使用了明确打分信息(explicit ratings)，还用到了一些没有明确信息的反馈(non-prefere">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;08&#x2F;05&#x2F;DeepMatrixFactorizationModelsforRecommenderSystems&#x2F;20170805001.png">
-<meta property="og:updated_time" content="2017-08-06T12:29:50.000Z">
+<meta property="og:image" content="http://yoursite.com/2017/08/05/DeepMatrixFactorizationModelsforRecommenderSystems/20170805001.png">
+<meta property="article:published_time" content="2017-08-05T14:02:57.000Z">
+<meta property="article:modified_time" content="2017-08-06T12:29:50.000Z">
+<meta property="article:author" content="YuyangZhangFTD">
+<meta property="article:tag" content="Machine Learning">
+<meta property="article:tag" content="Recommendation System">
+<meta property="article:tag" content="Deep Learning">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Deep Matrix Factorization Models for Recommender Systems">
-<meta name="twitter:description" content="Introduction ​ 矩阵分解的方法在推荐算法中是目前效果比较好的，本篇论文用深度学习的方法去做矩阵分解，因为矩阵分解是线性的分解关系，引入激活函数做多层计算后可以有非线性的特性，分解后的矩阵可能拟合程度更好。 本篇论文主要有以下几点：  提出了一种基于深度学习的矩阵分解方法，不仅使用了明确打分信息(explicit ratings)，还用到了一些没有明确信息的反馈(non-prefere">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;08&#x2F;05&#x2F;DeepMatrixFactorizationModelsforRecommenderSystems&#x2F;20170805001.png">
+<meta name="twitter:image" content="http://yoursite.com/2017/08/05/DeepMatrixFactorizationModelsforRecommenderSystems/20170805001.png">
 
 
 
@@ -142,7 +143,7 @@
 
 
 
-  <title>Deep Matrix Factorization Models for Recommender Systems | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Deep Matrix Factorization Models for Recommender Systems | Arvin's Blog</title>
   
 
 
@@ -158,7 +159,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -439,7 +440,7 @@ R_{ij}, &amp; \text{if otherwise} \end{cases}
 <h3 id="our-proposed-model">Our Proposed Model</h3>
 <p>​ 模型结构如图所示</p>
 <figure>
-<img src="20170805001.png" alt="20170805001"><figcaption>20170805001</figcaption>
+<img src="20170805001.png" alt="20170805001" /><figcaption>20170805001</figcaption>
 </figure>
 <p>很容易看，在交互矩阵<span class="math inline">\(Y\)</span> 的一行和一列分别取出后，经过多层神经网络后，最后产出分别产出一个隐向量，做乘积归一化后得到最后的评分，也就是做余弦相似度 <span class="math display">\[
 \hat{Y}_{ij}=F^{DFM}(u_i,v_j|\theta)=cosine(p_i,q_j)=\frac{p_i^Tq_j}{||p_i||||q_j|}
@@ -453,7 +454,7 @@ L=-\sum_{y\in Y^+ \cup Y^-}
 (1-\frac{Y_{ij}}{\max(R)}\log(1-\hat{Y}_{ij}))
 \]</span></p>
 <h3 id="summary">Summary</h3>
-<p>​ 感觉挺水的一篇文章…说优点，跟另一篇我之前看过的文章思路极其相似，谁前谁后也说，排除这点，这篇文章的亮点可能就是在于对于损失函数的设计吧。</p>
+<p>​ 感觉挺水的一篇文章...说优点，跟另一篇我之前看过的文章思路极其相似，谁前谁后也说，排除这点，这篇文章的亮点可能就是在于对于损失函数的设计吧。</p>
 
       
     </div>
@@ -679,12 +680,12 @@ L=-\sum_{y\in Y^+ \cup Y^-}
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Muse
   </a>
 </div>

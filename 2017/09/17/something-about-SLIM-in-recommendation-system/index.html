@@ -95,19 +95,19 @@
 
 
 <meta name="description" content="看16年recsys的best paper，Local Item-Item Models for Top-N Recommendation 中提到的SLIM方法，最近抓着这个方法研究了一下。然后还发现了Xia Ning和George Karypis这两位，这两位一直是SLIM相关论文的主要作者，XiaNing应该是George Karypis的学生，从最早的SLIM方法开始，到后面也有两篇（好像是">
-<meta name="keywords" content="Machine Learning,Recommendation System">
 <meta property="og:type" content="article">
 <meta property="og:title" content="something about SLIM in recommendation system">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;09&#x2F;17&#x2F;something-about-SLIM-in-recommendation-system&#x2F;index.html">
+<meta property="og:url" content="http://yoursite.com/2017/09/17/something-about-SLIM-in-recommendation-system/index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
 <meta property="og:description" content="看16年recsys的best paper，Local Item-Item Models for Top-N Recommendation 中提到的SLIM方法，最近抓着这个方法研究了一下。然后还发现了Xia Ning和George Karypis这两位，这两位一直是SLIM相关论文的主要作者，XiaNing应该是George Karypis的学生，从最早的SLIM方法开始，到后面也有两篇（好像是">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;09&#x2F;17&#x2F;something-about-SLIM-in-recommendation-system&#x2F;1.png">
-<meta property="og:updated_time" content="2019-05-19T11:00:56.016Z">
+<meta property="og:image" content="http://yoursite.com/2017/09/17/something-about-SLIM-in-recommendation-system/1.png">
+<meta property="article:published_time" content="2017-09-17T14:31:13.000Z">
+<meta property="article:modified_time" content="2019-05-19T11:00:56.016Z">
+<meta property="article:author" content="YuyangZhangFTD">
+<meta property="article:tag" content="Machine Learning">
+<meta property="article:tag" content="Recommendation System">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="something about SLIM in recommendation system">
-<meta name="twitter:description" content="看16年recsys的best paper，Local Item-Item Models for Top-N Recommendation 中提到的SLIM方法，最近抓着这个方法研究了一下。然后还发现了Xia Ning和George Karypis这两位，这两位一直是SLIM相关论文的主要作者，XiaNing应该是George Karypis的学生，从最早的SLIM方法开始，到后面也有两篇（好像是">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;09&#x2F;17&#x2F;something-about-SLIM-in-recommendation-system&#x2F;1.png">
+<meta name="twitter:image" content="http://yoursite.com/2017/09/17/something-about-SLIM-in-recommendation-system/1.png">
 
 
 
@@ -142,7 +142,7 @@
 
 
 
-  <title>something about SLIM in recommendation system | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>something about SLIM in recommendation system | Arvin's Blog</title>
   
 
 
@@ -158,7 +158,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -446,7 +446,7 @@
 </ul>
 <p>作者后面就开始了实验部分，不详细说了。初看这个模型会觉得是对打分矩阵的估计，然后细细思考，是通过一种线性的方式，学习物品之间的相似度，而且能够通过迭代的方式做类似协同过滤的事，十分巧妙的思路，最重要的是，能够并行，这就有很好的扩展性。</p>
 <h1 id="sslim">SSLIM</h1>
-<p>SSLIM这篇论文题目是利用side information做SLIM，但总给我感觉是在水论文…然后水出了cSLIM,rcSLIM,fSLIM,f2SLIM…这里不展开细说了，主要的想法就是通过相似的结构去学习side information中所含有的潜在相似性，一并作为最后打分排序的根据。不管怎么说，实验的量的确很大，看来学校的设备真的不错…</p>
+<p>SSLIM这篇论文题目是利用side information做SLIM，但总给我感觉是在水论文...然后水出了cSLIM,rcSLIM,fSLIM,f2SLIM...这里不展开细说了，主要的想法就是通过相似的结构去学习side information中所含有的潜在相似性，一并作为最后打分排序的根据。不管怎么说，实验的量的确很大，看来学校的设备真的不错...</p>
 <h1 id="fism">FISM</h1>
 <p>由于模型本身的限制，SLIM只能描述出有共现的物品之间的关系，所以在稀疏数据中表现受到限制，所以提出了FISM，通过学习物品之间的相似矩阵来改进推荐结果。当物品<span class="math inline">\(i\)</span> 与物品<span class="math inline">\(j\)</span> 没有同时被任意一个用户购买时，物品之间的相似性为<span class="math inline">\(0\)</span> ，但这样的两个物品，却可以通过第三个物品相似而又关联，也就是SLIM无法去刻画物品之间的传递相似关系，与之相似的矩阵分解方法，将数据映射到低维空间，一定程度上解决了这个问题。在FISM中，未打分的推荐评分由矩阵分解得到的估计代替 <span class="math display">\[
 \widetilde{r}_{ui}=b_u+b_i+(n_u^+)^{-\alpha}\sum_{j\in\mathcal{R}^+_u}p_jq_i^{\mathrm{T}}
@@ -457,7 +457,7 @@
 \min_{P,Q}\frac{1}{2}\sum_{u,i\in R}\|r_{u,i}-\widetilde{r}_{u,i}\|^2_F+\frac{\beta}{2}(\|P\|^2_F+\|Q\|^2_F)+\frac{\lambda}{2}\|b_u\|^2_F+\frac{\gamma}{2}\|b_i\|^2_F
 \]</span> 在训练时，进行非负项的采样迭代训练，训练过程如下：</p>
 <figure>
-<img src="1.png" alt="1"><figcaption>1</figcaption>
+<img src="1.png" alt="1" /><figcaption>1</figcaption>
 </figure>
 <p>FISMauc是一种贝叶斯个性化排序（<a href="https://arxiv.org/ftp/arxiv/papers/1205/1205.2618.pdf" target="_blank" rel="noopener">BRP</a>）的思路，同时利用打分和未打分的物品，来优化AUC，主要想法是先用FISMrmse做出初步结果，再去优化成对的目标损失： <span class="math display">\[
 \min_{P,Q}\frac{1}{2}\sum_{c\in \mathcal{C}}\sum_{i\in\mathcal{R}^+_u,j\in\mathcal{R}^-_u}\|(r_{u,i}-r_{u,j})-(\widetilde{r}_{u,i}-\widetilde{r}_{u,j})\|^2_F+\frac{\beta}{2}(\|P\|^2_F+\|Q\|^2_F)+\frac{\gamma}{2}\|b_i\|^2_F
@@ -538,7 +538,7 @@ z^{k+1}=\min_xL_{\rho}(x^{k+1},z,\mu^k)\\
 <li>[1]是去年的best paper，简单浏览过一次，做全局和局部的SLIM，我等着过一阵细细再品味一下。</li>
 <li>其实参考文献本来有20+，但是有些我下载不到就删掉了。</li>
 </ul>
-<p>BTW，牢骚写在最后，我对SLIM已经审美疲劳了，到了看见想吐的地步，大概所有这些看了两周多点，现在整个人都不好了，怎么说呢，大概就是天天回家看老婆的那种感觉吧…现在只想换个方向论文看一看。。大概可能去看看CV的。。</p>
+<p>BTW，牢骚写在最后，我对SLIM已经审美疲劳了，到了看见想吐的地步，大概所有这些看了两周多点，现在整个人都不好了，怎么说呢，大概就是天天回家看老婆的那种感觉吧...现在只想换个方向论文看一看。。大概可能去看看CV的。。</p>
 <h1 id="slim资料汇总">SLIM资料汇总</h1>
 <p>刚好看见别人博客里总结了，复制过来。</p>
 <ul>
@@ -782,12 +782,12 @@ z^{k+1}=\min_xL_{\rho}(x^{k+1},z,\mu^k)\\
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Muse
   </a>
 </div>

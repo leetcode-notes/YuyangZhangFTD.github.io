@@ -95,22 +95,23 @@
 
 
 <meta name="description" content="最近在学习online learning相关的东西，刚好总结一下。 Introduction to Online Learning 我们以在线二分类预测问题为例，比如说，日常生活中，我们根据气温、温度等特征来试试判断是否会下雪，这就是一个在线的二分类问题。 二分类分类器（二分类假设，binary classifier或者说binary hypothesis），将特征\(\mathbf{x}\in\">
-<meta name="keywords" content="Machine Learning,Convex Optimization,Online Learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Online Learning 1">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;06&#x2F;13&#x2F;Online-Learning-1&#x2F;index.html">
+<meta property="og:url" content="http://yoursite.com/2018/06/13/Online-Learning-1/index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
 <meta property="og:description" content="最近在学习online learning相关的东西，刚好总结一下。 Introduction to Online Learning 我们以在线二分类预测问题为例，比如说，日常生活中，我们根据气温、温度等特征来试试判断是否会下雪，这就是一个在线的二分类问题。 二分类分类器（二分类假设，binary classifier或者说binary hypothesis），将特征\(\mathbf{x}\in\">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;06&#x2F;13&#x2F;Online-Learning-1&#x2F;1.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;06&#x2F;13&#x2F;Online-Learning-1&#x2F;2.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;06&#x2F;13&#x2F;Online-Learning-1&#x2F;2.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;06&#x2F;13&#x2F;Online-Learning-1&#x2F;4.png">
-<meta property="og:updated_time" content="2018-06-13T15:34:31.593Z">
+<meta property="og:image" content="http://yoursite.com/2018/06/13/Online-Learning-1/1.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/13/Online-Learning-1/2.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/13/Online-Learning-1/2.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/13/Online-Learning-1/4.png">
+<meta property="article:published_time" content="2018-06-13T03:47:47.000Z">
+<meta property="article:modified_time" content="2018-06-13T15:34:31.593Z">
+<meta property="article:author" content="YuyangZhangFTD">
+<meta property="article:tag" content="Machine Learning">
+<meta property="article:tag" content="Convex Optimization">
+<meta property="article:tag" content="Online Learning">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Online Learning 1">
-<meta name="twitter:description" content="最近在学习online learning相关的东西，刚好总结一下。 Introduction to Online Learning 我们以在线二分类预测问题为例，比如说，日常生活中，我们根据气温、温度等特征来试试判断是否会下雪，这就是一个在线的二分类问题。 二分类分类器（二分类假设，binary classifier或者说binary hypothesis），将特征\(\mathbf{x}\in\">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2018&#x2F;06&#x2F;13&#x2F;Online-Learning-1&#x2F;1.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/06/13/Online-Learning-1/1.png">
 
 
 
@@ -145,7 +146,7 @@
 
 
 
-  <title>Online Learning 1 | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Online Learning 1 | Arvin's Blog</title>
   
 
 
@@ -161,7 +162,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -401,7 +402,7 @@ h:\mathbb{R}^n\rightarrow\{+1,-1\}
 \]</span></p>
 <p>在线二分类预测问题指，利用每一阶段<span class="math inline">\(t\)</span>的特征<span class="math inline">\(\mathbf{x}_t\)</span>来预测<span class="math inline">\(y_t\)</span>的情况，目标是最小化失败的次数。</p>
 <figure>
-<img src="1.png" alt="Online Binary Prediction Game"><figcaption>Online Binary Prediction Game</figcaption>
+<img src="1.png" alt="Online Binary Prediction Game" /><figcaption>Online Binary Prediction Game</figcaption>
 </figure>
 <p>需要注意的是，对于二分类预测问题：</p>
 <ul>
@@ -439,7 +440,7 @@ M_T\leq \log_2(|\mathcal{H}|)
 <p>例2：感知机算法（The Perceptron）</p>
 <p>感知机算法想必大家都不陌生了，定义一个线性二分类器，<span class="math inline">\(h_w\)</span>，和一组权重<span class="math inline">\(\mathbf{w}\in\mathbb{R}^n\)</span>，则 <span class="math display">\[
 \hat{y}_t=h_w(\mathbf{x})=\text{sign}(\mathbf{w}\cdot\mathbf{x})=\text{sign}(\sum^n_ix_iw_i)
-\]</span> <img src="2.png" alt="The Perceptron 1"></p>
+\]</span> <img src="2.png" alt="The Perceptron 1" /></p>
 <p>上图中是二维下感知机算法的直观几何解释，其中划分正例与负例的超平面称之为垂直超平面（与权重向量<span class="math inline">\(\mathbf{w}\)</span>垂直）。初始时候令<span class="math inline">\(\mathbf{w}_0=(0,\cdots,0)\)</span>，<span class="math inline">\(\text{sign }0=1\)</span>，所以初始时候任意<span class="math inline">\(\mathbf{x}\)</span>都有<span class="math inline">\(\mathbf{w_0}\cdot\mathbf{x}=1\)</span>。更新时则为 <span class="math display">\[
 \mathbf{w}_{t+1}=\begin{cases}
 \mathbf{w}_t &amp; \text{if} &amp; \hat{y}_t=y_t\\
@@ -452,7 +453,7 @@ M_T\leq \log_2(|\mathcal{H}|)
 &amp;=\mathbf{w}_t\cdot\mathbf{x}_t + \|\mathbf{x}_t\|^2\\
 &amp;\geq\mathbf{w}_t\cdot\mathbf{x}_t
 \end{aligned}
-\]</span> <img src="2.png" alt="The Perceptron 2"></p>
+\]</span> <img src="2.png" alt="The Perceptron 2" /></p>
 <p>如果我们想定义感知机的错误数量上界，我们还需要两个假设：</p>
 <ul>
 <li>假设3：特征向量的模长有限，<span class="math inline">\(\|\mathbf{x\|\leq\rho}\)</span></li>
@@ -460,7 +461,7 @@ M_T\leq \log_2(|\mathcal{H}|)
 </ul>
 <p>值得注意的是，假设4与之前的假设2很相似，假设4实际上会比假设2要求更严格，当<span class="math inline">\(\gamma=0\)</span>的时候，假设4与假设2等价。<span class="math inline">\(\gamma\)</span>被称为间隔（margin）</p>
 <figure>
-<img src="4.png" alt="Margin"><figcaption>Margin</figcaption>
+<img src="4.png" alt="Margin" /><figcaption>Margin</figcaption>
 </figure>
 <blockquote>
 <p>定理2：对于任何满足假设3和假设4的序列<span class="math inline">\(\{\mathbf{x}_t, y_t\}_{t=1}^\infty\)</span>，感知机分类器犯错误数量最多为<span class="math inline">\((\frac{\rho}{\gamma})^2\)</span></p>
@@ -716,12 +717,12 @@ M_T\gamma\leq\sqrt{M_T}\rho\Rightarrow M_T\leq(\frac{\rho}{\gamma})^2
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Muse
   </a>
 </div>

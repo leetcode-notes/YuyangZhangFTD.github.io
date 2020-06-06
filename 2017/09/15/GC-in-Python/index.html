@@ -94,18 +94,17 @@
 
 
 
-<meta name="description" content="Python垃圾回收处理 引用计数 当一个对象被创建或者复制时，对象的引用计数加一，当对象的引用被销毁时，对象的引用计数减一，当引用计数为0时，会将该对象所占内存释放。 优点在于实时性，任何内存一旦没有指向它的引用，就会立即被回收，其它垃圾回收机制是建立在一些特殊条件下。 缺点在于维护计数所造成的计算开销。同时，引用计数会造成循环引用，如下所示 1a &#x3D; []2b &#x3D; []3a.append(b)">
-<meta name="keywords" content="Python">
+<meta name="description" content="Python垃圾回收处理 引用计数 当一个对象被创建或者复制时，对象的引用计数加一，当对象的引用被销毁时，对象的引用计数减一，当引用计数为0时，会将该对象所占内存释放。 优点在于实时性，任何内存一旦没有指向它的引用，就会立即被回收，其它垃圾回收机制是建立在一些特殊条件下。 缺点在于维护计数所造成的计算开销。同时，引用计数会造成循环引用，如下所示 12345678a &#x3D; []b &#x3D; []a.appe">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GC in Python">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;09&#x2F;15&#x2F;GC-in-Python&#x2F;index.html">
+<meta property="og:url" content="http://yoursite.com/2017/09/15/GC-in-Python/index.html">
 <meta property="og:site_name" content="Arvin&#39;s Blog">
-<meta property="og:description" content="Python垃圾回收处理 引用计数 当一个对象被创建或者复制时，对象的引用计数加一，当对象的引用被销毁时，对象的引用计数减一，当引用计数为0时，会将该对象所占内存释放。 优点在于实时性，任何内存一旦没有指向它的引用，就会立即被回收，其它垃圾回收机制是建立在一些特殊条件下。 缺点在于维护计数所造成的计算开销。同时，引用计数会造成循环引用，如下所示 1a &#x3D; []2b &#x3D; []3a.append(b)">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-15T11:01:28.000Z">
+<meta property="og:description" content="Python垃圾回收处理 引用计数 当一个对象被创建或者复制时，对象的引用计数加一，当对象的引用被销毁时，对象的引用计数减一，当引用计数为0时，会将该对象所占内存释放。 优点在于实时性，任何内存一旦没有指向它的引用，就会立即被回收，其它垃圾回收机制是建立在一些特殊条件下。 缺点在于维护计数所造成的计算开销。同时，引用计数会造成循环引用，如下所示 12345678a &#x3D; []b &#x3D; []a.appe">
+<meta property="article:published_time" content="2017-09-15T11:01:01.000Z">
+<meta property="article:modified_time" content="2017-09-15T11:01:28.000Z">
+<meta property="article:author" content="YuyangZhangFTD">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GC in Python">
-<meta name="twitter:description" content="Python垃圾回收处理 引用计数 当一个对象被创建或者复制时，对象的引用计数加一，当对象的引用被销毁时，对象的引用计数减一，当引用计数为0时，会将该对象所占内存释放。 优点在于实时性，任何内存一旦没有指向它的引用，就会立即被回收，其它垃圾回收机制是建立在一些特殊条件下。 缺点在于维护计数所造成的计算开销。同时，引用计数会造成循环引用，如下所示 1a &#x3D; []2b &#x3D; []3a.append(b)">
 
 
 
@@ -140,7 +139,7 @@
 
 
 
-  <title>GC in Python | Arvin's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>GC in Python | Arvin's Blog</title>
   
 
 
@@ -156,7 +155,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -415,7 +414,7 @@
 <p>当一个对象被创建或者复制时，对象的引用计数加一，当对象的引用被销毁时，对象的引用计数减一，当引用计数为0时，会将该对象所占内存释放。</p>
 <p>优点在于实时性，任何内存一旦没有指向它的引用，就会立即被回收，其它垃圾回收机制是建立在一些特殊条件下。</p>
 <p>缺点在于维护计数所造成的计算开销。同时，引用计数会造成循环引用，如下所示</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">a = []</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">b = []</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">a.append(b)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">b.append(b)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">print(a)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">[[[…]]]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">print(b)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">[[[…]]]</span></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = []</span><br><span class="line">b = []</span><br><span class="line">a.append(b)</span><br><span class="line">b.append(b)</span><br><span class="line">print(a)</span><br><span class="line">[[[…]]]</span><br><span class="line">print(b)</span><br><span class="line">[[[…]]]</span><br></pre></td></tr></table></figure>
 <p>循环引用会使一组对象的引用计数不为0，但这些对象实际上并没有被任何外部对象所引用，只是它们之间相互引用，没人使用却平白增加了引用，所占内存永远不会被释放。为了解决这个问题，python引入了“标记-清除”和“分代回收”两种方式</p>
 <h2 id="标记-清除">标记-清除</h2>
 <p>标记-清除”是为了解决循环引用的问题。可以包含其他对象引用的容器对象（比如：list，set，dict，class，instance）都可能产生循环引用。</p>
@@ -643,12 +642,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Muse
   </a>
 </div>
